@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Алгебра · интерактивный мастер решений</title>
+<style>
+:root{--bg:#08121d;--panel:#101f2d;--panel2:#132635;--card:#172c3c;--line:#284152;--text:#f3f8fb;--muted:#9cb3c3;--accent:#78f0cb;--accent2:#60b7ff;--orange:#ffd18e;--shadow:0 25px 90px #0005;--button:#1b3445}
+:root.light{--bg:#edf4f7;--panel:#fff;--panel2:#f4f9fb;--card:#eaf3f7;--line:#d1e1e9;--text:#173141;--muted:#5d7786;--accent:#057e6f;--accent2:#0b6ea8;--orange:#986000;--shadow:0 20px 60px #2b58651b;--button:#f3f9fc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.5}button,a{font:inherit}button{cursor:pointer}a{color:var(--accent2)}.layout{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100vh}.sidebar{border-right:1px solid var(--line);background:var(--panel);padding:30px 18px 24px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:12px;padding:3px 9px 25px}.mark{height:43px;width:43px;border-radius:13px;background:linear-gradient(140deg,var(--accent),var(--accent2));color:#092233;font-weight:850;font-size:27px;display:grid;place-items:center}.brand b{display:block;font-size:17px;letter-spacing:-.03em}.brand small{display:block;color:var(--muted);font-size:12px;margin-top:2px}.sidebar-head{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800;padding:0 11px 10px}.category-list{overflow-y:auto;flex:1;padding-right:3px;scrollbar-width:thin}.category{display:flex;align-items:center;gap:11px;width:100%;border:1px solid transparent;background:transparent;color:var(--muted);padding:10px 11px;text-align:left;border-radius:11px;font-size:13px;line-height:1.25;margin:2px 0;transition:.15s}.category .num{font-variant-numeric:tabular-nums;opacity:.7;font-size:11px;min-width:21px}.category:hover{background:var(--panel2);color:var(--text)}.category.active{background:color-mix(in srgb,var(--accent) 12%,var(--panel));color:var(--accent);border-color:color-mix(in srgb,var(--accent) 25%,var(--line))}.sidebottom{padding:17px 10px 3px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.sidebottom a{display:block;margin-top:7px}.main{min-width:0;position:relative;overflow:hidden}.main:before{content:"";position:absolute;pointer-events:none;width:680px;height:680px;right:-280px;top:-380px;background:radial-gradient(circle,#1b6b7355,transparent 70%)}.topbar{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px clamp(22px,5vw,80px);border-bottom:1px solid var(--line);position:relative}.crumb{color:var(--muted);font-size:13px}.crumb strong{color:var(--text);font-weight:650}.controls{display:flex;gap:9px;flex-wrap:wrap}.iconbtn{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:10px;padding:9px 12px;font-size:13px}.iconbtn:hover{color:var(--text);border-color:var(--accent)}.content{max-width:960px;margin:auto;padding:48px clamp(22px,5vw,76px) 65px;position:relative}.eyebrow{color:var(--accent);font-size:12px;letter-spacing:.14em;font-weight:850;text-transform:uppercase;margin-bottom:14px}.headline{font-size:clamp(31px,4.2vw,53px);line-height:1.09;letter-spacing:-.055em;margin:0 0 15px;max-width:790px;font-weight:800}.lead{font-size:16px;line-height:1.7;color:var(--muted);max-width:770px;margin:0}.stepstrip{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:42px 0 17px}.minihead{font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);font-weight:750}.stepcount{font-size:12px;color:var(--accent);white-space:nowrap}.trail{display:flex;gap:6px;overflow:hidden;max-width:100%}.trail span{height:4px;flex:1;border-radius:5px;background:var(--line)}.trail span.on{background:var(--accent)}.question{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,37px);box-shadow:var(--shadow);position:relative;overflow:hidden}.question:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}.cardmeta{display:flex;align-items:center;gap:8px;margin-bottom:17px;color:var(--accent);font-size:12px;font-weight:780;letter-spacing:.065em;text-transform:uppercase}.dot{height:7px;width:7px;background:var(--accent);border-radius:50%;display:inline-block}.question h2{font-size:clamp(22px,3vw,30px);line-height:1.26;letter-spacing:-.035em;margin:0 0 11px}.question .description{color:var(--muted);font-size:14px;line-height:1.75;white-space:pre-line;margin:0 0 21px;max-width:740px}.options{display:grid;gap:10px;margin-top:22px}.option{width:100%;display:flex;align-items:center;gap:15px;text-align:left;background:var(--button);border:1px solid var(--line);padding:17px 18px;border-radius:13px;color:var(--text);transition:transform .12s,border-color .12s,background .12s}.option:hover,.option:focus-visible{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--button));transform:translateY(-1px);outline:none}.option .key{height:31px;min-width:31px;display:grid;place-items:center;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:750;color:var(--muted)}.option .opttext{flex:1}.option b{display:block;font-size:15px;font-weight:680}.option small{display:block;color:var(--muted);font-size:13px;margin-top:4px}.option .arrow{font-size:21px;color:var(--accent);opacity:.85}.instructions{display:grid;gap:12px;counter-reset:point;margin:21px 0 8px;padding:0;list-style:none}.instructions li{position:relative;padding:13px 15px 13px 49px;border:1px solid var(--line);border-radius:11px;background:var(--panel2);font-size:14px;line-height:1.7;white-space:pre-line}.instructions li:before{counter-increment:point;content:counter(point);position:absolute;top:13px;left:15px;font-size:12px;font-weight:800;display:grid;place-items:center;width:22px;height:22px;background:color-mix(in srgb,var(--accent) 18%,var(--panel));border-radius:7px;color:var(--accent)}.result-tag{display:inline-flex;padding:5px 10px;border-radius:99px;color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,var(--panel));font-size:12px;font-weight:750}.primary{border:0;border-radius:12px;background:var(--accent);color:#092f32;font-weight:800;padding:14px 19px;margin-top:21px}.primary:hover{filter:brightness(1.08)}.textbtn{border:0;background:none;color:var(--muted);font-size:14px;padding:12px 3px}.textbtn:hover{color:var(--accent)}.actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.footbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:19px}.tip{border:1px solid var(--line);border-radius:13px;padding:17px 18px;color:var(--muted);font-size:13px;line-height:1.7;margin-top:24px;background:color-mix(in srgb,var(--accent2) 5%,var(--panel))}.tip strong{color:var(--orange)}.journey{margin-top:37px}.journey h3{font-size:16px;margin:0 0 12px;letter-spacing:-.02em}.history{display:flex;flex-wrap:wrap;align-items:center;gap:7px}.chip{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:var(--muted);font-size:12px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chip:hover{border-color:var(--accent);color:var(--text)}.hsep{color:var(--muted);font-size:12px}.summary{margin-top:27px;display:none;padding:17px 20px;border:1px solid var(--line);border-radius:13px;background:var(--panel)}.summary.open{display:block}.summary h3{margin:0 0 12px;font-size:16px}.summary ol{margin:0;padding-left:20px;font-size:13px;color:var(--muted)}.summary li{margin:7px 0}.summary li b{color:var(--text)}.summary .tools{display:flex;gap:9px;margin-top:14px}.mobilemenu{display:none}.overlay{display:none}.hintlist{margin:15px 0 0 18px;padding:0;color:var(--muted);font-size:13px}.hintlist li{margin:7px 0}.footer{border-top:1px solid var(--line);padding:22px clamp(22px,5vw,80px);font-size:12px;color:var(--muted)}.footer a{color:var(--accent2)}@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:fixed;top:0;bottom:0;left:0;z-index:20;transform:translateX(-104%);transition:transform .2s;width:min(320px,86vw);box-shadow:20px 0 50px #0005}.sidebar.open{transform:translateX(0)}.overlay.open{display:block;position:fixed;inset:0;background:#0009;z-index:19}.mobilemenu{display:block}.topbar{padding:16px 22px}.content{padding-top:32px}.controls .hide-mobile{display:none}}@media(max-width:500px){.headline{font-size:32px}.lead{font-size:14px}.question{border-radius:16px}.topbar .crumb{font-size:12px}.option{padding:14px 12px}.option b{font-size:14px}.footbar{align-items:flex-start}.controls{gap:5px}.stepstrip{margin-top:31px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay"></div>
+<div class="layout">
+ <aside class="sidebar" id="sidebar" aria-label="Разделы алгоритма">
+  <div class="brand"><div class="mark">∑</div><div><b>Алгебра / Мастер</b><small>Алгоритмы без блок-схем</small></div></div>
+  <div class="sidebar-head">24 раздела · навигация</div>
+  <nav class="category-list" id="categories"></nav>
+  <div class="sidebottom">Основано на алгоритмической карте «Константа Лаб». <a href="https://konstantalab.ru/map" target="_blank" rel="noopener noreferrer">Оригинальная схема ↗</a></div>
+ </aside>
+ <main class="main">
+  <div class="topbar"><div style="display:flex;align-items:center;gap:11px"><button class="iconbtn mobilemenu" id="menu" aria-label="Открыть разделы">☰</button><div class="crumb">Мастер решений <span style="opacity:.5">/</span> <strong id="currentSection">Диагностика</strong></div></div><div class="controls"><button class="iconbtn hide-mobile" id="theme" title="Сменить тему">☀ / ☾</button><button class="iconbtn" id="summaryToggle">Маршрут</button><button class="iconbtn" id="reset">↺ Сбросить</button></div></div>
+  <div class="content">
+   <div class="eyebrow">Навигатор по математике</div>
+   <h1 class="headline">От условия задачи<br>к методу решения.</h1>
+   <p class="lead">Отвечайте на вопросы о своей задаче. Мастер будет переходить в нужные состояния, подсказывать преобразования и проверять типичные ошибки.</p>
+   <div class="stepstrip"><span class="minihead" id="stage">Диагностика</span><span class="stepcount" id="count">Шаг 1</span></div>
+   <div class="trail" id="trail" aria-hidden="true"></div>
+   <section class="question" id="card" aria-live="polite"></section>
+   <div class="footbar"><button class="textbtn" id="back">← Назад</button><button class="textbtn" id="home">В начало ↗</button></div>
+   <section class="summary" id="summary"><h3>Ваш маршрут</h3><ol id="summaryList"></ol><div class="tools"><button class="iconbtn" id="copy">Скопировать</button><button class="iconbtn" id="download">Сохранить .txt</button></div></section>
+   <div class="journey" id="journey"><h3>Пройденные развилки</h3><div class="history" id="history"></div></div>
+   <div class="tip"><strong>Важно:</strong> мастер выбирает алгоритм, но не вычисляет корни автоматически. Если преобразование изменяет область допустимых значений, в конце обязательна проверка по исходному условию. В сложных задачах возможны несколько подходящих методов.</div>
+  </div>
+  <footer class="footer">Интерактивный обучающий прототип · Все данные и логика встроены в HTML · Работает без интернета</footer>
+ </main>
+</div>
+<script>
+'use strict';
+const SECTIONS={
+1:'Вход в систему',2:'Диспетчерская',3:'Линейные уравнения',4:'Квадратные уравнения',5:'Высшие степени',6:'Системы и векторы',7:'Дробно-рациональные',8:'Тригонометрия',9:'Модули',10:'Корни и радикалы',11:'Показательные уравнения',12:'Логарифмы',13:'Матрёшки',14:'Формулы и преобразования',15:'Выражения',16:'Функции',17:'Комплексные числа',18:'Неравенства',19:'Параметры',20:'Прогрессии и бином',21:'Текстовые задачи',22:'Целые числа',23:'Олимпиадные методы',24:'Контроль корней'
+};
+const ENTRY={1:'entry_complex',2:'dispatcher',3:'lin_start',4:'quad_start',5:'high_start',6:'sys_start',7:'rat_start',8:'trig_start',9:'mod_start',10:'rad_start',11:'exp_start',12:'log_start',13:'nest_start',14:'hub_start',15:'expr_start',16:'func_start',17:'complex_start',18:'ineq_start',19:'param_start',20:'seq_start',21:'word_start',22:'integer_start',23:'olymp_start',24:'check_start'};
+const N={};const o=(label,next,detail='')=>({label,next,detail});
+function q(id,s,title,desc,options,hint=''){N[id]={id,s,k:'q',title,desc,options,hint}}
+function a(id,s,title,desc,steps,next='check_start',hint=''){N[id]={id,s,k:'a',title,desc,steps,next,hint}}
+function r(id,s,title,desc,steps=[],hint=''){N[id]={id,s,k:'r',title,desc,steps,hint}}
+// 1. Старт: последовательные вопросы сохранены из входного маршрута оригинальной карты.
+q('entry_complex',1,'Есть комплексные числа?','В условии встречается мнимая единица i, z = a + bi или явно сказано «комплексное число»?',[o('Да, комплексные числа','complex_start'),o('Нет','entry_function')]);
+q('entry_function',1,'Нужно исследовать функцию?','График, область определения или значений, обратная функция, свойства, значение в точке.',[o('Да','func_start'),o('Нет','entry_inequality')]);
+q('entry_inequality',1,'Это неравенство?','Есть знаки >, <, ≥, ≤ или требуется определить, где выражение положительно или отрицательно?',[o('Да','ineq_start'),o('Нет','entry_parameter')]);
+q('entry_parameter',1,'Есть параметр?','Нужно получить ответ для разных значений a, p, k или определить значения параметра?', [o('Да','param_start'),o('Нет','entry_sequence')]);
+q('entry_sequence',1,'Последовательности или бином?','Члены прогрессии, сумма n слагаемых, рекуррентная формула, биномиальные коэффициенты.',[o('Да','seq_start'),o('Нет','entry_word')]);
+q('entry_word',1,'Это текстовая задача?','В условии сюжет: движение, совместная работа, смеси, проценты, числа и цифры.',[o('Да','word_start'),o('Нет','entry_integer')]);
+q('entry_integer',1,'Нужны только целые решения?','Делимость, остатки, простые числа, натуральные или целые x.',[o('Да','integer_start'),o('Нет','entry_olymp')]);
+q('entry_olymp',1,'Нужна нестандартная оценка или доказательство?','Доказать неравенство, найти экстремум, решить функциональное уравнение.',[o('Да','olymp_start'),o('Нет','entry_solve')]);
+q('entry_solve',1,'Задание просит решить или найти корни?','В том числе найти нули функции.',[o('Да — решить уравнение','dispatcher'),o('Нет / неясно','entry_equal')]);
+q('entry_equal',1,'Есть знак «=» между двумя частями?','Например: 3x + 5 = 11.',[o('Да','entry_unknown'),o('Нет','expr_start')]);
+q('entry_unknown',1,'Есть неизвестная переменная?','x, y, z или другая буква, значение которой нужно определить.',[o('Да','dispatcher'),o('Нет','expr_start')]);
+// 2. Диспетчерская
+q('dispatcher',2,'Какой тип уравнения перед вами?','Сначала определите особую конструкцию; только если её нет — переходите к обычной алгебре.',[
+ o('Тригонометрия: sin, cos, tg, ctg','trig_start'),o('Модуль: |…|','mod_start'),o('Корень: √…','rad_start'),o('Показательная функция: aˣ','exp_start'),o('Логарифм: logₐ','log_start'),o('Вложенные функции («матрёшка»)','nest_start'),o('Смесь разных типов: 2ˣ + x, sin x = x','olymp_mono'),o('Обычная алгебра','dispatcher_count'),o('Иной тип задания','dispatcher_other')], 'При конкуренции признаков учитывайте ОДЗ исходного уравнения; типы могут сочетаться.');
+q('dispatcher_other',2,'Куда нужно перейти?','Дополнительные ветви центральной диспетчерской.',[o('Неравенство','ineq_start'),o('Параметр','param_start'),o('Только целые решения','integer_start'),o('Функциональное уравнение / оценка','olymp_start'),o('Векторное уравнение','vector_start'),o('Преобразовать выражение','expr_start'),o('Контроль корней','check_start')]);
+q('dispatcher_count',2,'Сколько неизвестных?','После раскрытия основных конструкций.',[o('Одна переменная','dispatcher_marker'),o('Две или больше переменных','sys_start'),o('Это векторное уравнение','vector_start')]);
+q('dispatcher_marker',2,'Какая главная конструкция?','Проверяйте сначала переменную в знаменателе, затем наибольшую степень.',[o('x в знаменателе','rat_start'),o('Степени x выше первой нет','lin_start'),o('Есть x², но нет старших степеней','quad_start'),o('Есть x³ или выше','high_start'),o('Векторы','vector_start')]);
+// 3. Линейные
+q('lin_start',3,'Есть скобки в линейном уравнении?','Цель: привести уравнение к виду ax = b.',[o('Да','lin_brackets'),o('Нет','lin_terms')]);
+a('lin_brackets',3,'Раскройте все скобки','Следите за знаком минус перед скобками.',['Раскройте скобки и умножьте одночлены.','Приведите слагаемые к стандартному виду.'],'lin_terms');
+q('lin_terms',3,'Иксы и числа находятся по разные стороны?','Если нет, переносим члены, меняя знак.',[o('Да','lin_combine'),o('Нет — нужно перенести','lin_move')]);
+a('lin_move',3,'Соберите x слева, числа справа','Перенос равен добавлению противоположного выражения к обеим частям.',['Перенесите все члены с x влево.','Все свободные числа перенесите вправо с противоположным знаком.'],'lin_combine');
+a('lin_combine',3,'Приведите подобные','Найдите коэффициенты a и b в ax = b.',['Сложите коэффициенты при x.','Сложите числа и упростите.'],'lin_zero');
+q('lin_zero',3,'Коэффициент a равен нулю?','Рассматриваем получившееся ax = b.',[o('Нет: a ≠ 0','lin_one'),o('Да: a = 0','lin_b')]);
+q('lin_b',3,'При a = 0 число b равно нулю?','Получается уравнение вида 0·x = b.',[o('Да: b = 0','lin_all'),o('Нет: b ≠ 0','lin_none')]);
+r('lin_one',3,'Единственное решение','x = b / a.',['Подставьте x в исходное уравнение.']);
+r('lin_all',3,'Любое действительное число','Получилось тождество 0 = 0.',['Все допустимые x удовлетворяют уравнению.']);
+r('lin_none',3,'Решений нет','Получилось неверное равенство 0 = b при b ≠ 0.');
+// 4. Квадратные
+q('quad_start',4,'Уравнение уже приведено к ax² + bx + c = 0?','Если нет — раскройте скобки и перенесите всё влево.',[o('Да','quad_combine'),o('Нет','quad_prepare')]);
+a('quad_prepare',4,'Приведите к стандартному виду','Оставьте справа ноль.',['Раскройте скобки.','Перенесите все члены влево, справа оставьте 0.'],'quad_combine');
+a('quad_combine',4,'Приведите подобные','Определите коэффициенты a, b, c.',['Соберите члены при x², x и свободный член.'],'quad_a');
+q('quad_a',4,'Члены при x² сократились?','Если a = 0, уравнение уже не квадратное.',[o('Да: a = 0, определить тип заново','dispatcher'),o('Нет: a ≠ 0','quad_full')]);
+q('quad_full',4,'Какой вид квадратного уравнения?','Сначала проверьте отсутствующие коэффициенты.',[o('Нет c, есть общий множитель x','quad_no_c'),o('Нет b, уравнение ax² + c = 0','quad_no_b'),o('Нет b и c','quad_no_bc'),o('Полное: a, b, c присутствуют','quad_vieta')]);
+a('quad_no_c',4,'Вынесите x за скобки','ax² + bx = x(ax + b) = 0.',['Одна ветвь: x = 0.','Другая ветвь: ax + b = 0, решите линейно.','Объедините и проверьте решения.'],'quad_end');
+a('quad_no_b',4,'Изолируйте x²','x² = −c/a.',['Если −c/a < 0, действительных корней нет.','Если −c/a = 0, один корень x = 0.','Если −c/a > 0, x = ±√(−c/a).'],'quad_end');
+r('quad_no_bc',4,'Корень x = 0','ax² = 0 при a ≠ 0; единственный действительный корень — 0.');
+q('quad_vieta',4,'a = 1 и корни легко подобрать?','Для приведённого уравнения x² + bx + c = 0 можно использовать теорему Виета.',[o('Да — применить Виета','quad_vieta_result'),o('Нет — дискриминант','quad_D')]);
+r('quad_vieta_result',4,'Используйте теорему Виета','Найдите x₁ и x₂: x₁ + x₂ = −b, x₁·x₂ = c.',['Проверьте оба соотношения и исходное уравнение.']);
+a('quad_D',4,'Вычислите дискриминант','D = b² − 4ac.',['Вычислите a, b, c.','Найдите D и определите его знак.'],'quad_dsign');
+q('quad_dsign',4,'Каков знак дискриминанта?','От него зависит число действительных корней.',[o('D < 0','quad_neg'),o('D = 0','quad_single'),o('D > 0','quad_double')]);
+q('quad_neg',4,'Нужны комплексные корни?','При D < 0 действительных решений нет.',[o('Да — решить над ℂ','complex_quad'),o('Нет — над ℝ корней нет','quad_neg_real')]);
+r('quad_neg_real',4,'Действительных корней нет','Для квадратного уравнения с a ≠ 0 и D < 0 множество действительных решений пусто.');
+r('quad_single',4,'Один действительный корень','x = −b / (2a).');
+r('quad_double',4,'Два действительных корня','x₁,₂ = (−b ± √D) / (2a).');
+r('quad_end',4,'Объедините полученные корни','Решите простые ветви и проверьте подстановкой.');
+// 5. Высшие степени
+q('high_start',5,'Биквадратное уравнение?','Вид ax⁴ + bx² + c = 0.',[o('Да','high_biquad'),o('Нет','high_constant')]);
+a('high_biquad',5,'Замена t = x²','Решайте квадратное уравнение по t.',['Обязательно t ≥ 0.','Найдите допустимые t, затем решите x² = t.'],'quad_start');
+q('high_constant',5,'Свободный член равен нулю?','В многочлене отсутствует константа.',[o('Да','high_factorx'),o('Нет','high_group')]);
+a('high_factorx',5,'Вынесите минимальную степень x','Произведение равно нулю, если хотя бы один множитель равен нулю.',['Разложите по общему множителю xᵏ.','Решите x = 0 и уравнения для оставшихся множителей.'],'dispatcher');
+q('high_group',5,'Можно сгруппировать слагаемые?','Ищите повторяющуюся скобку или разность квадратов.',[o('Да','high_group_do'),o('Нет','high_special')]);
+a('high_group_do',5,'Разложите группировкой','Каждый множитель приравняйте к нулю.',['Сгруппируйте слагаемые попарно.','Вынесите общие выражения.','Решите каждую ветвь.'],'dispatcher');
+q('high_special',5,'Узнаёте особый вид?','Специальные замены часто понижают степень.',[o('Возвратное: симметричные коэффициенты','high_recip'),o('Произведение четырёх скобок','high_fourbr'),o('(x+a)⁴ + (x+b)⁴ = m','high_twofour'),o('Однородное A·P² + B·PQ + C·Q² = 0','high_homo'),o('Четвёртая степень без простого разложения','high_ferrari'),o('Обычный многочлен с целыми коэффициентами','high_rational'),o('Ничего не подходит','high_numerical')]);
+a('high_recip',5,'Возвратное: t = x + 1/x','Для симметричного многочлена чётной степени.', ['Отдельно проверьте x = 0 до деления.','Для степени 4 разделите на x² и используйте t = x + 1/x.','Для нечётной возвратной степени x = −1 — корень; далее уменьшайте степень.'],'dispatcher');
+a('high_fourbr',5,'Сгруппируйте четыре скобки','Ищите пары с одинаковой суммой сдвигов.',['Перемножьте парные скобки, получите x² + sx + константа.','Сделайте замену t = x² + sx.','После решения для t вернитесь к x.'],'dispatcher');
+a('high_twofour',5,'Сдвиньте переменную','Сделайте t = x + (a+b)/2.',['Сумма четвёртых степеней станет биквадратным уравнением по t.','Решите его и вернитесь к x.'],'dispatcher');
+a('high_homo',5,'Однородная замена','Используйте t = P/Q.',['Проверьте случай Q = 0 отдельно.','При Q ≠ 0 разделите на Q² и решите квадратное по t.'],'dispatcher');
+a('high_ferrari',5,'Метод Феррари','Для общего уравнения степени 4.', ['Попробуйте выделить полный квадрат с вспомогательным параметром.','Подберите параметр так, чтобы второй многочлен тоже стал квадратом.','Разность квадратов даёт два квадратных уравнения.'],'dispatcher');
+q('high_rational',5,'Удаётся найти рациональный корень?','Для целых коэффициентов кандидаты p/q: p делит свободный член, q делит старший коэффициент.',[o('Да','high_horner'),o('Нет','high_unknown')]);
+a('high_horner',5,'Разделите многочлен на (x − x₁)','Примените схему Горнера или деление столбиком.',['Снизьте степень на 1.','Повторите поиск корней или вернитесь в диспетчерскую.'],'dispatcher');
+q('high_unknown',5,'Можно разложить на квадратные множители?','Метод неопределённых коэффициентов.',[o('Да','high_coeffs'),o('Нет','high_numerical')]);
+a('high_coeffs',5,'Приравняйте коэффициенты','Ищите (x² + px + q)(x² + rx + s).',['Раскройте произведение.','Приравняйте коэффициенты при одинаковых степенях.','Решите полученную систему.'],'dispatcher');
+r('high_numerical',5,'Оценки и численные методы','Если простого алгебраического разложения нет, исследуйте монотонность и промежутки корней; используйте численное приближение. Для кубических существует формула Кардано; для общих уравнений степени ≥ 5 формулы в радикалах нет.');
+// 6. Системы / векторы
+q('sys_start',6,'Сколько переменных и уравнений?','Уточните структуру системы.',[o('Переменных больше, чем независимых уравнений','sys_underdetermined'),o('Линейная система из 3 и более уравнений','sys_gauss'),o('Два уравнения, можно решить школьным методом','sys_school'),o('Нелинейная или особая система','sys_special'),o('Векторное уравнение','vector_start')]);
+r('sys_underdetermined',6,'Выразите свободные переменные','При совместной системе с недостатком независимых уравнений обычно есть свободные параметры; отсутствие решений также возможно.',['Выберите ведущие неизвестные.','Оставшиеся обозначьте параметрами.','Проверьте совместность всех уравнений.']);
+q('sys_school',6,'Что проще исключить?','Выберите метод для системы из двух уравнений.',[o('Легко выразить x или y — подстановка','sys_sub'),o('Коэффициенты удобно сложить — сложение','sys_add'),o('Удобнее графически','sys_graph')]);
+a('sys_sub',6,'Метод подстановки','Выразите одну переменную через другую.',['Подставьте выражение во второе уравнение.','Решите уравнение одной переменной.','Вернитесь и найдите вторую.'],'sys_done');
+a('sys_add',6,'Метод сложения','Уничтожьте одну неизвестную.',['При необходимости умножьте уравнения на подходящие константы.','Сложите или вычтите уравнения.','Найдите обе переменные.'],'sys_done');
+a('sys_gauss',6,'Метод Гаусса','Для линейных систем любого допустимого размера.',['Составьте расширенную матрицу.','Преобразуйте её к ступенчатому виду.','Строка [0 … 0 | c], c ≠ 0 означает отсутствие решений.','Определите свободные переменные, если они есть.'],'sys_done');
+q('sys_special',6,'Какой особый вид системы?','Нелинейные системы часто упрощаются заменой.',[o('Симметричная по x и y','sys_symmetric'),o('Однородная — подходит x/y','sys_homo'),o('Есть произведение, равное нулю','sys_factor'),o('Другое','sys_school')]);
+a('sys_symmetric',6,'Симметричная замена','u = x + y, v = xy.',['Решите систему для u и v.','x и y — корни t² − ut + v = 0.'],'sys_done');
+a('sys_homo',6,'Замена t = x/y','Для однородного выражения.', ['Случай y = 0 проверьте отдельно.','При y ≠ 0 разделите на нужную степень y.','Найдите отношение x/y и восстановите решения.'],'sys_done');
+a('sys_factor',6,'Разбейте систему на ветви','Если A·B = 0, рассмотрите A = 0 и B = 0.', ['Получаются две системы.','Решите каждую и объедините допустимые пары.'],'sys_done');
+r('sys_graph',6,'Графический метод','Постройте кривые; точки пересечения дают пары решений. Для точного ответа проверьте координаты алгебраически.');
+r('sys_done',6,'Проверьте каждую пару','Подставьте найденные значения во все исходные уравнения системы.');
+q('vector_start',6,'Даны координаты векторов?','Переведите векторное равенство в обычные уравнения.',[o('Да — координатная форма','vector_coords'),o('Нет — удобно спроецировать','vector_proj')]);
+a('vector_coords',6,'Приравняйте координаты','Равные векторы имеют одинаковые координаты.',['Составьте уравнения отдельно для x- и y-компонент (и z, если есть).'],'sys_start');
+a('vector_proj',6,'Спроецируйте на оси','Используйте проекции на OX и OY.',['Найдите скалярные компоненты.','Составьте систему по каждой оси.'],'sys_start');
+// 7. Рациональные
+ a('rat_start',7,'Сначала запишите ОДЗ','Все знаменатели исходного уравнения отличны от нуля.',['Перечислите запрещённые значения x.','Не теряйте эти ограничения после сокращения.'],'rat_type');
+q('rat_type',7,'Какой вид дробного уравнения?','Выбирайте специальный приём, когда он подходит.',[o('P(x)/Q(x) = 0','rat_zero'),o('Пропорция A/B = C/D','rat_prop'),o('Повторяется дробный блок','rat_sub'),o('Обычное дробное уравнение','rat_common')]);
+a('rat_zero',7,'Числитель равен нулю','P(x) = 0 и Q(x) ≠ 0 одновременно.',['Решите P(x) = 0.','Исключите значения, обнуляющие Q.'],'rat_final');
+a('rat_prop',7,'Перемножьте крест-накрест','A·D = B·C при B ≠ 0 и D ≠ 0.',['Решите новое уравнение.','Проверьте запрещённые значения.'],'rat_final');
+a('rat_sub',7,'Сделайте замену повторяющегося блока','Например t = (x−1)/(x+1).',['Укажите область допустимых значений t.','Решите уравнение по t.','Вернитесь к x и проверьте ОДЗ.'],'rat_final');
+a('rat_common',7,'Общий знаменатель','Приведите к общему знаменателю и избавьтесь от дробей.', ['Решите полученное уравнение.','Корни, нарушающие исходную ОДЗ, исключите.'],'dispatcher');
+r('rat_final',7,'Ответ после фильтра ОДЗ','Запишите только корни, допустимые в исходном дробном уравнении.');
+// 8. Тригонометрия
+ a('trig_start',8,'ОДЗ тригонометрического уравнения','Проверяйте знаменатели, tg, ctg, радикалы и логарифмы до преобразований.', ['Для tg(A) требуется cos(A) ≠ 0; для ctg(A) — sin(A) ≠ 0.','Отдельно проверяйте случаи, исключённые делением на cos и подстановкой t = tg(x/2).'],'trig_simple');
+q('trig_simple',8,'Это простейшее уравнение?','sin A = c, cos A = c, tg A = c, ctg A = c.',[o('Да','trig_kind'),o('Нет, углы в функциях разные','trig_angles'),o('Нет, один и тот же аргумент','trig_same')]);
+q('trig_kind',8,'Какая функция?','Для sin и cos справа допустимы только значения от −1 до 1.',[o('sin A = c','trig_sin'),o('cos A = c','trig_cos'),o('tg A = c','trig_tan'),o('ctg A = c','trig_cot')]);
+r('trig_sin',8,'Решение sin A = c','При |c| > 1 действительных решений нет. Иначе A = (−1)ⁿ·arcsin(c) + πn, n ∈ ℤ.',['Проверьте границы и заданный промежуток.']);
+r('trig_cos',8,'Решение cos A = c','При |c| > 1 корней нет. Иначе A = ±arccos(c) + 2πn, n ∈ ℤ.');
+r('trig_tan',8,'Решение tg A = c','A = arctg(c) + πn, n ∈ ℤ. Не забудьте ОДЗ тангенса.');
+r('trig_cot',8,'Решение ctg A = c','A = arcctg(c) + πn, n ∈ ℤ (с принятой договорённостью для arcctg). Не забудьте ОДЗ.');
+a('trig_angles',8,'Приведите углы к общему виду','Используйте формулы суммы, разности, двойного угла, приведения.', ['Преобразуйте аргументы.','Снова определите, получилось ли простейшее уравнение.'],'trig_simple');
+q('trig_same',8,'Как устроены функции от одного угла?','Выберите доступную алгебраизацию.',[o('Однородное по sin и cos','trig_homo'),o('a·sin x + b·cos x = c','trig_aux'),o('Квадратный шаблон sin²/cos²/tg²','trig_sub'),o('Общий множитель','trig_factor'),o('Равны одноимённые функции','trig_equal'),o('Иное — формулы произведения и суммы','trig_formulas')]);
+a('trig_homo',8,'Однородное тригонометрическое','Перейдите к tg x, если допустимо.', ['Отдельно проверьте cos x = 0.','Разделите на нужную степень cos x.','Решите алгебраическое уравнение по tg x.'],'trig_kind');
+a('trig_aux',8,'Вспомогательный угол','a sin x + b cos x = c.',['Разделите на √(a²+b²), если a²+b² > 0.','Если c² > a²+b², корней нет.','Представьте как R·sin(x+φ)=c и решите простейшее.'],'trig_kind');
+a('trig_sub',8,'Замена t = sin x или cos x','Для sin/cos необходимо |t| ≤ 1.',['Решите алгебраическое уравнение по t.','Вернитесь к тригонометрическому уравнению.'],'trig_kind');
+a('trig_factor',8,'Вынесите общий множитель','Произведение равно нулю.', ['Разделите на две ветви без сокращения на потенциально нулевой множитель.'],'trig_kind');
+a('trig_equal',8,'Формулы равенства одноимённых функций','sin A = sin B: A = B + 2πk или A = π − B + 2πk. cos A = cos B: A = ±B + 2πk. tg A = tg B: A = B + πk.', ['Решите каждую серию.','Объедините и при необходимости отберите корни на промежутке.'],'trig_finish');
+a('trig_formulas',8,'Формулы суммы и произведения','Примените тождества и снова определите вид.', ['При необходимости используйте t = tg(x/2).','В случае t = tg(x/2) отдельно проверьте x = π + 2πk.'],'trig_simple');
+r('trig_finish',8,'Проверьте серии корней','Проверьте ОДЗ, совпадающие серии и отбор на заданном промежутке.');
+// 9. Модуль
+q('mod_start',9,'Сколько модулей в уравнении?','Цель — правильно раскрыть |…|.',[o('Один модуль','mod_right'),o('Равенство |A| = |B|','mod_equal'),o('Несколько модулей','mod_interval')]);
+q('mod_right',9,'Что стоит справа от |A| = B?','Перед снятием модуля проверьте неотрицательность правой части.',[o('Число','mod_number'),o('Выражение B(x)','mod_expr')]);
+q('mod_number',9,'Каков знак числа B?','Модуль не может быть отрицательным.',[o('B < 0','mod_none'),o('B = 0','mod_zero'),o('B > 0','mod_two')]);
+r('mod_none',9,'Корней нет','Равенство |A(x)| = отрицательному числу невозможно.');
+a('mod_zero',9,'Приравняйте A к нулю','|A| = 0 ⇔ A = 0.',['Решите A(x) = 0.'],'dispatcher');
+a('mod_two',9,'Две ветви','|A| = B при B > 0 даёт A = B или A = −B.', ['Решите обе ветви.','Объедините решения.'],'dispatcher');
+a('mod_expr',9,'Добавьте фильтр B(x) ≥ 0','|A| = B(x) равносильно B(x) ≥ 0 и (A = B или A = −B).',['Решите обе ветви.','Оставьте корни, удовлетворяющие B(x) ≥ 0.'],'dispatcher');
+a('mod_equal',9,'Равенство двух модулей','|A| = |B| ⇔ A = B или A = −B.', ['Решите обе ветви.'],'dispatcher');
+a('mod_interval',9,'Метод промежутков для модулей','Раскройте каждый модуль на своих интервалах знакопостоянства.', ['Найдите нули выражений под модулями.','Разбейте ось на промежутки.','На каждом интервале раскройте модули со знаком.','Проверьте принадлежность найденных корней выбранному интервалу.'],'mod_finish');
+r('mod_finish',9,'Объедините допустимые решения','Не забудьте граничные точки всех промежутков.');
+// 10. Радикалы
+q('rad_start',10,'Степень корня нечётная или чётная?','Для корней чётной степени обязательно A(x) ≥ 0.',[o('Нечётная','rad_odd'),o('Чётная, включая √','rad_domain')]);
+a('rad_odd',10,'Возведите в нечётную степень','Для действительного нечётного корня дополнительных знаковых ограничений нет.', ['Изолируйте радикал.','Возведите обе части в степень корня и решите уравнение.'],'dispatcher');
+a('rad_domain',10,'Сначала ОДЗ исходного уравнения','Все подкоренные выражения чётных корней одновременно ≥ 0.', ['Запишите пересечение условий для всех радикалов.','После возведения в квадрат проверьте корни подстановкой.'],'rad_kind');
+q('rad_kind',10,'Какой вид уравнения с корнем?','Уточните форму после изоляции радикала.',[o('Повторяющийся блок с √','rad_sub'),o('√A = число','rad_number'),o('√A = B(x)','rad_shield'),o('√A = √B','rad_equal'),o('Несколько корней в сумме','rad_many')]);
+a('rad_sub',10,'Замена t = √A','Требуется t ≥ 0.', ['Решите более простое уравнение по t.','Вернитесь к x.'],'dispatcher');
+q('rad_number',10,'Каков знак числа справа?','Рассматриваем √A = c.',[o('c < 0','rad_none'),o('c = 0','rad_zero'),o('c > 0','rad_positive')]);
+r('rad_none',10,'Корней нет','Чётный корень не может быть отрицательным.');
+a('rad_zero',10,'Положите A = 0','При √A = 0 подкоренное равно нулю.', ['Решите A(x) = 0.','Проверьте исходную ОДЗ.'],'dispatcher');
+a('rad_positive',10,'Возведите в квадрат','При c > 0: A = c².',['Решите полученное уравнение.','Проверьте исходную ОДЗ.'],'dispatcher');
+a('rad_shield',10,'Приём «щит и меч»','√A = B(x) ⇔ B(x) ≥ 0 и A = B(x)².',['Щит: B(x) ≥ 0.','Меч: возведите в квадрат.','Сверьте корни с оригиналом.'],'dispatcher');
+a('rad_equal',10,'Приравняйте подкоренные','√A = √B ⇔ A = B и A ≥ 0.', ['Решите A = B.','Сверьте ОДЗ обоих корней.'],'dispatcher');
+a('rad_many',10,'Уединяйте и возводите в квадрат поэтапно','При √A + √B = √C после первого квадрата появится 2√(AB).',['Заранее найдите общую ОДЗ.','Уедините оставшийся корень, проверьте знак обеих частей.','Возведите в квадрат ещё раз.','Обязательно подставьте кандидатов в исходное уравнение.'],'dispatcher');
+// 11. Показательные
+q('exp_start',11,'Основание степени зависит от x?','Для вещественных показателей используйте положительное основание.',[o('Да: h(x)^{f(x)}','exp_variable'),o('Нет, основание постоянное','exp_type')]);
+a('exp_variable',11,'Проверьте основание и выделите случаи','При корректно заданном положительном основании h(x).',['ОДЗ: h(x) > 0.','Особый случай h(x) = 1.','Если h(x) ≠ 1 и h(x)^{f(x)} = h(x)^{g(x)}, то f(x) = g(x).'],'dispatcher');
+q('exp_type',11,'Как устроено показательное уравнение?','Для aˣ предполагается a > 0, a ≠ 1.',[o('Одна степень равна числу','exp_single'),o('Сумма степеней одного основания','exp_factor'),o('Квадратный шаблон по aˣ','exp_sub'),o('Однородное из a²ˣ, (ab)ˣ, b²ˣ','exp_homo'),o('Основания не совпадают или есть x вне степени','exp_mixed')]);
+q('exp_single',11,'Число справа B положительно?','a^{f(x)} = B, где a > 0 и a ≠ 1.',[o('Нет: B ≤ 0','exp_none'),o('Да: B > 0','exp_match')]);
+r('exp_none',11,'Решений нет','Показательная функция с положительным основанием строго положительна.');
+q('exp_match',11,'Можно привести обе стороны к одному основанию?','Например 2^{x+1} = 8 = 2³.',[o('Да','exp_powers'),o('Нет','exp_log')]);
+a('exp_powers',11,'Приравняйте показатели','Если a > 0 и a ≠ 1, из a^u = a^v следует u = v.', ['Решите уравнение показателей.'],'dispatcher');
+r('exp_log',11,'Используйте логарифм','Для a^{f(x)} = B при B > 0: f(x) = logₐB. Если справа есть x и нет подходящей замены, используйте монотонность или график.');
+a('exp_factor',11,'Вынесите наименьшую степень','Сумма степеней одного основания допускает общий множитель.', ['Вынесите a^{mx}.','Полученное уравнение упростите или сделайте замену.'],'exp_type');
+a('exp_sub',11,'Замена t = aˣ','Обязательно t > 0.', ['Решите алгебраическое уравнение для t.','Найдите x логарифмированием допустимых значений t.'],'dispatcher');
+a('exp_homo',11,'Однородная замена','t = (a/b)ˣ при t > 0.', ['При b > 0 разделите на b^{2x}.','Решите квадратное по t и вернитесь к x.'],'dispatcher');
+a('exp_mixed',11,'Монотонность или график','Уравнения вида 2ˣ = 5 − x часто не сводятся к равенству показателей.', ['Найдите вероятный корень.','Докажите единственность сравнением монотонности сторон.'],'olymp_mono');
+// 12. Логарифмы
+ a('log_start',12,'Сначала ОДЗ логарифмов','Аргументы > 0, основания > 0 и ≠ 1.',['Запишите ограничения для КАЖДОГО исходного логарифма.','Не заменяйте исходную ОДЗ областью после склеивания логарифмов.'],'log_kind');
+q('log_kind',12,'Какой вид логарифмического уравнения?','Перед решением при необходимости примените свойства логарифмов.',[o('logₐ f(x) = число','log_number'),o('logₐ f(x) = logₐ g(x)','log_equal'),o('Квадратный шаблон логарифма','log_sub'),o('Разные основания / переменное основание','log_base'),o('Сумма или разность логарифмов','log_pack'),o('Переменная и в основании, и в показателе','log_both')]);
+a('log_number',12,'Определение логарифма','logₐ f(x) = B ⇔ f(x) = aᴮ.', ['Решите f(x) = aᴮ.','Отфильтруйте исходную ОДЗ.'],'dispatcher');
+a('log_equal',12,'Потенцирование','При одном корректном основании logₐ f = logₐ g ⇔ f = g.', ['Решите f(x) = g(x).','Проверьте положительность аргументов.'],'dispatcher');
+a('log_sub',12,'Замена t = logₐ x','Квадрат логарифма превращается в алгебраическое уравнение.', ['Решите уравнение по t.','Вернитесь к x = aᵗ.','Проверьте ОДЗ.'],'dispatcher');
+a('log_base',12,'Приведите основания к общему','Формула: logₐ b = ln b / ln a.', ['Не забывайте ограничения на основания и аргументы.','После преобразования снова классифицируйте вид уравнения.'],'log_kind');
+a('log_pack',12,'Склейте логарифмы осторожно','logₐ u + logₐ v = logₐ(uv) только при исходных u > 0 и v > 0.', ['Примените свойства произведения, частного и степени.','Сохраните исходную ОДЗ.'],'log_kind');
+a('log_both',12,'Логарифмируйте положительные части','Для положительных выражений можно логарифмировать обе части.', ['Запишите ОДЗ исходного уравнения.','Выберите одно удобное основание и упростите.'],'dispatcher');
+// 13. Матрёшка
+ a('nest_start',13,'Сначала внешняя функция','Работайте «снаружи внутрь».',['Обозначьте вложенное выражение за T.','Решите уравнение для внешней функции от T.','Приравняйте исходную внутренность найденным допустимым значениям T.'],'dispatcher','Следите за областью значений внутренней функции и ОДЗ внешней.');
+// 14. Библиотека преобразований
+q('hub_start',14,'Какая формула нужна?','Справочная ветвь. После применения вернитесь к предыдущему шагу с помощью «Назад».',[o('Степени','hub_power'),o('Логарифмы','hub_logs'),o('Сокращённое умножение','hub_fsu'),o('Тригонометрия','hub_trig'),o('Радикалы и модули','hub_roots')]);
+r('hub_power',14,'Свойства степеней','При допустимых основаниях:',['aᵐ · aⁿ = aᵐ⁺ⁿ; aᵐ / aⁿ = aᵐ⁻ⁿ.','(aᵐ)ⁿ = aᵐⁿ; (ab)ⁿ = aⁿ bⁿ.','a⁻ⁿ = 1/aⁿ.']);
+r('hub_logs',14,'Свойства логарифмов','Все формулы только на исходной ОДЗ.',['logₐ(uv) = logₐu + logₐv.','logₐ(u/v) = logₐu − logₐv.','logₐ(uᵖ) = p logₐu при u > 0.','logₐb = ln b / ln a.']);
+r('hub_fsu',14,'Формулы сокращённого умножения','Выберите подходящую факторизацию.',['a² − b² = (a−b)(a+b).','(a±b)² = a² ± 2ab + b².','a³ ± b³ = (a±b)(a² ∓ ab + b²).']);
+r('hub_trig',14,'Тригонометрические тождества','Полезны для замены разных функций одной.',['sin²x + cos²x = 1.','sin(2x) = 2sin x cos x.','cos(2x) = cos²x − sin²x.','Формулы суммы, разности и приведения.']);
+r('hub_roots',14,'Корни и модули','Учитывайте знаки выражений.',['√(a²) = |a|.','√(ab) = √a·√b при a ≥ 0, b ≥ 0.','|a| = a при a ≥ 0, иначе −a.']);
+// 15. Выражения
+q('expr_start',15,'Есть переменные в выражении?','Определите тип задания.',[o('Нет — только числа','expr_numeric'),o('Да','expr_goal')]);
+r('expr_numeric',15,'Считайте по порядку действий','Скобки → степени и корни → умножение и деление → сложение и вычитание.');
+q('expr_goal',15,'Что требуется сделать?','Разные цели требуют разных преобразований.',[o('Упростить или найти значение','expr_simplify'),o('Разложить на множители','expr_factor'),o('Доказать тождество','expr_identity'),o('Сравнить числа','expr_compare'),o('Доказать неравенство','olymp_start')]);
+a('expr_simplify',15,'Упростите выражение','Проверьте скобки и подобные слагаемые.', ['Если есть переменные в знаменателе, зафиксируйте ОДЗ.','Разложите числитель и знаменатель, сократите только ненулевые множители.','Используйте формулы степеней, корней, логарифмов и тригонометрии.','Подставьте заданные значения в самом конце.'],'expr_done');
+q('expr_factor',15,'Какой способ разложения подходит первым?','Идите от простых методов к более сложным.',[o('Общий множитель','expr_common'),o('Формула сокращённого умножения','expr_fsu'),o('Группировка','expr_group'),o('Квадратный трёхчлен','expr_quadratic'),o('Многочлен степени выше 2','expr_bezout')]);
+a('expr_common',15,'Вынесите общий множитель','Вынесите общий множитель за скобки.', ['Проверьте, не раскладываются ли полученные множители дальше.'],'expr_checkfactor');
+a('expr_fsu',15,'Используйте формулу','Разность квадратов, квадрат суммы/разности, кубические формулы.', ['Подберите тождество.','Проверьте обратным раскрытием скобок.'],'expr_checkfactor');
+a('expr_group',15,'Разложение группировкой','Сгруппируйте слагаемые с одинаковыми множителями.', ['Вынесите общие скобки.'],'expr_checkfactor');
+a('expr_quadratic',15,'Найдите корни трёхчлена','ax² + bx + c = a(x−x₁)(x−x₂) при действительных корнях.', ['Вычислите дискриминант.','Если корни действительные, запишите произведение.'],'expr_checkfactor');
+a('expr_bezout',15,'Понизьте степень по Безу','Подберите рациональный корень и разделите на x−x₁.', ['Продолжайте разложение оставшегося многочлена.'],'expr_checkfactor');
+r('expr_checkfactor',15,'Проверьте разложение','Можно ли разложить множители дальше? Раскройте скобки и сравните с исходным выражением.');
+r('expr_identity',15,'Доказательство тождества','Начните с более сложной стороны и приведите её ко второй. Если трудно — преобразуйте обе стороны или их разность до нуля.');
+r('expr_compare',15,'Сравните значения','Сравните знак разности, приведите степени к общему основанию, используйте оценки или монотонность. Квадрат обеих частей берите только при подходящих знаках.');
+r('expr_done',15,'Упрощённый вид получен','Проверьте ОДЗ исходного выражения и корректность сокращений.');
+// 16. Функции
+q('func_start',16,'Что нужно узнать о функции?','Выберите задачу по её формулировке.',[o('Значение в точке','func_value'),o('Область определения','func_domain'),o('Область значений','func_range'),o('Построить график','func_graph'),o('Исследовать свойства','func_properties'),o('Производная, экстремумы, касательная','func_derivative'),o('Обратная функция','func_inverse')]);
+a('func_value',16,'Подставьте аргумент','Вычислите f(x₀) или f(g(x)).', ['Подставьте вместо x заданное число или выражение.','Упростите по порядку действий.'],'expr_start');
+a('func_domain',16,'Соберите все ограничения','Область определения — пересечение допустимых множеств.', ['Знаменатели ≠ 0.','Подкоренные чётных корней ≥ 0.','Аргументы логарифмов > 0, основания > 0 и ≠ 1.','tg/ctg должны быть определены; arcsin/arccos имеют аргумент от −1 до 1.'],'ineq_start');
+q('func_range',16,'Можно определить значения по графику или слоям?','Нужно выяснить допустимые y.',[o('График уже известен','func_range_graph'),o('Вложение простых функций','func_range_layers'),o('Общий сложный вид','func_range_param')]);
+r('func_range_graph',16,'Проекция графика на OY','Смотрите весь диапазон y, который принимает функция, с учётом включения концов.');
+a('func_range_layers',16,'Идите изнутри наружу','Квадрат, модуль, корень, sin и cos преобразуют диапазоны.', ['На каждом шаге обновляйте интервал значений.'],'func_range_graph');
+a('func_range_param',16,'Рассматривайте y как параметр','Найдите все y, для которых f(x) = y имеет решение.', ['Используйте дискриминант, знаки или монотонность.'],'param_start');
+q('func_graph',16,'Каков тип функции?','Выберите базовую форму графика.',[o('Линейная','func_gline'),o('Квадратичная','func_gquad'),o('Дробно-линейная','func_ghyp'),o('Модуль, корень, степень, логарифм, sin/cos','func_gtrans'),o('Окружность / не является функцией','func_gcurve')]);
+r('func_gline',16,'Прямая по двум точкам','Для y = kx + b возьмите две точки, например x = 0 и x = 1, и проведите прямую.');
+r('func_gquad',16,'Парабола','Вершина x₀ = −b/(2a), ось симметрии x = x₀. При a > 0 ветви вверх, иначе вниз. Пересечения с OX — корни уравнения.');
+r('func_ghyp',16,'Дробно-линейная функция','Для (ax+b)/(cx+d) при c≠0 и ad−bc≠0 вертикальная асимптота x=−d/c, горизонтальная y=a/c. Если c=0 — линейная; если ad=bc — постоянная с выколотой точкой.');
+r('func_gtrans',16,'Преобразуйте опорный график','f(x)+c — вверх; f(x−a) — вправо; −f(x) — отражение относительно OX; f(−x) — относительно OY; |f(x)| — отражение отрицательной части вверх.');
+r('func_gcurve',16,'Кривая на координатной плоскости','Окружность, ромб |x|+|y|=a, гипербола xy=k могут не быть графиками функций y=f(x).');
+a('func_properties',16,'Исследуйте функцию по порядку','Не пропускайте область определения.', ['Область определения и её симметричность.','Чётность: f(−x)=f(x); нечётность: f(−x)=−f(x).','Нули f(x)=0, знаки функции и промежутки монотонности.','Периодичность f(x+T)=f(x), если применимо.'],'func_done');
+a('func_derivative',16,'Производная и экстремумы','Используйте f′(x), её знак и критические точки.', ['Найдите область определения и производную.','Решите f′(x)=0 и отметьте точки, где производная не существует.','По смене знака определите экстремумы; на отрезке сравните значения с концами.','Касательная: y=f(x₀)+f′(x₀)(x−x₀).'],'func_done');
+a('func_inverse',16,'Найдите обратную функцию','Нужна взаимная однозначность на выбранном промежутке.', ['Проверьте монотонность; если нужно, ограничьте область.','В y=f(x) выразите x через y.','Поменяйте x и y местами.','Область определения обратной = области значений исходной.'],'func_done');
+r('func_done',16,'Сформулируйте свойства и вывод','Укажите необходимые интервалы, граничные точки и ограничения.');
+// 17. Комплексные
+q('complex_start',17,'Что требуется с комплексным числом?','Для z = a + bi, i² = −1.',[o('Сложить / вычесть','complex_add'),o('Умножить / разделить','complex_mul'),o('Модуль, сопряжённое, аргумент','complex_props'),o('Степень или корень','complex_power'),o('Решить уравнение','complex_eq'),o('Геометрическое множество','complex_geo')]);
+r('complex_add',17,'Действительные и мнимые части отдельно','(a+bi) ± (c+di) = (a±c) + (b±d)i.');
+r('complex_mul',17,'Умножение и деление','При умножении раскройте скобки и замените i² на −1. При делении домножьте на комплексно-сопряжённое знаменателю.');
+r('complex_props',17,'Характеристики числа z','Сопряжённое: a−bi; модуль: √(a²+b²); аргумент — угол вектора (a,b) с OX с учётом четверти.');
+q('complex_power',17,'Какая операция?','Можно перейти в тригонометрическую форму.',[o('Степень iⁿ','complex_ipower'),o('Большая степень zⁿ','complex_moivre'),o('Корень n-й степени из z','complex_root')]);
+r('complex_ipower',17,'Период степеней i равен 4','Остаток n mod 4: 0 → 1; 1 → i; 2 → −1; 3 → −i.');
+r('complex_moivre',17,'Формула Муавра','zⁿ = rⁿ(cos(nφ)+i sin(nφ)), где z = r(cos φ+i sin φ).');
+r('complex_root',17,'n комплексных корней','Для z = r(cos φ + i sin φ): wₖ = ⁿ√r · (cos((φ+2πk)/n)+i sin((φ+2πk)/n)), k=0…n−1.');
+q('complex_eq',17,'Какое уравнение?','Определите форму неизвестного z.',[o('Квадратное с D < 0 (коэффициенты действительные)','complex_quad'),o('Линейное по z','complex_linear'),o('zⁿ = w','complex_root'),o('z и сопряжённое z̄ / |z|','complex_split'),o('Квадратное с комплексными коэффициентами','complex_complexquad')]);
+r('complex_quad',17,'Комплексные корни квадратного','x = (−b ± i√(−D)) / (2a), если a,b,c вещественны, a≠0, D<0.');
+a('complex_linear',17,'Решайте как линейное','Операции с i выполняйте по обычным правилам с i² = −1.',['При делении используйте сопряжённое.'],'complex_done');
+a('complex_split',17,'Перейдите к x и y','Положите z=x+iy.', ['Отдельно приравняйте действительные и мнимые части.','Решите систему действительных уравнений.'],'sys_start');
+a('complex_complexquad',17,'Дискриминант может быть комплексным','Найдите квадратный корень из комплексного D.', ['Используйте формулу квадратного уравнения над ℂ.'],'complex_done');
+r('complex_geo',17,'Комплексная геометрия','|z−z₀|=R — окружность; |z−a|=|z−b| — серединный перпендикуляр; Re(z)=c и Im(z)=c — прямые.');
+r('complex_done',17,'Проверьте комплексное решение','Подставьте z в исходное равенство и сверьте обе части.');
+// 18. Неравенства
+ a('ineq_start',18,'Подготовьте неравенство','Перенесите всё влево, справа оставьте 0.',['Не делите и не умножайте на выражение с неизвестным знаком.','Запишите исходную ОДЗ: знаменатели, радикалы, логарифмы и тригонометрию.'],'ineq_type');
+q('ineq_type',18,'Какой тип неравенства?','Результат обычно будет множеством промежутков.',[o('Линейное ax > b','ineq_linear'),o('Квадратное','ineq_quad'),o('Многочлен / дробь — метод интервалов','ineq_intervals'),o('С модулем','ineq_mod'),o('С корнем','ineq_rad'),o('Показательное','ineq_exp'),o('Логарифмическое','ineq_log'),o('Тригонометрическое','ineq_trig'),o('Система / совокупность','ineq_system')]);
+q('ineq_linear',18,'Каков знак коэффициента a?','На примере ax > b.',[o('a > 0','ineq_linear_plus'),o('a < 0','ineq_linear_minus'),o('a = 0','ineq_linear_zero')]);
+r('ineq_linear_plus',18,'Знак сохраняется','x > b/a (для исходного «>»); для других символов знак сохраняется аналогично.');
+r('ineq_linear_minus',18,'Знак меняется','x < b/a (для исходного «>»); при делении на отрицательное число переверните знак.');
+r('ineq_linear_zero',18,'Проверьте числовое неравенство','При a=0 остаётся 0 > b (или соответствующий исходный знак): если верно, любое допустимое x, иначе нет решений.');
+a('ineq_quad',18,'Изучите параболу','Решите ax²+bx+c = 0 и набросайте знак параболы.', ['При a=0 — линейный случай.','При D<0 знак квадратичной функции постоянен и равен знаку a.','При D=0 нуль один; различайте строгий и нестрогий знак.'],'ineq_finish');
+a('ineq_intervals',18,'Метод интервалов','Подходит для многочленов и рациональных выражений.', ['Разложите числитель и знаменатель на множители.','Отметьте нули, полюса и кратности.','Знак меняется через корни нечётной кратности, через чётные — нет.','Нули знаменателя исключаются всегда.'],'ineq_finish');
+q('ineq_mod',18,'Какой вид модуля?','Правую часть B(x) учитывайте при раскрытии.',[o('|A| < B','ineq_mod_lt'),o('|A| > B','ineq_mod_gt'),o('|A| и |B|','ineq_mod_both'),o('Несколько модулей','mod_interval')]);
+a('ineq_mod_lt',18,'Превратите в систему','|A| < B ⇔ −B < A < B (что автоматически требует B > 0). Для ≤ используйте нестрогие знаки.', ['Решите двойное неравенство и пересеките условия.'],'ineq_finish');
+a('ineq_mod_gt',18,'Превратите в совокупность','|A| > B ⇔ A > B или A < −B. При B < 0 верно для любого A из ОДЗ.', ['Решите две ветви.'],'ineq_finish');
+a('ineq_mod_both',18,'Возведите модули в квадрат','|A| и |B| сравниваются через A²−B² = (A−B)(A+B).',['Примените метод интервалов.'],'ineq_finish');
+q('ineq_rad',18,'Как сравнивается √A с B?','Сначала A ≥ 0.',[o('√A < B','ineq_rad_lt'),o('√A > B','ineq_rad_gt')]);
+a('ineq_rad_lt',18,'Система условий','√A < B ⇔ A ≥ 0, B > 0, A < B².', ['Для нестрогих знаков аккуратно поправьте границы.'],'ineq_finish');
+a('ineq_rad_gt',18,'Два случая','√A > B: (B < 0 и A ≥ 0) или (B ≥ 0 и A > B²).',['Решите обе системы и объедините ответы.'],'ineq_finish');
+q('ineq_exp',18,'Каково основание a?','Для a > 0, a ≠ 1.',[o('a > 1','ineq_exp_plus'),o('0 < a < 1','ineq_exp_minus')]);
+r('ineq_exp_plus',18,'Знак показателей сохраняется','a^{f(x)} > a^{g(x)} ⇔ f(x) > g(x). Если есть квадратный шаблон — t=aˣ>0.');
+r('ineq_exp_minus',18,'Знак показателей меняется','a^{f(x)} > a^{g(x)} ⇔ f(x) < g(x). Не забудьте ОДЗ.');
+q('ineq_log',18,'Каково основание логарифма?','ОДЗ: аргументы >0, основание >0 и ≠1.',[o('a > 1','ineq_log_plus'),o('0 < a < 1','ineq_log_minus'),o('Переменное основание','ineq_intervals')]);
+r('ineq_log_plus',18,'Знак аргументов сохраняется','logₐ f > logₐ g ⇔ f > g при a>1 и исходной ОДЗ.');
+r('ineq_log_minus',18,'Знак меняется','logₐ f > logₐ g ⇔ f < g при 0<a<1 и исходной ОДЗ.');
+a('ineq_trig',18,'Единичная окружность','Сведите к простейшему виду, найдите подходящие дуги.', ['Запишите промежутки с периодом 2πk или πk, где уместно.','Проверьте концы промежутков и ОДЗ.'],'ineq_finish');
+r('ineq_system',18,'Пересечение или объединение','Система неравенств → пересечение множеств. Совокупность → объединение множеств.');
+r('ineq_finish',18,'Проверьте границы и ОДЗ','Строгие и нестрогие концы, выколотые точки, пробные значения на интервалах. Записывайте промежутки по возрастанию.');
+// 19. Параметры
+q('param_start',19,'Какая задача с параметром?','Ищите граничные значения параметра, в которых тип решения меняется.',[o('Линейное уравнение с коэффициентом k(a)','param_linear'),o('Квадратное с параметром','param_quad'),o('Расположение корней относительно m','param_roots'),o('Число решений / графический метод','param_graph'),o('Неравенство с параметром','param_ineq'),o('Уникальное решение / симметрия','param_sym')]);
+a('param_linear',19,'Отдельно рассмотрите k(a)=0','Для k(a)·x=m(a).',['Найдите все a, при которых k(a)=0.','При них проверьте m(a): если 0, любое x, иначе нет корней.','В остальных случаях x=m(a)/k(a).'],'param_finish');
+a('param_quad',19,'Проверьте вырождение и D(a)','Для a-зависимых коэффициентов.', ['Выделите значения параметра, где коэффициент при x² равен нулю.','При остальных найдите D(a) и разберите его знак.','Дополнительные условия корней выразите через Виета.'],'param_finish');
+a('param_roots',19,'Условия на корни относительно m','Используйте дискриминант, вершину и f(m).',['Разберите знак старшего коэффициента.','Проверьте действительность корней.','Положение корней определите совместными условиями на вершину и значение функции в m.'],'param_finish');
+a('param_graph',19,'Параметр как переменная','Выразите a=g(x) либо рассмотрите плоскость (x,a).',['Постройте график g(x) или множество решений.','Сечения прямыми a=const показывают число и положение решений.'],'param_finish');
+a('param_ineq',19,'Разбейте значения параметра на случаи','Важны знаки коэффициентов, D(a), порядок корней.', ['Рассмотрите равенство старшего коэффициента нулю отдельно.','Не умножайте на выражения неизвестного знака без разбиения на случаи.'],'param_finish');
+a('param_sym',19,'Используйте симметрию','Если x и −x всегда идут парой, единственный корень возможен только в центре симметрии.', ['Проверьте x=0 или x=c/2 как необходимое условие.','Обязательно докажите достаточность.'],'param_finish');
+r('param_finish',19,'Ответ по диапазонам параметра','Укажите границы случаев, в том числе a=0, D(a)=0 и другие особые значения.');
+// 20. Последовательности
+q('seq_start',20,'Какой тип последовательности или суммы?','Определите постоянную разность, отношение или рекурсию.',[o('Арифметическая прогрессия','seq_arith'),o('Геометрическая прогрессия','seq_geom'),o('Бесконечная геометрическая сумма','seq_inf'),o('Рекуррентная формула','seq_rec'),o('Сумма ряда','seq_sum'),o('Бином Ньютона','seq_binom'),o('Доказательство по индукции','seq_induction')]);
+r('seq_arith',20,'Арифметическая прогрессия','aₙ=a₁+(n−1)d, Sₙ=n(a₁+aₙ)/2. Разность соседних членов d постоянна.');
+r('seq_geom',20,'Геометрическая прогрессия','bₙ=b₁qⁿ⁻¹, Sₙ=b₁(qⁿ−1)/(q−1) при q≠1; при q=1 сумма nb₁.');
+r('seq_inf',20,'Сумма бесконечной прогрессии','При |q|<1: S=b₁/(1−q). Убедитесь в сходимости.');
+r('seq_rec',20,'Рекуррентные соотношения','Выпишите первые члены. Для aₙ₊₁=p·aₙ+q при p≠1 сдвиг bₙ=aₙ−q/(1−p) даёт геометрическую прогрессию. При p=1 получается арифметическая.');
+r('seq_sum',20,'Стандартные суммы','Σk=n(n+1)/2; Σk²=n(n+1)(2n+1)/6; Σk³=[n(n+1)/2]². Для телескопических сумм раскладывайте слагаемые на разность соседних дробей.');
+r('seq_binom',20,'Бином Ньютона','(a+b)ⁿ = Σ C(n,k)aⁿ⁻ᵏbᵏ; C(n,k)=n!/[k!(n−k)!]. Сумма коэффициентов равна 2ⁿ.');
+r('seq_induction',20,'Математическая индукция','Проверьте базу; предположите утверждение для n=k; докажите для k+1.');
+// 21. Сюжетные задачи
+ a('word_start',21,'Введите неизвестные','Зафиксируйте единицы и ограничения из сюжета.', ['Назовите x, y и что они обозначают.','Запишите положительность, целочисленность и другие ограничения.'],'word_type');
+q('word_type',21,'Какой сюжет у задачи?','Выберите модель.',[o('Движение','word_motion'),o('Работа / производительность','word_work'),o('Смеси / сплавы','word_mix'),o('Проценты / банк / цены','word_percent'),o('Числа и цифры','word_digits')]);
+a('word_motion',21,'Путь = скорость × время','S=vt, с учётом относительной скорости.', ['По течению: v+u, против течения: v−u.','Навстречу скорости складываются, вдогонку вычитаются.','Средняя скорость — весь путь / всё время.'],'word_model');
+a('word_work',21,'Весь объём работы примите за 1','Производительность p=1/t.', ['Совместная производительность p₁+p₂.','Время работы = 1/(p₁+p₂).'],'word_model');
+a('word_mix',21,'Баланс вещества','Масса вещества = масса раствора × доля концентрации.', ['Сумма вещества до смешивания = после смешивания.','Учтите единицы: проценты переводите в доли.'],'word_model');
+a('word_percent',21,'Процентная модель','p% от N = N·p/100.', ['Увеличение/уменьшение на p% — множитель 1±p/100.','Сложные проценты: N(1+p/100)ⁿ.'],'word_model');
+a('word_digits',21,'Представьте число через цифры','Двузначное число: 10a+b.', ['0≤a,b≤9, цифры целые, первая цифра a≥1.','Составьте равенства из условий.'],'word_model');
+q('word_model',21,'Сколько независимых неизвестных осталось?','Постройте уравнение по условиям.',[o('Одна — уравнение','dispatcher'),o('Две или больше — система','sys_start'),o('Модель решена — проверить смысл','word_finish')]);
+r('word_finish',21,'Ответьте на вопрос сюжета','Исключите физически невозможные значения: отрицательное время, дробное число людей и т. п. Проверьте единицы измерения и ответ именно на вопрос задачи.');
+// 22. Целые числа
+q('integer_start',22,'Какая структура задачи в целых числах?','Обычных действительных решений недостаточно: нужны ограничения ℤ или ℕ.',[o('Делимость, НОД, НОК','int_gcd'),o('Линейное ax+by=c','int_linear'),o('Произведение = число','int_factor'),o('Квадраты / степени','int_square'),o('Остатки / чётность','int_mod'),o('Ограниченный перебор','int_bounds'),o('Целые корни многочлена','int_roots'),o('Бесконечный спуск','int_descent')]);
+r('int_gcd',22,'Делимость и алгоритм Евклида','Используйте НОД, НОК, разложение на простые. НОД(a,b)·НОК(a,b)=|ab| для ненулевых целых a,b.');
+a('int_linear',22,'Диофантово ax+by=c','Положите d=НОД(a,b).', ['Если d не делит c, решений нет.','Иначе найдите частное решение (x₀,y₀).','Все решения: x=x₀+(b/d)t, y=y₀−(a/d)t, t∈ℤ.'],'int_finish');
+a('int_factor',22,'Разложение на целые множители','Приведите к виду A(x,y)·B(x,y)=N.', ['Переберите пары целых делителей N.','Решите полученные системы.'],'int_finish');
+a('int_square',22,'Квадраты и степени','Используйте выделение полного квадрата, разность квадратов и необходимое условие полного квадрата для дискриминанта.', ['Учитывайте ограничения на знаки.'],'int_finish');
+a('int_mod',22,'Остатки и чётность','Квадраты по модулю 4 дают только 0 или 1.', ['Выберите удобный модуль.','Покажите невозможность некоторых остатков или сократите число случаев.'],'int_finish');
+a('int_bounds',22,'Оценка + конечный перебор','Упорядочьте переменные, например x≤y≤z.', ['Выведите верхние и нижние границы.','Проверьте оставшееся конечное число вариантов.'],'int_finish');
+a('int_roots',22,'Делители свободного члена','Целый корень многочлена с целыми коэффициентами делит свободный член.', ['Для рационального p/q проверяйте делители свободного и старшего коэффициентов.'],'int_finish');
+r('int_descent',22,'Бесконечный спуск','Предположите, что существует минимальное положительное решение. Постройте строго меньшее допустимое решение и получите противоречие.');
+r('int_finish',22,'Перечислите все целые решения','Выразите их формулой с целым параметром или полным списком; проверьте подстановкой.');
+// 23. Олимпиадный арсенал
+q('olymp_start',23,'Какой нестандартный приём нужен?','Когда обычные преобразования не помогают.',[o('Доказать неравенство','olymp_ineq'),o('Найти максимум или минимум','olymp_ext'),o('Оценить уравнение с двух сторон','olymp_bounds'),o('Доказать единственность корня','olymp_mono'),o('Функциональное уравнение','olymp_func'),o('Целая / дробная часть','olymp_floor'),o('Симметрия или замена','olymp_sym')]);
+r('olymp_ineq',23,'Оценки и суммы квадратов','Преобразуйте A−B в сумму квадратов. Для неотрицательных a,b: a+b≥2√(ab). Коши–Буняковский: (Σaᵢbᵢ)²≤(Σaᵢ²)(Σbᵢ²).');
+r('olymp_ext',23,'Экстремумы через оценки','Используйте вершину параболы, ограниченность sin/cos, AM–GM, сумму квадратов или производную. Всегда укажите, где достигается равенство.');
+r('olymp_bounds',23,'Метод двух оценок','Если L(x)≥M, а R(x)≤M, равенство L=R возможно только когда обе части равны M. Решите совместную систему равенств.');
+r('olymp_mono',23,'Монотонность и график','Например 2ˣ=5−x: левая часть строго возрастает, правая убывает, поэтому пересечение не более одного. Подберите корень и проверьте.');
+r('olymp_func',23,'Функциональные уравнения','Подставляйте 0,1,−1, y=0, y=x; выясните f(0), f(1), чётность. Предположите простой вид, но обязательно проверьте его в исходном уравнении.');
+r('olymp_floor',23,'Целая и дробная части','x=⌊x⌋+{x}, где 0≤{x}<1. Положите n=⌊x⌋, решите и проверьте n≤x<n+1.');
+r('olymp_sym',23,'Симметрия и замены','Для симметричных x,y часто пригодны u=x+y и v=xy. Пробуйте замену x→a−x и однородность.');
+// 24. Проверка решений
+q('check_start',24,'Какой риск нужно проверить в решении?','Можно открывать этот раздел несколько раз. Первая и главная проверка — ограничения исходного уравнения.',[o('Возводили в чётную степень','check_power'),o('Делили или сокращали на g(x)','check_divide'),o('Домножали на знаменатель','check_denominator'),o('Преобразовывали логарифмы','check_log'),o('Делали тригонометрические замены','check_trig'),o('Заменяли переменную t','check_sub'),o('Общий финальный контроль','check_final')]);
+r('check_power',24,'Проверьте посторонние корни','Возведение в квадрат может добавить корни. Проверьте знак изолированной правой части и подставьте кандидатов в исходное уравнение.');
+r('check_divide',24,'Проверьте потерянные корни','Если делили на g(x), отдельно решите g(x)=0 и проверьте эти значения в исходном уравнении. Безопаснее факторизовать, чем сокращать.');
+r('check_denominator',24,'Отклоните запрещённые корни','Домножение на знаменатель может добавить значения, при которых исходная дробь не определена. Проверьте исходную ОДЗ.');
+r('check_log',24,'Проверьте исходную ОДЗ логарифмов','Склейка логарифмов может расширять ОДЗ. Каждый аргумент исходного логарифма обязан быть положительным; основание >0 и ≠1.');
+r('check_trig',24,'Проверьте тригонометрические исключения','tg x требует cos x≠0; после деления на cos проверьте cos x=0 отдельно; замена t=tg(x/2) теряет x=π+2πk.');
+r('check_sub',24,'Проверьте область значений t','Например t=aˣ>0, t=sin x требует |t|≤1, t=√A требует t≥0. После решения вернитесь к исходной переменной.');
+r('check_final',24,'Финальный чек-лист','Только после этих проверок записывайте ответ.',['Исходная ОДЗ соблюдена.','Все возможные потерянные ветви проверены.','Посторонние корни отброшены подстановкой.','Строгость границ, интервалы и единицы измерения верны.','Ответ сформулирован для поставленной задачи.']);
+// Application state and transitions. Every option points to an explicit state in N.
+const STORAGE='algebra-wizard-state-v1';
+let path=[{id:'entry_complex',choice:''}],current=0;
+const $=id=>document.getElementById(id);
+const dom=(tag,cls='',value='')=>{const e=document.createElement(tag);if(cls)e.className=cls;if(value)e.textContent=value;return e};
+const list=(arr)=>{const ul=dom('ol','instructions');for(const t of arr||[]){ul.append(dom('li','',t))}return ul};
+function save(){try{localStorage.setItem(STORAGE,JSON.stringify({path,current}))}catch(e){}}
+function restore(){try{const state=JSON.parse(localStorage.getItem(STORAGE));if(!state||!Array.isArray(state.path)||!state.path.length)return; if(!state.path.every(item=>typeof item.id==='string'&&N[item.id]))return;path=state.path.slice(0,200).map(p=>({id:p.id,choice:typeof p.choice==='string'?p.choice:''}));current=Math.max(0,Math.min(path.length-1,Number(state.current)||0))}catch(e){}}
+function move(next,choice=''){if(!N[next]){console.error('Нет состояния:',next);return}path=path.slice(0,current+1);path[current].choice=choice;path.push({id:next,choice:''});current=path.length-1;save();render()}
+function jump(next){if(!N[next])return;path=[{id:next,choice:''}];current=0;save();render();closeMenu()}
+function backward(){if(current>0){current--;save();render()}}
+function forward(){if(current<path.length-1){current++;save();render()}}
+function lineOfPath(){return path.slice(0,current+1).map((item,i)=>{const n=N[item.id];let s=(i+1)+'. '+SECTIONS[n.s]+' — '+n.title;if(item.choice)s+=' → '+item.choice;return s}).join('\n')}
+function summaryText(){return 'АЛГЕБРА — МАРШРУТ РЕШЕНИЯ\nОсновано на: https://konstantalab.ru/map\n\n'+lineOfPath()+'\n\nТекущий алгоритм:\n'+(N[path[current].id].steps||[]).map((t,i)=>(i+1)+'. '+t).join('\n')+'\n'}
+function render(){
+ const node=N[path[current].id];$('currentSection').textContent=SECTIONS[node.s];$('stage').textContent=SECTIONS[node.s];$('count').textContent='Шаг '+(current+1)+' · '+Object.keys(N).length+' состояний';
+ const trail=$('trail');trail.replaceChildren();for(let i=0;i<Math.min(14,current+1);i++){const el=dom('span','on');trail.append(el)}for(let i=0;i<Math.max(0,14-Math.min(14,current+1));i++)trail.append(dom('span'));
+ const card=$('card');card.replaceChildren();
+ const meta=dom('div','cardmeta');meta.append(dom('span','dot'),dom('span','',node.k==='q'?'Вопрос · выберите ответ':node.k==='a'?'Действие · выполните шаг':'Рекомендация · результат'));card.append(meta);
+ card.append(dom('h2','',node.title));card.append(dom('p','description',node.desc));
+ if(node.k==='q'){
+  const opts=dom('div','options');node.options.forEach((option,i)=>{const b=dom('button','option');b.type='button';b.setAttribute('aria-label',option.label);const key=dom('span','key',String(i+1));const body=dom('span','opttext');body.append(dom('b','',option.label));if(option.detail)body.append(dom('small','',option.detail));b.append(key,body,dom('span','arrow','→'));b.addEventListener('click',()=>move(option.next,option.label));opts.append(b)});card.append(opts);
+ }else{
+  if(node.k==='r')card.append(dom('span','result-tag','Метод найден'));
+  if(node.steps?.length)card.append(list(node.steps));
+  const actions=dom('div','actions');const next=dom('button','primary',node.k==='a'?'Выполнено — продолжить →':'Перейти к контролю →');next.type='button';next.addEventListener('click',()=>move(node.k==='a'?node.next:'check_start',node.k==='a'?'Шаг выполнен':'Перейти к проверке'));actions.append(next);
+  if(node.k==='r'){const ret=dom('button','textbtn','↩ Выбрать другой раздел');ret.addEventListener('click',()=>jump('entry_complex'));actions.append(ret)}card.append(actions);
+ }
+ if(node.hint){const hint=dom('div','tip');hint.append(dom('strong','','Подсказка: '),document.createTextNode(node.hint));card.append(hint)}
+ $('back').disabled=current===0;$('back').style.opacity=current===0?'.35':'1';
+ const history=$('history');history.replaceChildren();if(current===0){history.append(dom('span','chip','Начало маршрута'))}else{const begin=Math.max(0,current-7);if(begin>0)history.append(dom('span','hsep','…'));for(let i=begin;i<current;i++){const step=N[path[i].id];const b=dom('button','chip',path[i].choice||step.title);b.title=step.title;b.addEventListener('click',()=>{current=i;save();render()});history.append(b);history.append(dom('span','hsep','›'))}history.append(dom('span','chip',node.title))}
+ [...$('categories').children].forEach(b=>{const active=Number(b.dataset.section)===node.s;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});
+ const ol=$('summaryList');ol.replaceChildren();path.slice(0,current+1).forEach((step,i)=>{const li=dom('li');const n=N[step.id];li.append(dom('b','',SECTIONS[n.s]+': '),document.createTextNode(n.title+(step.choice?' — «'+step.choice+'»':'')));ol.append(li)});
+}
+function closeMenu(){$('sidebar').classList.remove('open');$('overlay').classList.remove('open')}
+Object.entries(SECTIONS).forEach(([n,name])=>{const b=dom('button','category');b.dataset.section=n;b.append(dom('span','num',String(n).padStart(2,'0')),dom('span','',name));b.addEventListener('click',()=>jump(ENTRY[n]));$('categories').append(b)});
+$('menu').addEventListener('click',()=>{$('sidebar').classList.toggle('open');$('overlay').classList.toggle('open')});$('overlay').addEventListener('click',closeMenu);
+$('back').addEventListener('click',backward);$('home').addEventListener('click',()=>jump('entry_complex'));
+$('reset').addEventListener('click',()=>jump('entry_complex'));
+$('summaryToggle').addEventListener('click',()=>{const box=$('summary');box.classList.toggle('open');if(box.classList.contains('open'))box.scrollIntoView({behavior:'smooth',block:'nearest'})});
+$('copy').addEventListener('click',async()=>{const text=summaryText();try{await navigator.clipboard.writeText(text);$('copy').textContent='Скопировано ✓';setTimeout(()=>$('copy').textContent='Скопировать',1600)}catch(e){const t=dom('textarea');t.value=text;document.body.append(t);t.select();try{document.execCommand('copy');$('copy').textContent='Скопировано ✓'}catch(err){alert('Не удалось скопировать; сохраните маршрут в .txt')}t.remove();setTimeout(()=>$('copy').textContent='Скопировать',1600)}});
+$('download').addEventListener('click',()=>{const blob=new Blob([summaryText()],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='algebra-route.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)});
+const oldTheme=(()=>{try{return localStorage.getItem('algebra-theme')}catch(e){return null}})();if(oldTheme==='light')document.documentElement.classList.add('light');
+$('theme').addEventListener('click',()=>{document.documentElement.classList.toggle('light');try{localStorage.setItem('algebra-theme',document.documentElement.classList.contains('light')?'light':'dark')}catch(e){}});
+document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||e.target instanceof HTMLInputElement||e.target instanceof HTMLTextAreaElement)return;if(e.key==='Escape')closeMenu();if(e.key==='Backspace'&&!e.repeat){e.preventDefault();backward()}if(e.key==='ArrowLeft'&&e.altKey){e.preventDefault();backward()}if(/^[1-9]$/.test(e.key)){const n=N[path[current].id];if(n.k==='q'&&n.options[Number(e.key)-1])move(n.options[Number(e.key)-1].next,n.options[Number(e.key)-1].label)}});
+// Diagnostics for maintainers; verifies that every referenced transition exists.
+const missing=[];for(const n of Object.values(N)){if(n.k==='q')for(const op of n.options){if(!N[op.next])missing.push(n.id+' -> '+op.next)}else if(n.k==='a'&&!N[n.next])missing.push(n.id+' -> '+n.next)}
+for(const id of Object.values(ENTRY))if(!N[id])missing.push('section -> '+id);
+if(missing.length)console.error('Некорректные переходы:',missing);
+window.__algebraDiagnostics={nodes:Object.keys(N).length,missing,sections:Object.keys(SECTIONS).length};
+restore();render();
+</script>
+</body>
+</html>
