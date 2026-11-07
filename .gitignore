@@ -1,0 +1,10 @@
+# IDE
+.idea/
+.vscode/
+
+# Vercel CLI local artifacts
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
