@@ -61,7 +61,7 @@ function app(saved = null) {
 }
 
 function options(instance) {
-  return instance.elements.get('card').children.find(element => element.className === 'options')?.children ?? [];
+  return instance.elements.get('transitions').children.find(element => element.className === 'options')?.children ?? [];
 }
 
 test('все исходные узлы и стрелки совпадают, включая подписи и пунктир', async () => {
@@ -113,6 +113,7 @@ test('каждая кнопка выполняет ровно одну исхо�
     instance.api.jump(node.id);
     assert.equal(options(instance).length, node.options.length, node.id);
     const card = instance.elements.get('card');
+    assert(!card.children.some(element => element.className === 'options'), 'Переходы должны находиться под карточкой');
     assert.equal(card.children[1].textContent + (card.children[2].textContent ? '\n' + card.children[2].textContent : ''), node.text);
     for (const [index, edge] of node.options.entries()) {
       instance.api.jump(node.id);
@@ -120,6 +121,11 @@ test('каждая кнопка выполняет ровно одну исхо�
       assert.equal(button.dataset.next, edge.next);
       assert.equal(button.dataset.kind, edge.kind);
       if (edge.label) assert.equal(button.attributes['aria-label'], edge.label);
+      const [title, detail] = button.children[1].children;
+      const target = graph.nodes[edge.next];
+      const expectedDescription = edge.label ? target.text : target.text.split('\n').slice(1).join('\n');
+      assert.equal(title.textContent, edge.label || target.text.split('\n')[0]);
+      assert.equal(detail?.textContent || '', expectedDescription, 'Полное дополнение цели должно быть на кнопке');
       button.click();
       assert.equal(instance.api.path.length, 2);
       assert.equal(instance.api.path[1].id, edge.next, `${node.id} -> ${edge.next}`);
@@ -146,6 +152,7 @@ test('конечные узлы не получают автоматически
   for (const node of Object.values(graph.nodes).filter(node => !node.options.length)) {
     instance.api.jump(node.id);
     assert.equal(options(instance).length, 0);
+    assert.equal(instance.elements.get('transitions').hidden, true);
     instance.api.move(0);
     assert.equal(instance.api.path.length, 1);
     assert(instance.elements.get('card').children.some(element => element.textContent === 'В карте нет дальнейших переходов'));

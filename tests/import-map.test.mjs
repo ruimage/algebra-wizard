@@ -128,9 +128,19 @@ test('мастер запускается из HTML в реальном DOM бе
     assert.equal(dom.window.__algebraDiagnostics.edges, saved.edges.length);
     assert.equal(document.querySelectorAll('#categories button').length, saved.data.sections.length);
     assert.equal(document.getElementById('sectionsLabel').textContent, saved.data.sections.length + ' разделов · навигация');
-    document.querySelector('#card button').click();
+    const card = document.getElementById('card');
+    const transitions = document.getElementById('transitions');
+    assert.equal(card.nextElementSibling, transitions);
+    assert.equal(card.querySelectorAll('button').length, 0);
+    transitions.querySelector('button').click();
     assert.match(document.querySelector('#card h2').textContent, /мнимая единица/);
-    assert.equal(document.querySelectorAll('#card button').length, 2);
+    assert.equal(document.querySelectorAll('#transitions button').length, 2);
+    assert.equal(document.querySelectorAll('#card button').length, 0);
+    const next = transitions.querySelector('button');
+    assert.match(next.querySelector('small').textContent, /Просят исследовать функцию:/);
+    assert.match(next.querySelector('small').textContent, /обратная функция, значение в точке\?/);
+    next.click();
+    assert.match(card.querySelector('h2').textContent, /Просят исследовать функцию:/);
   } finally {
     dom.window.close();
   }

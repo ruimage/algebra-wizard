@@ -58,21 +58,23 @@ a:hover{color:var(--accent)}
 .trail{display:flex;gap:4px;width:100%;overflow:hidden}
 .trail span{height:2px;flex:1;background:var(--line)}
 .trail span.on{background:var(--accent)}
-.question{padding-top:28px}
+.question{padding:28px;margin-top:24px;border:1px solid var(--rule)}
 .cardmeta{display:flex;align-items:center;gap:8px;margin-bottom:20px;color:var(--muted);font-size:10px;line-height:1.5;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
 .dot{display:inline-block;width:5px;height:5px;flex-shrink:0;background:var(--accent)}
 .question h2{max-width:850px;margin:0 0 14px;font-size:clamp(26px,2.6vw,37px);font-weight:600;letter-spacing:-.04em;line-height:1.17;overflow-wrap:anywhere}
 .question .description{max-width:790px;margin:0 0 28px;font-size:17px;line-height:1.6;white-space:pre-line;overflow-wrap:anywhere}
 .question .description:empty{display:none}
-.options{display:grid;gap:0;margin-top:28px;border-bottom:1px solid var(--rule)}
-.option{display:grid;grid-template-columns:34px minmax(0,1fr) 24px;align-items:center;gap:14px;width:100%;min-height:80px;padding:18px 12px;border:0;border-top:1px solid var(--line);background:transparent;color:var(--text);text-align:left;transition:background .12s}
-.option:first-child{border-top-color:var(--rule)}
-.option.dotted{border-top-style:dashed}
+.transitions{margin-top:24px}
+.transitions h3{margin:0 0 12px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.option{display:grid;grid-template-columns:24px minmax(0,1fr) 20px;align-items:start;gap:12px;width:100%;min-height:112px;padding:20px;border:1px solid var(--rule);background:transparent;color:var(--text);text-align:left;transition:background .12s}
+.option:only-child{grid-column:1/-1}
+.option.dotted{border-style:dashed}
 .option:hover{background:var(--subtle)}
 .option:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .option .key{align-self:start;padding-top:3px;color:var(--accent);font-size:12px;font-weight:500;font-variant-numeric:tabular-nums}
 .option b{display:block;font-size:16px;font-weight:600;line-height:1.4;letter-spacing:-.015em;overflow-wrap:anywhere}
-.option small{display:block;margin-top:5px;font-size:11px;line-height:1.6;color:var(--muted);overflow-wrap:anywhere}
+.option small{display:block;margin-top:8px;font-size:12px;line-height:1.6;color:var(--muted);white-space:pre-line;overflow-wrap:anywhere}
 .option .arrow{color:var(--accent);font-size:26px;line-height:1}
 .result-tag{display:inline-block;margin-top:12px;padding:12px 0;border-top:1px solid var(--rule);font-size:12px;font-weight:600}
 .textbtn{min-height:44px;border:0;background:none;padding:10px 0;color:var(--text);font-size:11px;font-weight:600}
@@ -99,7 +101,7 @@ button.chip:hover{color:var(--accent);border-color:var(--accent)}
 @media(min-width:1600px){.content{padding-top:70px}}
 @media(max-width:1100px){.layout{grid-template-columns:240px minmax(0,1fr)}.sidebar{padding:28px 20px 20px}.crumb-prefix,.crumb-separator{display:none}.headline{font-size:76px}.topbar{gap:12px}}
 @media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:fixed;z-index:20;left:0;top:0;bottom:0;width:min(350px,88vw);height:100vh;height:100dvh;visibility:hidden;transform:translateX(-100%);transition:transform .18s,visibility .18s}.sidebar.open{visibility:visible;transform:translateX(0)}.overlay.open{display:block;position:fixed;inset:0;background:#0006;z-index:19}.mobilemenu{display:block;flex-shrink:0;min-width:36px}.topbar{min-height:76px;padding:18px 28px}.content{padding:42px 28px 44px}.headline{font-size:84px}.crumb{font-size:11px}.footer{padding:20px 28px}}
-@media(max-width:600px){.topbar{padding:14px 20px;gap:10px;align-items:flex-start}.topbar-left{gap:10px}.crumb{max-width:145px;font-size:10px;align-self:center}.controls .iconbtn{padding:8px 10px;font-size:10px;min-height:36px}.controls .themebtn{font-size:17px;padding:5px 8px;min-width:34px}.content{padding:34px 20px 40px}.eyebrow{font-size:9px;letter-spacing:.08em;margin-bottom:24px}.headline{font-size:clamp(44px,12vw,66px);letter-spacing:-.065em;margin-bottom:24px}.lead{font-size:13px;line-height:1.65}.stepstrip{margin-top:34px;gap:16px;padding-top:16px}.minihead{font-size:10px;max-width:75%}.stepcount{font-size:10px}.question{padding-top:24px}.cardmeta{font-size:9px;margin-bottom:17px}.question h2{font-size:28px;line-height:1.18}.question .description{font-size:15px;margin-bottom:24px}.option{grid-template-columns:23px minmax(0,1fr) 20px;gap:10px;padding:17px 6px;min-height:80px}.option b{font-size:15px}.option small{font-size:10px}.option .arrow{font-size:24px}.option .key{font-size:11px}.journey{margin-top:26px}.chip{max-width:230px}.tip{font-size:11px;margin-top:28px}.footer{padding:18px 20px;gap:8px;flex-wrap:wrap}.sidebottom{padding-top:13px}.category{min-height:40px;font-size:13px}}
+@media(max-width:600px){.topbar{padding:14px 20px;gap:10px;align-items:flex-start}.topbar-left{gap:10px}.crumb{max-width:145px;font-size:10px;align-self:center}.controls .iconbtn{padding:8px 10px;font-size:10px;min-height:36px}.controls .themebtn{font-size:17px;padding:5px 8px;min-width:34px}.content{padding:34px 20px 40px}.eyebrow{font-size:9px;letter-spacing:.08em;margin-bottom:24px}.headline{font-size:clamp(44px,12vw,66px);letter-spacing:-.065em;margin-bottom:24px}.lead{font-size:13px;line-height:1.65}.stepstrip{margin-top:34px;gap:16px;padding-top:16px}.minihead{font-size:10px;max-width:75%}.stepcount{font-size:10px}.question{padding:22px 18px;margin-top:20px}.cardmeta{font-size:9px;margin-bottom:17px}.question h2{font-size:28px;line-height:1.18}.question .description{font-size:15px;margin-bottom:24px}.transitions{margin-top:20px}.options{grid-template-columns:1fr;gap:10px}.option{grid-template-columns:23px minmax(0,1fr) 20px;gap:10px;padding:18px 14px;min-height:88px}.option b{font-size:15px}.option small{font-size:12px}.option .arrow{font-size:24px}.option .key{font-size:11px}.journey{margin-top:26px}.chip{max-width:230px}.tip{font-size:11px;margin-top:28px}.footer{padding:18px 20px;gap:8px;flex-wrap:wrap}.sidebottom{padding-top:13px}.category{min-height:40px;font-size:13px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
@@ -121,6 +123,7 @@ button.chip:hover{color:var(--accent);border-color:var(--accent)}
    <div class="stepstrip"><span class="minihead" id="stage">Диагностика</span><span class="stepcount" id="count">Шаг 1</span></div>
    <div class="trail" id="trail" aria-hidden="true"></div>
    <section class="question" id="card" aria-live="polite"></section>
+   <nav class="transitions" id="transitions" aria-label="Возможные переходы" aria-live="polite"></nav>
    <div class="footbar"><button class="textbtn" id="back">← Назад</button><button class="textbtn" id="home">В начало ↗</button></div>
    <section class="summary" id="summary"><h3>Ваш маршрут</h3><ol id="summaryList"></ol><div class="tools"><button class="iconbtn" id="copy">Скопировать</button><button class="iconbtn" id="download">Сохранить .txt</button></div></section>
    <div class="journey" id="journey"><h3>Пройденные развилки</h3><div class="history" id="history"></div></div>
@@ -7989,14 +7992,20 @@ function render(){
  const node=N[path[current].id];$('currentSection').textContent=SECTIONS[node.s];$('stage').textContent=SECTIONS[node.s];$('count').textContent='Шаг '+String(current+1).padStart(2,'0');
  const trail=$('trail');trail.replaceChildren();for(let i=0;i<Math.min(14,current+1);i++){const el=dom('span','on');trail.append(el)}for(let i=0;i<Math.max(0,14-Math.min(14,current+1));i++)trail.append(dom('span'));
  const card=$('card');card.replaceChildren();
- const meta=dom('div','cardmeta');meta.append(dom('span','dot'),dom('span','',node.options.length?'Узел карты · выберите переход':'Конечный узел карты'));card.append(meta);
+ const meta=dom('div','cardmeta');meta.append(dom('span','dot'),dom('span','',node.options.length?'Текущий шаг':'Конечный узел карты'));card.append(meta);
  const [title,...description]=node.text.split('\n');card.append(dom('h2','',title),dom('p','description',description.join('\n')));
+ const transitions=$('transitions');transitions.replaceChildren();transitions.hidden=node.options.length===0;
  if(node.options.length){
+  transitions.append(dom('h3','','Возможные переходы'));
   const opts=dom('div','options');node.options.forEach((option,i)=>{
    const target=N[option.next];const label=labelOf(option);const b=dom('button','option'+(option.kind==='dotted'?' dotted':''));b.type='button';b.dataset.next=option.next;b.dataset.kind=option.kind;b.setAttribute('aria-label',label);
-   const body=dom('span','opttext');body.append(dom('b','',label));body.append(dom('small','',(option.kind==='dotted'?'Пунктирная стрелка':'Обычная стрелка')+(option.label?' · '+target.text.split('\n').slice(0,2).join(' '):'')));
-   b.append(dom('span','key',String(i+1)),body,dom('span','arrow',option.kind==='dotted'?'⇢':'→'));b.addEventListener('click',()=>move(i));opts.append(b);
-  });card.append(opts);
+   const [targetTitle,...targetDescription]=target.text.split('\n');
+   const body=dom('span','opttext');body.append(dom('b','',option.label||targetTitle));
+   const description=option.label?target.text:targetDescription.join('\n');
+   if(description){const detail=dom('small','',description);detail.id='transition-target-'+i;body.append(detail);b.setAttribute('aria-describedby',detail.id)}
+   const arrow=dom('span','arrow',option.kind==='dotted'?'⇢':'→');arrow.setAttribute('aria-hidden','true');b.title=option.kind==='dotted'?'Пунктирный переход':'Переход';
+   b.append(dom('span','key',String(i+1).padStart(2,'0')),body,arrow);b.addEventListener('click',()=>move(i));opts.append(b);
+  });transitions.append(opts);
  }else{card.append(dom('span','result-tag','В карте нет дальнейших переходов'))}
  $('back').disabled=current===0;$('back').style.opacity=current===0?'.35':'1';
  const history=$('history');history.replaceChildren();if(current===0){history.append(dom('span','chip','Начало маршрута'))}else{const begin=Math.max(0,current-7);if(begin>0)history.append(dom('span','hsep','…'));for(let i=begin;i<current;i++){const step=N[path[i].id];const b=dom('button','chip',path[i].choice||titleOf(step));b.title=titleOf(step);b.addEventListener('click',()=>{current=i;save();render()});history.append(b);history.append(dom('span','hsep','›'))}history.append(dom('span','chip',titleOf(node)))}
