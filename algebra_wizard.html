@@ -7966,12 +7966,17 @@ const SECTIONS={},ENTRY={},N=Object.create(null),sectionNumbers=new Map();
 for(const section of MAP.data.sections){SECTIONS[section.number]=section.label;ENTRY[section.number]=section.entryNodeId;sectionNumbers.set(section.id,section.number)}
 for(const node of MAP.nodes)N[node.id]={id:node.id,s:sectionNumbers.get(node.data.sectionId),text:node.label,options:[]};
 for(const edge of MAP.edges)N[edge.sourceId].options.push({next:edge.targetId,label:edge.label,kind:edge.data.kind});
+const PRIMARY_ENTRY=MAP.data.sections[0].entryNodeId;
+const FIRST_SECTION=MAP.data.sections[0].number;
+const startBlock=N[PRIMARY_ENTRY];
+const SKIP_START=startBlock.options.length===1&&!MAP.edges.some(edge=>edge.targetId===PRIMARY_ENTRY)&&/^(?:(?:узел|блок)\s*:\s*)?(?:корневой (?:объект|узел)|начало|старт|start)[.!:]?$/i.test(startBlock.text.trim().replace(/\s+/g,' '));
+const START_NODE=SKIP_START?startBlock.options[0].next:PRIMARY_ENTRY;
 document.getElementById('sectionsLabel').textContent=MAP.data.sections.length+' разделов · навигация';
 const titleOf=node=>node.text.split('\n').slice(0,2).join(' ');
 const labelOf=option=>option.label||N[option.next].text.split('\n').slice(0,2).join(' ');
 // Application state and transitions. Every option points to an explicit state in N.
 const STORAGE='algebra-wizard-state-v2';
-let path=[{id:'Root',choice:''}],current=0;
+let path=[{id:START_NODE,choice:''}],current=0;
 const $=id=>document.getElementById(id);
 const dom=(tag,cls='',value='')=>{const e=document.createElement(tag);if(cls)e.className=cls;if(value)e.textContent=value;return e};
 function save(){try{localStorage.setItem(STORAGE,JSON.stringify({path,current}))}catch(e){}}
@@ -7981,6 +7986,7 @@ function restore(){try{
  if(!state.path.every((item,i)=>item&&typeof item.id==='string'&&Object.hasOwn(N,item.id)&&(i===state.path.length-1||N[item.id].options[item.edge]?.next===state.path[i+1]?.id)))return;
  path=state.path.map((item,i)=>({id:item.id,edge:i<state.path.length-1?item.edge:null,choice:i<state.path.length-1?labelOf(N[item.id].options[item.edge]):''}));
  current=Math.max(0,Math.min(path.length-1,Number(state.current)||0));current=Math.floor(current);
+ if(SKIP_START&&path[0].id===PRIMARY_ENTRY){path=path.slice(1);current=Math.max(0,current-1);if(!path.length)path=[{id:START_NODE,choice:''}]}
  }catch(e){}}
 function move(index){const option=N[path[current].id].options[index];if(!option)return;path=path.slice(0,current+1);path[current].choice=labelOf(option);path[current].edge=index;path.push({id:option.next,choice:''});current=path.length-1;save();render()}
 function jump(next){if(!N[next])return;path=[{id:next,choice:''}];current=0;save();render();closeMenu()}
@@ -8013,10 +8019,10 @@ function render(){
  const ol=$('summaryList');ol.replaceChildren();path.slice(0,current+1).forEach((step,i)=>{const li=dom('li');const n=N[step.id];li.append(dom('b','',SECTIONS[n.s]+': '),document.createTextNode(titleOf(n)+(i<current&&step.choice?' — «'+step.choice+'»':'')));ol.append(li)});
 }
 function closeMenu(){$('sidebar').classList.remove('open');$('overlay').classList.remove('open');$('menu').setAttribute('aria-expanded','false')}
-Object.entries(SECTIONS).forEach(([n,name])=>{const b=dom('button','category');b.dataset.section=n;b.append(dom('span','num',String(n).padStart(2,'0')),dom('span','',name));b.addEventListener('click',()=>jump(ENTRY[n]));$('categories').append(b)});
+Object.entries(SECTIONS).forEach(([n,name])=>{const b=dom('button','category');b.dataset.section=n;b.append(dom('span','num',String(n).padStart(2,'0')),dom('span','',name));b.addEventListener('click',()=>jump(Number(n)===FIRST_SECTION?START_NODE:ENTRY[n]));$('categories').append(b)});
 $('menu').addEventListener('click',()=>{$('sidebar').classList.toggle('open');$('overlay').classList.toggle('open');$('menu').setAttribute('aria-expanded',String($('sidebar').classList.contains('open')))});$('overlay').addEventListener('click',closeMenu);
-$('back').addEventListener('click',backward);$('home').addEventListener('click',()=>jump('Root'));
-$('reset').addEventListener('click',()=>jump('Root'));
+$('back').addEventListener('click',backward);$('home').addEventListener('click',()=>jump(START_NODE));
+$('reset').addEventListener('click',()=>jump(START_NODE));
 $('summaryToggle').addEventListener('click',()=>{const box=$('summary');box.classList.toggle('open');if(box.classList.contains('open'))box.scrollIntoView({behavior:'smooth',block:'nearest'})});
 $('copy').addEventListener('click',async()=>{const text=summaryText();try{await navigator.clipboard.writeText(text);$('copy').textContent='Скопировано ✓';setTimeout(()=>$('copy').textContent='Скопировать',1600)}catch(e){const t=dom('textarea');t.value=text;document.body.append(t);t.select();try{document.execCommand('copy');$('copy').textContent='Скопировано ✓'}catch(err){alert('Не удалось скопировать; сохраните маршрут в .txt')}t.remove();setTimeout(()=>$('copy').textContent='Скопировать',1600)}});
 $('download').addEventListener('click',()=>{const blob=new Blob([summaryText()],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='algebra-route.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)});

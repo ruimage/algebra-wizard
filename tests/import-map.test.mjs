@@ -132,7 +132,6 @@ test('мастер запускается из HTML в реальном DOM бе
     const transitions = document.getElementById('transitions');
     assert.equal(card.nextElementSibling, transitions);
     assert.equal(card.querySelectorAll('button').length, 0);
-    transitions.querySelector('button').click();
     assert.match(document.querySelector('#card h2').textContent, /мнимая единица/);
     assert.equal(document.querySelectorAll('#transitions button').length, 2);
     assert.equal(document.querySelectorAll('#card button').length, 0);

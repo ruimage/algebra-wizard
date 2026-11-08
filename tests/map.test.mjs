@@ -39,10 +39,10 @@ class Element {
   scrollIntoView() {}
 }
 
-function app(saved = null) {
+function app(saved = null, data = embedded) {
   const elements = new Map();
   for (const [, id] of html.matchAll(/id="([^"]+)"/g)) elements.set(id, new Element());
-  elements.get('map-data').textContent = JSON.stringify(embedded);
+  elements.get('map-data').textContent = JSON.stringify(data);
   const storage = new Map(saved ? [['algebra-wizard-state-v2', saved]] : []);
   const document = {
     getElementById: id => elements.get(id),
@@ -142,7 +142,8 @@ test('все разделы открывают собственный первы
   assert.equal(buttons.length, embedded.data.sections.length);
   for (const button of buttons) {
     button.click();
-    assert.equal(instance.api.path[0].id, graph.entry[button.dataset.section]);
+    const section = embedded.data.sections.find(section => section.number === Number(button.dataset.section));
+    assert.equal(instance.api.path[0].id, section === embedded.data.sections[0] ? 'QC' : section.entryNodeId);
     assert.equal(instance.api.path.length, 1);
   }
 });
@@ -196,7 +197,7 @@ test('устаревший или поврежденный маршрут с о�
   for (const path of [[{ id: 'entry_complex' }], [{ id: 'Root', edge: 0 }, { id: 'CtrlEnd' }], [{ id: '__proto__' }], [null]]) {
     const instance = app(JSON.stringify({ path, current: 100 }));
     assert.equal(instance.api.path.length, 1);
-    assert.equal(instance.api.path[0].id, 'Root');
+    assert.equal(instance.api.path[0].id, 'QC');
     assert.equal(instance.api.current, 0);
   }
 });
@@ -204,10 +205,76 @@ test('устаревший или поврежденный маршрут с о�
 test('клавиши 1–9 используют те же стрелки, включая однозначное действие', () => {
   const instance = app();
   instance.document.keydown({ key: '1', target: {} });
-  assert.equal(instance.api.path.at(-1).id, 'QC');
+  assert.equal(instance.api.path.at(-1).id, graph.nodes.QC.options[0].next);
   instance.api.jump('OlyQ1');
   instance.document.keydown({ key: '9', target: {} });
   assert.equal(instance.api.path.at(-1).id, graph.nodes.OlyQ1.options[8].next);
+});
+
+test('служебный старт пропускается при открытии, сбросе и выборе первого раздела', () => {
+  const instance = app();
+  const assertStart = () => {
+    assert.equal(instance.api.current, 0);
+    assert.equal(instance.api.path[0].id, 'QC');
+    assert.equal(instance.elements.get('count').textContent, 'Шаг 01');
+    assert.equal(instance.elements.get('back').disabled, true);
+    assert(!instance.api.summaryText().includes('Корневой объект'));
+  };
+  assertStart();
+  for (const button of [instance.elements.get('reset'), instance.elements.get('home'), instance.elements.get('categories').children[0]]) {
+    instance.api.move(0);
+    button.click();
+    assertStart();
+  }
+  instance.api.move(0);
+  instance.api.backward();
+  assertStart();
+  assert(embedded.nodes.some(node => node.id === 'Root'));
+  assert(embedded.edges.some(edge => edge.sourceId === 'Root' && edge.targetId === 'QC'));
+});
+
+test('старые маршруты восстанавливаются без служебного начала и лишнего номера шага', () => {
+  const paths = [
+    { path: [{ id: 'Root' }], current: 0 },
+    { path: [{ id: 'Root', edge: 0 }, { id: 'QC' }], current: 0 },
+    { path: [{ id: 'Root', edge: 0 }, { id: 'QC' }], current: 1 },
+    { path: [{ id: 'Root', edge: 0 }, { id: 'QC', edge: 0 }, { id: 'QF' }], current: 2 }
+  ];
+  for (const state of paths) {
+    const instance = app(JSON.stringify(state));
+    assert.equal(instance.api.path[0].id, 'QC');
+    assert(!instance.api.path.some(step => step.id === 'Root'));
+    assert.equal(instance.api.current, Math.max(0, state.current - 1));
+    assert(!instance.api.summaryText().includes('Корневой объект'));
+  }
+});
+
+test('без стартового блока и для содержательного первого узла пропуска нет', () => {
+  const withoutRoot = structuredClone(embedded);
+  withoutRoot.nodes = withoutRoot.nodes.filter(node => node.id !== 'Root');
+  withoutRoot.edges = withoutRoot.edges.filter(edge => edge.sourceId !== 'Root');
+  withoutRoot.data.sections[0].entryNodeId = 'QC';
+  const direct = app(null, withoutRoot);
+  assert.equal(direct.api.path[0].id, 'QC');
+  direct.elements.get('home').click();
+  assert.equal(direct.api.path[0].id, 'QC');
+  const meaningful = structuredClone(embedded);
+  meaningful.nodes.find(node => node.id === 'Root').label = 'Сначала запишите ОДЗ';
+  assert.equal(app(null, meaningful).api.path[0].id, 'Root');
+});
+
+test('служебный блок определяется по смыслу, но развилка и возвраты не скрываются', () => {
+  const renamed = structuredClone(embedded);
+  const root = renamed.nodes.find(node => node.id === 'Root');
+  root.id = 'Begin';root.label = 'Начало';
+  renamed.data.sections[0].entryNodeId = 'Begin';
+  renamed.edges.find(edge => edge.sourceId === 'Root').sourceId = 'Begin';
+  assert.equal(app(null, renamed).api.path[0].id, 'QC');
+  renamed.edges.push({ id: 'extra-branch', sourceId: 'Begin', targetId: 'QF', label: 'Другой путь', data: { kind: 'solid', order: renamed.edges.length } });
+  assert.equal(app(null, renamed).api.path[0].id, 'Begin');
+  renamed.edges.pop();
+  renamed.edges.push({ id: 'return', sourceId: 'QC', targetId: 'Begin', label: '', data: { kind: 'solid', order: renamed.edges.length } });
+  assert.equal(app(null, renamed).api.path[0].id, 'Begin');
 });
 
 test('неверный синтаксис и узлы вне разделов не пропускаются при импорте', async () => {
