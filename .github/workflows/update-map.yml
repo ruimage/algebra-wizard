@@ -1,0 +1,78 @@
+name: Check and update Mermaid map
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mermaid-map-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Validate committed map
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+
+  update:
+    name: Sync source and wait for Vercel
+    if: >-
+      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') &&
+      github.ref_name == github.event.repository.default_branch
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      statuses: read
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Import current Mermaid source
+        run: npm run map:update:live
+      - name: Validate updated graph and every transition
+        run: npm run check
+      - name: Commit only generated map files
+        id: commit
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git add -- docs/map-source.mmd map.json map.schema.json algebra_wizard.html
+          if git diff --cached --quiet; then
+            echo 'Source unchanged; no commit or deployment triggered.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git -c core.hooksPath=/dev/null commit -m 'chore(map): sync upstream Mermaid source'
+            git push origin "HEAD:refs/heads/$DEFAULT_BRANCH"
+            echo 'Updated map committed; Vercel Git integration starts deployment.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Wait for Vercel deployment status
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEPLOYMENT_SHA: ${{ steps.commit.outputs.sha }}
+        run: node scripts/wait-vercel.mjs

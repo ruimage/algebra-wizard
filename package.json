@@ -1,0 +1,20 @@
+{
+  "name": "algebra-wizard",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "map:update": "node scripts/map.mjs --write",
+    "map:update:live": "node scripts/map.mjs --live --write",
+    "map:check": "node scripts/map.mjs",
+    "map:check:live": "node scripts/map.mjs --live",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run map:check && npm test"
+  },
+  "engines": { "node": ">=22.13.0" },
+  "devDependencies": {
+    "@statelyai/graph": "2.6.0",
+    "jsdom": "31.0.0",
+    "mermaid": "12.3.0",
+    "zod": "4.6.7"
+  }
+}

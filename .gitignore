@@ -4,6 +4,7 @@
 
 # Vercel CLI local artifacts
 .vercel/
+node_modules/
 
 # OS
 .DS_Store

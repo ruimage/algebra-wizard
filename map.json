@@ -1,0 +1,7825 @@
+{
+  "$schema": "./map.schema.json",
+  "schemaVersion": 1,
+  "mode": "directed",
+  "data": {
+    "source": {
+      "url": "https://konstantalab.ru/map",
+      "sha256": "73636ea407056ff09f32dbb30ea3d18c92408191e98bd6e2f59f5e95a8d1c8fa",
+      "author": "Виктор Лиситчук",
+      "license": "CC-BY-NC-SA-4.0"
+    },
+    "sections": [
+      {
+        "id": "ENTRY",
+        "number": 1,
+        "label": "Вход в систему",
+        "entryNodeId": "Root"
+      },
+      {
+        "id": "DISP",
+        "number": 2,
+        "label": "Диспетчерская",
+        "entryNodeId": "Dispatcher"
+      },
+      {
+        "id": "LIN",
+        "number": 3,
+        "label": "Линейные уравнения",
+        "entryNodeId": "LinTarget"
+      },
+      {
+        "id": "QUAD",
+        "number": 4,
+        "label": "Квадратные уравнения",
+        "entryNodeId": "QuadTarget"
+      },
+      {
+        "id": "HIGH",
+        "number": 5,
+        "label": "Высшие степени",
+        "entryNodeId": "HighTarget"
+      },
+      {
+        "id": "SYS",
+        "number": 6,
+        "label": "Системы и векторы",
+        "entryNodeId": "SysTarget"
+      },
+      {
+        "id": "FRAC",
+        "number": 7,
+        "label": "Дробно-рациональные",
+        "entryNodeId": "FracTarget"
+      },
+      {
+        "id": "TRIG",
+        "number": 8,
+        "label": "Тригонометрия",
+        "entryNodeId": "TrigTarget"
+      },
+      {
+        "id": "MOD",
+        "number": 9,
+        "label": "Модули",
+        "entryNodeId": "ModTarget"
+      },
+      {
+        "id": "IRR",
+        "number": 10,
+        "label": "Корни (радикалы)",
+        "entryNodeId": "IrrTarget"
+      },
+      {
+        "id": "EXP",
+        "number": 11,
+        "label": "Показательные",
+        "entryNodeId": "ExpTarget"
+      },
+      {
+        "id": "LOG",
+        "number": 12,
+        "label": "Логарифмы",
+        "entryNodeId": "LogTarget"
+      },
+      {
+        "id": "MAT",
+        "number": 13,
+        "label": "Матрешки (сложные функции)",
+        "entryNodeId": "MatTarget"
+      },
+      {
+        "id": "HUBG",
+        "number": 14,
+        "label": "Сервисный хаб: преобразование выражений",
+        "entryNodeId": "Hub"
+      },
+      {
+        "id": "XPR",
+        "number": 15,
+        "label": "Выражения",
+        "entryNodeId": "ExprTarget"
+      },
+      {
+        "id": "FUN",
+        "number": 16,
+        "label": "Функции",
+        "entryNodeId": "FuncTarget"
+      },
+      {
+        "id": "CMP",
+        "number": 17,
+        "label": "Комплексные числа",
+        "entryNodeId": "CplxTarget"
+      },
+      {
+        "id": "INEQ",
+        "number": 18,
+        "label": "Неравенства",
+        "entryNodeId": "IneqTarget"
+      },
+      {
+        "id": "PAR",
+        "number": 19,
+        "label": "Параметры",
+        "entryNodeId": "ParTarget"
+      },
+      {
+        "id": "SEQ",
+        "number": 20,
+        "label": "Последовательности, прогрессии, бином",
+        "entryNodeId": "SeqTarget"
+      },
+      {
+        "id": "WORD",
+        "number": 21,
+        "label": "Текстовые задачи",
+        "entryNodeId": "WordTarget"
+      },
+      {
+        "id": "NUM",
+        "number": 22,
+        "label": "Целые числа и делимость",
+        "entryNodeId": "NumTarget"
+      },
+      {
+        "id": "OLY",
+        "number": 23,
+        "label": "Олимпиадный арсенал: оценки и функциональные уравнения",
+        "entryNodeId": "OlyTarget"
+      },
+      {
+        "id": "CTRL",
+        "number": 24,
+        "label": "Контроль корней: потеря и приобретение",
+        "entryNodeId": "CtrlTarget"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "Root",
+      "label": "Узел:\nКорневой объект",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "QC",
+      "label": "В условии есть мнимая единица i\nили слова комплексное число?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "QF",
+      "label": "Просят исследовать функцию:\nграфик, область определения,\nобласть значений, свойства,\nобратная функция, значение в точке?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "Q1",
+      "label": "Задание сформулировано словами\nрешить, найти корни?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "Q2",
+      "label": "Просят решить уравнение -\nнайти нули или корни?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "Q3",
+      "label": "Есть знак '=' между\nлевой и правой частями?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "Q4",
+      "label": "Есть хотя бы одна неизвестная\nпеременная x - y - z?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "QI",
+      "label": "Есть знак неравенства: больше, меньше,\nне больше, не меньше,\nили просят найти, при каких x\nвыражение положительно или отрицательно?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "QP",
+      "label": "Есть буква-параметр a, p, k\nи просят решить при каждом a\nили найти, при каких a\nусловие выполнено?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "QS",
+      "label": "Речь о последовательности,\nпрогрессии, сумме n членов\nили биномиальных коэффициентах?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "QW",
+      "label": "Условие - сюжет:\nдвижение, работа, смеси,\nпроценты, числа и цифры?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "QN",
+      "label": "Нужны только целые\nили натуральные решения,\nделимость, остатки, простые числа?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "QO",
+      "label": "Доказать неравенство, найти наибольшее\nили наименьшее значение,\nфункциональное уравнение,\nнестандартная оценка?",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "NotEq",
+      "label": "Не уравнение или нет неизвестной:\nупростить выражение или вычислить",
+      "data": {
+        "sectionId": "ENTRY"
+      }
+    },
+    {
+      "id": "Dispatcher",
+      "label": "Центральный Диспетчер:\nУзел Уравнение\nСначала ищем особый тип,\nпотом обычная алгебра\nРазные типы функций в одном уравнении (2^x + x, x + lg x, sin x = x):\nстандартные приёмы не работают - монотонность, оценка или график",
+      "data": {
+        "sectionId": "DISP"
+      }
+    },
+    {
+      "id": "Q_Check",
+      "label": "Проверка количества переменных",
+      "data": {
+        "sectionId": "DISP"
+      }
+    },
+    {
+      "id": "Q_Type",
+      "label": "Ревизия маркеров объекта:\nсначала x в знаменателе,\nпотом степень",
+      "data": {
+        "sectionId": "DISP"
+      }
+    },
+    {
+      "id": "LinTarget",
+      "label": "Цель:\nВид ax = b",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "LinQ1",
+      "label": "Шаг 1:\nЕсть скобки?",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "LinAct1",
+      "label": "Действие:\nРаскрыть ВСЕ скобки",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "LinQ2",
+      "label": "Шаг 2:\nСлагаемые перемешаны?",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "LinAct2",
+      "label": "Действие:\nИксы влево - числа вправо\nс переменой знака",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "LinAct3",
+      "label": "Шаг 3:\nПривести подобные",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "SpecQ1",
+      "label": "Особый случай:\nКоэффициент a = 0?",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "SpecAns1",
+      "label": "1 корень:\nx = b / a",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "SpecQ2",
+      "label": "Число b = 0?",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "SpecAns2",
+      "label": "0 = 0\nКорень - ЛЮБОЕ число",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "SpecAns3",
+      "label": "0 = числу\nКорней НЕТ",
+      "data": {
+        "sectionId": "LIN"
+      }
+    },
+    {
+      "id": "QuadTarget",
+      "label": "Цель:\nВид ax² + bx + c = 0",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "QuadQ1",
+      "label": "Шаг 1:\nРаскиданы слагаемые?",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "QuadAct1",
+      "label": "Раскрыть скобки, перенести все влево\nсправа оставить 0",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "QuadQ2",
+      "label": "Шаг 2:\nПривести подобные",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "QuadQ3",
+      "label": "Шаг 3:\nСлагаемые с x² уничтожились?",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "QuadQ4",
+      "label": "Шаг 4:\nВсе коэффициенты на месте?",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "Неполные",
+      "label": "Ветка: Неполные",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "Неполные1",
+      "label": "Вынести x за скобки:\nx=0 или ax+b=0",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "Неполные2",
+      "label": "Уединить x²:\nЕсли -c/a меньше 0 - нет корней\nИначе x = ± √(-c/a)",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "Полные",
+      "label": "Ветка: Полные",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "QuadQ5",
+      "label": "Приведенное a = 1 и корни подбираются в уме?",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "Виет",
+      "label": "Теорема Виета:\nx1+x2=-b, x1*x2=c",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "Дискр",
+      "label": "Дискриминант D = b² - 4ac",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "DQ",
+      "label": "Знак D?",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "D1",
+      "label": "Корней НЕТ",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "D2",
+      "label": "1 корень:\nx = -b / 2a",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "D3",
+      "label": "2 корня:\nx = (-b ± √D) / 2a",
+      "data": {
+        "sectionId": "QUAD"
+      }
+    },
+    {
+      "id": "HighTarget",
+      "label": "Цель:\nПонизить степень",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighQ1",
+      "label": "Биквадратное?",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighAct1",
+      "label": "Замена x² = t при t >= 0\nРешить для t, затем вернуться к x",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighQ2",
+      "label": "Есть свободное число c?",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighAct2",
+      "label": "Вынести X в меньшей степени\nПроизведение = 0: каждый множитель приравнять к 0",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighQ3",
+      "label": "Работает группировка?",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighAct3",
+      "label": "Вынести общую скобку\nПроизведение = 0: каждый множитель приравнять к 0",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighQ3b",
+      "label": "Особый вид?",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighRec",
+      "label": "Возвратное: коэффициенты симметричны a, b, c, b, a\nРазделить на x² (x не равен 0), замена t = x + 1/x\nНечётная степень: x = -1 всегда корень",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighPair",
+      "label": "Произведение четырёх скобок (x+a)(x+b)(x+c)(x+d) = m:\nСгруппировать пары с одинаковой суммой чисел\n(x² + sx + ad)(x² + sx + bc) = m\nЗамена t = x² + sx",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighShift",
+      "label": "Вид (x+a)^4 + (x+b)^4 = m:\nСдвиг t = x + (a+b)/2\nПолучится биквадратное по t",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighHom",
+      "label": "Однородное A·P² + B·P·Q + C·Q² = 0:\nРазделить на Q² (отдельно проверить Q = 0)\nЗамена t = P / Q",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighQ4",
+      "label": "Коэффициенты целые\nили приводятся к целым домножением?",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "Безу",
+      "label": "Теорема Безу:\nИщем корни среди p/q, где p - делитель c,\nq - делитель старшего коэффициента\nДелим в столбик или по схеме Горнера на x-x1",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighUnc",
+      "label": "Корней среди p/q нет:\nМетод неопределённых коэффициентов\nРазложить на два квадратных трёхчлена\n(x² + px + q)(x² + rx + s)\nПриравнять коэффициенты при одинаковых степенях",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighSq",
+      "label": "Степень 4 без рациональных корней:\nВыделение полного квадрата с параметром t (метод Феррари)\nПрибавить и вычесть t: левая часть - квадрат,\nправая - квадратный трёхчлен; подобрать t так, чтобы\nправая часть стала полным квадратом (D = 0, кубическое по t)\nДальше разность квадратов - два квадратных уравнения\nПример: x⁴ - 4x³ - 1 = 0, t = -1:\n(x² - 2x - 1)² = 2(x + 1)², то есть x² - 2x - 1 = ± √2·(x + 1)",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "HighVi",
+      "label": "Теорема Виета для степени n:\nСумма корней = - (коэфф. при x^(n-1)) / (старший коэфф.)\nПроизведение корней = (-1)^n · (свободный член) / (старший коэфф.)\nУдобно для проверки найденных корней",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "ВУЗ",
+      "label": "Высшая математика / Численные методы:\nКубическое - формула Кардано\nСтепень 5 и выше в радикалах в общем случае не решается:\nоценка корней, монотонность, график, численный метод",
+      "data": {
+        "sectionId": "HIGH"
+      }
+    },
+    {
+      "id": "SysTarget",
+      "label": "Система или Уравнение с двумя переменными",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "SysQ1",
+      "label": "Переменных больше уравнений?",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "SysParam",
+      "label": "Решений бесконечно много: выразить одну переменную через другую.\nЕсли нужны целые числа - олимпиадный хак: подбор квадратов",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "SysQ2",
+      "label": "Все линейные?",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "SysQ3",
+      "label": "Уравнений больше 2?",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "Гаусс",
+      "label": "Метод Гаусса / Матрицы:\nПривести к ступенчатому виду\nПротиворечие 0 = число - решений нет\nЛишние уравнения - проверка совместности\nДля 2×2 и 3×3 удобен метод Крамера",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "Школа",
+      "label": "Школьные методы решения систем:\nвыбрать один способ",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "Метод1",
+      "label": "Подстановка:\nВыразить букву и подставить",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "Метод2",
+      "label": "Сложение:\nУничтожить слагаемое",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "SysSpec",
+      "label": "Особый вид нелинейной системы?",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "SysSym",
+      "label": "Симметричная: уравнения не меняются при замене x и y местами\nЗамена u = x + y, v = xy\nРешить относительно u и v, затем x и y - корни t² - ut + v = 0",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "SysHom",
+      "label": "Однородное уравнение в системе\n(все слагаемые одной степени):\nРазделить на y² (отдельно проверить y = 0)\nЗамена t = x / y",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "SysFact",
+      "label": "Одно из уравнений раскладывается на множители:\nПолучится совокупность двух более простых систем",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "SysGraph",
+      "label": "Графический метод:\nПостроить графики обоих уравнений\nЧисло и приближённые координаты точек пересечения\nТочные значения - подстановкой",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "Veq",
+      "label": "Векторное уравнение",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "VeqQ1",
+      "label": "Даны координаты?",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "VeqAct1",
+      "label": "Метод координат",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "VeqAct2",
+      "label": "Метод проекций на OX и OY",
+      "data": {
+        "sectionId": "SYS"
+      }
+    },
+    {
+      "id": "FracTarget",
+      "label": "Цель:\nУбить знаменатель",
+      "data": {
+        "sectionId": "FRAC"
+      }
+    },
+    {
+      "id": "FracStep1",
+      "label": "Шаг 1: Фиксация ОДЗ ИСХОДНОГО уравнения\nЗнаменатели не равны 0\nВ конце проверить корни по ОДЗ",
+      "data": {
+        "sectionId": "FRAC"
+      }
+    },
+    {
+      "id": "FracQ",
+      "label": "Какой вид?",
+      "data": {
+        "sectionId": "FRAC"
+      }
+    },
+    {
+      "id": "FracZero",
+      "label": "Дробь равна нулю P / Q = 0:\nЧислитель P = 0\nи одновременно Q не равен 0",
+      "data": {
+        "sectionId": "FRAC"
+      }
+    },
+    {
+      "id": "FracProp",
+      "label": "Пропорция A / B = C / D:\nКрест-накрест A·D = B·C\nпри B и D не равных 0",
+      "data": {
+        "sectionId": "FRAC"
+      }
+    },
+    {
+      "id": "FracSub",
+      "label": "Повторяется один и тот же блок:\nЗамена t = блок, например t = x + 1/x\nили t = (x-1)/(x+1)\nРешить для t, затем вернуться к x",
+      "data": {
+        "sectionId": "FRAC"
+      }
+    },
+    {
+      "id": "FracStep2",
+      "label": "Шаг 2: Домножить на общий знаменатель\nи сократить его\nРешить полученное, корни проверить по ОДЗ",
+      "data": {
+        "sectionId": "FRAC"
+      }
+    },
+    {
+      "id": "TrigTarget",
+      "label": "Цель:\nВид функция от x равна числу",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigODZ",
+      "label": "Шаг 0: Фиксация ОДЗ ИСХОДНОГО уравнения (до преобразований)\ntg u: cos u не равен 0, ctg u: sin u не равен 0\nЗнаменатели не равны 0, корни и логарифмы - свои запреты\nВ конце проверить корни по ОДЗ\nПосле деления на cos x отдельно проверить cos x = 0",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigQ1",
+      "label": "Уже простейший вид",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigBase",
+      "label": "Проверка числа справа\nдля sin и cos",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigErr",
+      "label": "Сбой! Корней нет",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigAns",
+      "label": "Запись ответа по таблице плюс период:\nsin x = a: x = (-1)^n arcsin a + πn\ncos x = a: x = ± arccos a + 2πn\ntg x = a: x = arctg a + πn, ctg x = a: x = arcctg a + πn\nЗначения 0, 1, -1 для sin и cos - особые формулы",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigChk",
+      "label": "Проверка:\nКорни подходят по ОДЗ из шага 0\nСовпадающие серии объединить",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigSel",
+      "label": "Отбор корней на промежутке:\nПодставить серию x = ... + 2πk в двойное неравенство,\nнайти целые k\nили отметить серии на единичной окружности",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigQ2",
+      "label": "Углы аргументов одинаковые",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigAct1",
+      "label": "Хаб выражений:\nФормулы двойного угла и приведения",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigQ3",
+      "label": "Имена функций одинаковые",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigQ4",
+      "label": "Уравнение однородное",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigAct2",
+      "label": "Разделить на косинус\nПерейти к тангенсу",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigQ4b",
+      "label": "Вид a·sin x + b·cos x = c?",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigAux",
+      "label": "Вспомогательный угол: разделить на √(a² + b²)\nsin(x + φ) = c / √(a² + b²)\nКорни есть при c² ≤ a² + b²\nИли универсальная подстановка t = tg(x/2)\n(отдельно проверить x = π + 2πk)",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigAct3",
+      "label": "Хаб выражений:\nОсновное тождество",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigQ5",
+      "label": "Квадратный паттерн",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigSub",
+      "label": "Замена t = функция от x при модуле t меньше или равном 1\nРешить для t, затем вернуться к x",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigQ6",
+      "label": "Можно вынести функцию за скобки",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigSplit",
+      "label": "Вынести за скобки\nРаспад на два простейших",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigQ7",
+      "label": "Равенство одноимённых функций\nf(A) = f(B)?",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigSame",
+      "label": "sin A = sin B: A = B + 2πk или A = π - B + 2πk\ncos A = cos B: A = ± B + 2πk\ntg A = tg B: A = B + πk",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "TrigHard",
+      "label": "Хаб выражений:\nФормулы суммы и произведения",
+      "data": {
+        "sectionId": "TRIG"
+      }
+    },
+    {
+      "id": "ModTarget",
+      "label": "Цель:\nСнять палочки модуля",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModQ1",
+      "label": "Только один модуль",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModAct1",
+      "label": "Изолировать модуль:\nВид модуль A равен B",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModQ2",
+      "label": "Правая часть - число",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModQ3",
+      "label": "Знак числа",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModErr",
+      "label": "Сбой! Корней нет",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModZero",
+      "label": "Стереть палочки: A = 0",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModSplit",
+      "label": "Две ветки: A = Число и A = -Число",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModX",
+      "label": "Вид модуль A равен B-x\nФильтр B-x больше или равен нулю\nВетки A = B-x и A = -B-x",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModQ4",
+      "label": "Два модуля вида модуль A равен модулю B",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModTwo",
+      "label": "Быстрое раскрытие:\nA = B или A = -B",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "ModIntervals",
+      "label": "Сложный хаос:\nМетод промежутков и интервалов",
+      "data": {
+        "sectionId": "MOD"
+      }
+    },
+    {
+      "id": "IrrTarget",
+      "label": "Цель:\nУничтожить радикалы",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrODZ",
+      "label": "Шаг 0: ОДЗ - ВСЕ подкоренные выражения чётных корней\nбольше или равны 0 одновременно (пересечение условий)\nВ конце проверить корни подстановкой в ИСХОДНОЕ уравнение",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrQ1",
+      "label": "Степень корня четная",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrНечет",
+      "label": "Нечетный корень:\nОграничений нет - возвести в степень корня",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrQ0",
+      "label": "Повторяется блок с корнем?\nКвадратный паттерн по √x",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrSub",
+      "label": "Замена t = корень при t ≥ 0\nРешить для t, затем вернуться к x",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrAct1",
+      "label": "Изолировать корень:\nВид √A = B",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrQ2",
+      "label": "Справа голое число",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrQ3",
+      "label": "Знак числа",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrErr",
+      "label": "Сбой! Корней нет",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrZero",
+      "label": "Подкоренное A = 0",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrPos",
+      "label": "Фильтр A больше или равен нулю\nВозвести в квадрат: A = Число в квадрате",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrQ4",
+      "label": "Что справа?",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "ЩитМеч",
+      "label": "Скрипт Щит и Меч:\nЩит: B-x больше или равен нулю\nМеч: A = B-x в квадрате",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrEq",
+      "label": "Другой корень √A = √B:\nФильтр A ≥ 0 (тогда и B ≥ 0)\nПриравнять: A = B",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrTwo",
+      "label": "Несколько корней, например √A + √B = √C:\nШаг 1: ОДЗ для ВСЕХ подкоренных одновременно\nШаг 2: возвести в квадрат: A + B + 2√(AB) = C\nШаг 3: уединить удвоенное произведение 2√(AB), возвести ещё раз\n(обе части должны быть не меньше 0)\nШаг 4: проверить подстановкой в ИСХОДНОЕ\nПример: √(x+1) + √(x-2) = √(2x+3): ОДЗ x ≥ 2,\n2√((x+1)(x-2)) = 4, x² - x - 6 = 0, ответ x = 3 (x = -2 вне ОДЗ)",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "IrrCnj",
+      "label": "Сумма двух корней равна числу c:\n√A + √B = c, тогда √A - √B = (A - B) / c\nСложить - получить √A отдельно",
+      "data": {
+        "sectionId": "IRR"
+      }
+    },
+    {
+      "id": "ExpTarget",
+      "label": "Цель:\nСпустить X на землю",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpQ0",
+      "label": "Переменная есть и в основании степени?\nВид h(x)^f(x)",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpPow",
+      "label": "Показательно-степенное h^f = h^g:\nОДЗ: основание h больше 0\nДва случая: h = 1 (верно при любых f и g)\nили h не равно 1, тогда f = g",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpQ1",
+      "label": "Слева одна степень a^f-x, справа число B?\nЗнак B\nОснование a больше 0 и a не равно 1:\nпри a = 1 степень всегда равна 1, проверить B = 1;\nпри a меньше 0 a^x не определена при дробных x - проверять только целые x",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpErr",
+      "label": "Сбой! Корней нет",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpQ2",
+      "label": "Можно уравнять основания",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpAct1",
+      "label": "Привести к одинаковым основаниям\nСхлопнуть: f-x=g-x",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpQ3",
+      "label": "Разные степени одного числа",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpAct2",
+      "label": "Вынести наименьшую степень\nразделить правую часть",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpQ4",
+      "label": "Квадратный паттерн",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpSub",
+      "label": "Замена t = a^x при t больше нуля\nРешить для t, затем вернуться к x",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpQ5",
+      "label": "Однородное: степени a^(2x), (ab)^x, b^(2x)?",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpHom",
+      "label": "Разделить на b^(2x)\nЗамена t = (a/b)^x при t больше 0\nРешить для t, затем вернуться к x",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "ExpLog",
+      "label": "Тупик оснований: вид 2^x=3\nКлюч: x = log2 3\nЕсли справа не число, а выражение с x (2^x = 5 - x, 3^x + x = 4):\nлогарифм не поможет - угадать корень и доказать единственность монотонностью или графически",
+      "data": {
+        "sectionId": "EXP"
+      }
+    },
+    {
+      "id": "LogTarget",
+      "label": "Цель:\nСхлопнуть логарифмы",
+      "data": {
+        "sectionId": "LOG"
+      }
+    },
+    {
+      "id": "LogОДЗ",
+      "label": "Шаг 1: Фиксация ОДЗ ИСХОДНОГО уравнения (до любых преобразований)\nАргумент больше нуля, основание больше нуля и не равно единице\nКорни проверять только по этому ОДЗ",
+      "data": {
+        "sectionId": "LOG"
+      }
+    },
+    {
+      "id": "LogAct1",
+      "label": "Шаг 2: Упаковать логарифмы свойствами\nВНИМАНИЕ: log(bc) = log b + log c расширяет ОДЗ,\nlog(b²) = 2·log(модуль b) - не терять модуль\nСверяться с ОДЗ из шага 1, а не с промежуточным",
+      "data": {
+        "sectionId": "LOG"
+      }
+    },
+    {
+      "id": "LogBase",
+      "label": "Основания разные или переменное основание log_x:\nПерейти к одному основанию\nlog_a b = log_c b / log_c a, log_a b = 1 / log_b a",
+      "data": {
+        "sectionId": "LOG"
+      }
+    },
+    {
+      "id": "LogQ1",
+      "label": "Каков канонический вид",
+      "data": {
+        "sectionId": "LOG"
+      }
+    },
+    {
+      "id": "LogDef",
+      "label": "По определению:\nf-x = a^B",
+      "data": {
+        "sectionId": "LOG"
+      }
+    },
+    {
+      "id": "LogPot",
+      "label": "Потенцирование:\nf-x = g-x",
+      "data": {
+        "sectionId": "LOG"
+      }
+    },
+    {
+      "id": "LogSub",
+      "label": "Замена t = log_a x\nРешить для t, затем вернуться к x",
+      "data": {
+        "sectionId": "LOG"
+      }
+    },
+    {
+      "id": "LogTake",
+      "label": "Переменная и в основании, и в показателе,\nнапример x^(log_2 x) = 8x²:\nОбе части больше 0 - прологарифмировать\nпо удобному основанию",
+      "data": {
+        "sectionId": "LOG"
+      }
+    },
+    {
+      "id": "MatTarget",
+      "label": "Правило:\nСнаружи внутрь",
+      "data": {
+        "sectionId": "MAT"
+      }
+    },
+    {
+      "id": "MatStep1",
+      "label": "Заменить внутренность на коробку Т",
+      "data": {
+        "sectionId": "MAT"
+      }
+    },
+    {
+      "id": "MatStep2",
+      "label": "Решить для внешней функции:\nСнять наружную оболочку",
+      "data": {
+        "sectionId": "MAT"
+      }
+    },
+    {
+      "id": "MatStep3",
+      "label": "Приравнять внутренность к результату",
+      "data": {
+        "sectionId": "MAT"
+      }
+    },
+    {
+      "id": "Hub",
+      "label": "Центральный хаб:\nПреобразование Выражений",
+      "data": {
+        "sectionId": "HUBG"
+      }
+    },
+    {
+      "id": "B1",
+      "label": "Библиотека 1: Свойства Степеней\na^m · a^n = a^(m+n), a^m / a^n = a^(m-n)\n(a^m)^n = a^(mn), (ab)^n = a^n · b^n\na^(-n) = 1 / a^n, a^0 = 1 при a не равном 0\na^(1/n) = корень n-й степени из a",
+      "data": {
+        "sectionId": "HUBG"
+      }
+    },
+    {
+      "id": "B2",
+      "label": "Библиотека 2: Свойства Логарифмов\nlog_a(bc) = log_a b + log_a c\nlog_a(b/c) = log_a b - log_a c\nlog_a(b^p) = p · log_a b\na^(log_a b) = b, log_a a = 1, log_a 1 = 0\nСмена основания: log_a b = log_c b / log_c a",
+      "data": {
+        "sectionId": "HUBG"
+      }
+    },
+    {
+      "id": "B3",
+      "label": "Библиотека 3: ФСУ и Скобки\n(a - b)(a + b) = a² - b²\n(a ± b)² = a² ± 2ab + b²\na³ + b³ = (a + b)(a² - ab + b²)\na³ - b³ = (a - b)(a² + ab + b²)\n(a ± b)³ = a³ ± 3a²b + 3ab² ± b³\n(a + b + c)² = a² + b² + c² + 2ab + 2bc + 2ac",
+      "data": {
+        "sectionId": "HUBG"
+      }
+    },
+    {
+      "id": "B4",
+      "label": "Библиотека 4: Тригонометрия\nsin² x + cos² x = 1, tg x = sin x / cos x\nsin 2x = 2 sin x cos x\ncos 2x = cos² x - sin² x = 1 - 2sin² x = 2cos² x - 1\nСумма и разность углов, формулы приведения\nСумма в произведение и обратно\nsin² x = (1 - cos 2x) / 2, cos² x = (1 + cos 2x) / 2",
+      "data": {
+        "sectionId": "HUBG"
+      }
+    },
+    {
+      "id": "B5",
+      "label": "Библиотека 5: Корни и Модуль\n√(a²) = модуль a\n√(ab) = √a · √b при a ≥ 0 и b ≥ 0\n(√a)² = a при a ≥ 0\nМодуль: |a|² = a², |ab| = |a|·|b|\n|a| = a при a ≥ 0, |a| = -a при a меньше 0",
+      "data": {
+        "sectionId": "HUBG"
+      }
+    },
+    {
+      "id": "ExprTarget",
+      "label": "Цель:\nПривести выражение\nк простому виду",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprQ1",
+      "label": "Есть буквы-переменные?",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprNum",
+      "label": "Только числа:\nпорядок действий:\nскобки, степени и корни,\nумножение и деление,\nсложение и вычитание",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprQ2",
+      "label": "Что требуется\nсделать с выражением?",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprS1",
+      "label": "Шаг 1:\nРаскрыть скобки\nи привести подобные",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprS2",
+      "label": "Шаг 2:\nЕсть дробь с переменной?",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprS3",
+      "label": "Дробь:\nЗафиксировать ОДЗ - знаменатель не равен 0\nРазложить числитель и знаменатель\nна множители и сократить",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprS4",
+      "label": "Шаг 3:\nМожно упростить формулами\nстепеней, корней, логарифмов\nили тригонометрии?",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprS5",
+      "label": "Действие:\nПрименить формулы из Сервисного хаба,\nзатем вернуться к Шагу 1",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprS6",
+      "label": "Готово:\nУпрощенный вид или число",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprS8",
+      "label": "Если заданы значения переменных:\nПодставить и вычислить\nпо порядку действий",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprF1",
+      "label": "Есть общий множитель\nу всех слагаемых?",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprF1A",
+      "label": "Вынести общий множитель\nза скобки",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprF2",
+      "label": "Подходит формула\nсокращенного умножения\nили выделение полного квадрата?",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprF2A",
+      "label": "Применить ФСУ:\nРазность квадратов,\nквадрат суммы или разности,\nсумма и разность кубов\nПолный квадрат: x² + px = (x + p/2)² - p²/4",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprF3",
+      "label": "Четыре и больше слагаемых\nи работает группировка?",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprF3A",
+      "label": "Сгруппировать слагаемые,\nвынести общую скобку",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprF4",
+      "label": "Остался квадратный трехчлен\nax² + bx + c?",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprF4A",
+      "label": "Найти корни x1 и x2 через Дискриминант:\nax² + bx + c = a(x - x1)(x - x2)",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprF4B",
+      "label": "Степень выше 2?",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprF5",
+      "label": "Проверка:\nМожно ли разложить\nкаждый множитель дальше?\nРаскрыть скобки и сравнить",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprI1",
+      "label": "Доказать тождество:\nВзять более сложную часть",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprI2",
+      "label": "Преобразовать ее формулами\nк виду другой части",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprI3",
+      "label": "Получилось?",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprI4",
+      "label": "Другой путь:\nПреобразовать обе части к одному виду\nили проверить, что разность равна 0",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprI5",
+      "label": "Тождество доказано",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprRad",
+      "label": "Радикалы в выражении:\nИррациональность в знаменателе: домножить на сопряжённое\n1 / (√a - √b) = (√a + √b) / (a - b)\nВынести множитель из-под корня: √(a²·b) = модуль a · √b\nСложный радикал: √(a ± 2√b) = √x ± √y, где x + y = a, x·y = b",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprDiv",
+      "label": "Степень числителя не меньше степени знаменателя:\nВыделить целую часть делением многочлена уголком\nДробь = частное + остаток / знаменатель",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "ExprCmp",
+      "label": "Сравнение чисел:\nРазность A - B и её знак\nОбщее основание или общий показатель\nОбе положительные части - в квадрат\nОценка между целыми: 2 меньше √5 меньше 3\nЛогарифм: сравнить основание и аргумент с 1",
+      "data": {
+        "sectionId": "XPR"
+      }
+    },
+    {
+      "id": "FuncTarget",
+      "label": "Цель:\nПонять, что нужно\nузнать о функции",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncQ1",
+      "label": "Что требуется?",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncV1",
+      "label": "Значение в точке или сложная функция:\nВместо x подставить число\nили выражение в скобках",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncD1",
+      "label": "Область определения:\nНайти запреты\nпо типам выражений",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncD2",
+      "label": "Запреты:\nЗнаменатель не равен 0\nКорень четной степени: подкоренное больше или равно 0\nЛогарифм: аргумент больше 0,\nоснование больше 0 и не равно 1\ntg: аргумент не равен π/2 + πk\nctg: аргумент не равен πk\narcsin и arccos: аргумент от -1 до 1\nСтепень с переменным показателем:\nоснование больше 0",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncD3",
+      "label": "Решить все условия вместе:\nравенства - через Диспетчерскую,\nнеравенства - блок Неравенства (метод интервалов)\nОтвет: общая часть решений",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncR1",
+      "label": "Область значений:\nИзвестен график?",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncR2",
+      "label": "Смотреть по оси OY:\nОт наименьшего до наибольшего значения",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncR3",
+      "label": "x входит в формулу один раз\nи она собрана из простых функций:\nквадрат, модуль, корень, sin, cos?",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncR4",
+      "label": "Идти изнутри наружу:\nНа каждом шаге пересчитывать\nдиапазон значений",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncR5",
+      "label": "Приём: взять y как параметр\nУравнение f(x) = y имеет решение?\nНайти все такие y",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncG1",
+      "label": "Построить график:\nКакой вид функции?",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncG2",
+      "label": "Линейная y = kx + b:\nПрямая по двум точкам",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncG3",
+      "label": "Квадратичная:\nВершина x0 = -b / 2a\nВетви вверх при a больше 0\nПересечение с OY - точка 0, c\nПересечения с OX - корни",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncG4",
+      "label": "Дробно-линейная (ax + b) / (cx + d):\nТолько при c ≠ 0 и ad - bc ≠ 0\nЕсли c = 0 - это обычная линейная функция\nЕсли ad = bc - числитель и знаменатель пропорциональны,\nфункция постоянна (кроме точки x = -d / c)\nГипербола с центром (-d / c, a / c)\nВертикальная асимптота: знаменатель равен 0, x = -d / c\nГоризонтальная асимптота: y = a / c",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncG5",
+      "label": "Другая:\nВзять опорный график\nx², √x, модуль x, a^x, log, sin, cos, tg\nи преобразовать его",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncG6",
+      "label": "Преобразования графика y = f(x):\nВверх на c: f(x) + c\nВправо на a: f(x - a)\nОтражение: -f(x) относительно OX,\nf(-x) относительно OY\nМодуль: часть ниже OX отразить вверх",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncP1",
+      "label": "Исследование свойств:\nИдти по порядку",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncP2",
+      "label": "Область определения\nсимметрична относительно нуля?",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncP3",
+      "label": "Ни четная, ни нечетная",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncP4",
+      "label": "Четность:\nСравнить f(-x) с f(x)",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncP5",
+      "label": "Четная:\nГрафик симметричен\nотносительно оси OY",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncP6",
+      "label": "Нечетная:\nГрафик симметричен\nотносительно начала координат",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncP8",
+      "label": "Нули функции:\nf(x) = 0\nТочки пересечения с OX",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncP9",
+      "label": "Знакопостоянство:\nГде f(x) больше 0\nи где меньше 0",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncP10",
+      "label": "Монотонность:\nПо графику или\nчерез знак производной",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncP11",
+      "label": "Периодичность:\nЕсть ли число T, что\nf(x + T) = f(x)",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncI1",
+      "label": "Обратная функция:\nФункция монотонна\nна области определения?",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncI2",
+      "label": "Обратной на всей области нет:\nСузить область определения\nдо промежутка монотонности",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncI3",
+      "label": "Выразить x через y:\nРешить уравнение y = f(x)\nотносительно x",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncI4",
+      "label": "Поменять x и y местами\nОбласть определения обратной -\nобласть значений исходной\nГрафик симметричен относительно y = x",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncG7",
+      "label": "Кривая, не являющаяся функцией:\nОкружность (x - a)² + (y - b)² = r²\nРомб модуль x + модуль y = a\nГипербола xy = k\nСтроить по характерным точкам и симметрии",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "FuncX",
+      "label": "Производная и экстремумы:\nНайти f'(x), приравнять к 0 - критические точки\nf' больше 0 - возрастает, f' меньше 0 - убывает\nСмена знака с плюса на минус - максимум, наоборот - минимум\nНаибольшее и наименьшее на отрезке: значения в критических точках и на концах\nКасательная в точке x0: y = f(x0) + f'(x0)(x - x0)",
+      "data": {
+        "sectionId": "FUN"
+      }
+    },
+    {
+      "id": "CplxTarget",
+      "label": "Цель:\nРаботать с числом z = a + bi\na - действительная часть, b - мнимая\ni² = -1\nТочка с координатами a, b на плоскости",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxQ1",
+      "label": "Что требуется?",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxOpsQ",
+      "label": "Какое действие?",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxAdd",
+      "label": "Сложение и вычитание:\nОтдельно действительные части\nи отдельно мнимые",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxMul",
+      "label": "Умножение:\nРаскрыть скобки как обычно\nи заменить i² на -1",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxDiv",
+      "label": "Деление:\nДомножить числитель и знаменатель\nна число, сопряженное знаменателю\nЗнаменатель станет действительным",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxChar",
+      "label": "Характеристики числа z = a + bi:\nСопряженное: a - bi\nМодуль r: корень из a² + b²\nz умножить на сопряженное = r²",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxArg",
+      "label": "Аргумент φ:\nУгол между осью OX\nи вектором a, b\ntg φ = b / a\nЧетверть определить по знакам a и b",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxPQ",
+      "label": "Нужна степень или корень?",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxIPow",
+      "label": "Степень самого i:\nОстаток n при делении на 4\n0 дает 1, 1 дает i,\n2 дает -1, 3 дает -i",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxMoivre",
+      "label": "Большая степень, формула Муавра:\nz^n = r^n (cos nφ + i sin nφ)\nСначала найти r и φ",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxRoot",
+      "label": "Корень n-й степени из z:\nРовно n значений, k = 0, 1, ..., n-1\nМодуль: корень n-й степени из r\nАргумент: (φ + 2πk) / n\nСначала найти r и φ",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxEq1",
+      "label": "Уравнение с комплексным\nнеизвестным:\nКакой вид?",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxEq2",
+      "label": "Квадратное с действительными\nкоэффициентами и D меньше 0:\nДва сопряженных корня\nx = (-b ± i√(-D)) / 2a",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxEq3",
+      "label": "Есть z вместе с сопряженным\nили с модулем:\nЗаписать z = x + iy\nПриравнять отдельно\nдействительные и мнимые части\nПолучится система",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxEq4",
+      "label": "Вид z^n = w:\nНайти корень n-й степени из w",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxEq5",
+      "label": "Линейное по z:\nРешать как обычное линейное,\nдействия с i по правилам",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxEq6",
+      "label": "Квадратное с комплексными\nкоэффициентами:\nДискриминант комплексный,\nего корень найти как корень 2-й степени",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxTrigF",
+      "label": "Тригонометрическая форма:\nz = r(cos φ + i sin φ)\nУмножение: модули перемножить, аргументы сложить\nДеление: модули разделить, аргументы вычесть",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "CplxLoc",
+      "label": "Множество точек на плоскости:\nМодуль z - z0 = R: окружность с центром z0\nМодуль z - a = модуль z - b: серединный перпендикуляр\nRe z = c, Im z = c: прямые\nЗаписать z = x + iy и получить уравнение линии",
+      "data": {
+        "sectionId": "CMP"
+      }
+    },
+    {
+      "id": "IneqTarget",
+      "label": "Цель:\nНайти ВСЕ x, при которых неравенство верно\nОтвет - множество: промежутки, их объединение\nили пустое множество",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqS0",
+      "label": "Шаг 1: Всё в одну сторону, справа 0\nВид: f(x) и знак (больше, меньше, не больше, не меньше)\nНЕ умножать и НЕ делить на выражение с x,\nпока неизвестен его знак",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqS1",
+      "label": "Шаг 2: ОДЗ\nЗнаменатели, корни чётной степени, логарифмы,\ntg и ctg - те же запреты, что в блоке Функции\nОтвет = решение, пересечённое с ОДЗ",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqQ1",
+      "label": "Шаг 3: Какой тип неравенства?",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqLin",
+      "label": "Линейное ax больше b (или другой знак):\na больше 0 - знак сохраняется\na меньше 0 - знак МЕНЯЕТСЯ на противоположный\na = 0 - подставить в 0 и знак b: если верно, то ЛЮБОЕ x, иначе решений нет\nСтрогое 0·x больше 0 - решений нет, нестрогое 0·x ≥ 0 - любое x",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqQuad",
+      "label": "Квадратное ax² + bx + c и знак:\na = 0 - это линейное (см. выше)\nНайти корни (Виета, дискриминант)\nЭскиз параболы: ветви вверх при a больше 0\nВзять промежутки по знаку\nD = 0: строгое - все x кроме корня, нестрогое - включить корень\nD меньше 0: парабола целиком по одну сторону от оси OX",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqInt",
+      "label": "Метод интервалов (многочлен, дробь):\n1. Разложить на множители\n2. Нули числителя и знаменателя отметить на оси\n3. Знак на крайнем правом промежутке = знак старшего коэффициента\n4. Корень нечётной кратности - знак меняется,\nчётной кратности - знак НЕ меняется\n5. Нестрогое: нули числителя включить, знаменателя - никогда\n6. Отдельно проверить изолированные точки",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqFrac",
+      "label": "Дробное P / Q и знак:\nНЕ домножать на Q - его знак неизвестен\nВсё влево, общий знаменатель, одна дробь\nЗатем метод интервалов",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqMod",
+      "label": "Модуль:\n|A| меньше B: система B больше 0, -B меньше A меньше B\n|A| больше B: совокупность A меньше -B или A больше B\n(если B меньше 0 - верно везде, где A определено)\n|A| и |B|: возвести в квадрат, (A-B)(A+B) и знак\nНесколько модулей - метод промежутков",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqRad1",
+      "label": "Корень, знак меньше: √A меньше B\nСистема: A ≥ 0, B больше 0, A меньше B²",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqRad2",
+      "label": "Корень, знак больше: √A больше B\nСовокупность двух систем:\n(B меньше 0 и A ≥ 0) или (B ≥ 0 и A больше B²)\nНечётный корень - возводить в степень без ограничений",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqExp",
+      "label": "Показательное, сравнение a^f и a^g:\na больше 1 - знак сохраняется для f и g\n0 меньше a меньше 1 - знак МЕНЯЕТСЯ\nЧисло справа привести к тому же основанию\nКвадратный паттерн: замена t = a^x при t больше 0\nРешить неравенство по t, затем вернуться к x",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqLog",
+      "label": "Логарифмическое:\nШаг 1: ОДЗ - аргументы больше 0,\nоснования больше 0 и не равны 1\nШаг 2: свести к log_a f и log_a g с одним основанием\na больше 1 - знак сохраняется для f и g\n0 меньше a меньше 1 - знак МЕНЯЕТСЯ\nШаг 3: пересечь с ОДЗ",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqTrig",
+      "label": "Тригонометрическое:\nСвести к sin x, cos x, tg x или ctg x и числу\nЕдиничная окружность: отметить дугу решений\nЗаписать промежуток плюс период (2πk или πk)\nСложное - замена t, неравенство по t, вернуться к x",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqRat",
+      "label": "Метод рационализации (замена знака):\nlog_a f - log_a g имеет знак (a-1)(f-g)\nlog_h f имеет знак (h-1)(f-1)\na^f - a^g имеет знак (a-1)(f-g)\n|f| - |g| имеет знак (f-g)(f+g)\n√f - √g имеет знак f - g\nТолько внутри ОДЗ, затем метод интервалов",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqSys",
+      "label": "Система неравенств:\nРешить каждое, ответ - ПЕРЕСЕЧЕНИЕ\nСовокупность (или): ОБЪЕДИНЕНИЕ\nУдобно: ось x и штриховки",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "IneqChk",
+      "label": "Финал: Проверка и запись ответа\nСтрогость концов, выколотые точки, ОДЗ\nПодставить пробное число из каждого промежутка\nЗаписать промежутки по возрастанию",
+      "data": {
+        "sectionId": "INEQ"
+      }
+    },
+    {
+      "id": "ParTarget",
+      "label": "Цель:\nПараметр a - число, значение которого не задано\nРешить задачу ПРИ КАЖДОМ значении a\nили найти, при каких a условие выполнено",
+      "data": {
+        "sectionId": "PAR"
+      }
+    },
+    {
+      "id": "ParQ1",
+      "label": "Какая задача?",
+      "data": {
+        "sectionId": "PAR"
+      }
+    },
+    {
+      "id": "ParLin",
+      "label": "Линейное k(a)·x = m(a):\nНайти a, при которых k(a) = 0\nДля них отдельно: m(a) = 0 - любое x, иначе корней нет\nДля остальных a: x = m(a) / k(a)",
+      "data": {
+        "sectionId": "PAR"
+      }
+    },
+    {
+      "id": "ParQuad",
+      "label": "Квадратное с параметром:\nСтарший коэффициент равен 0? Разобрать отдельно (линейное)\nИначе дискриминант D(a): знак D даёт число корней\nУсловия на корни - через теорему Виета",
+      "data": {
+        "sectionId": "PAR"
+      }
+    },
+    {
+      "id": "ParPos",
+      "label": "Расположение корней относительно числа m:\nПарабола, a больше 0: условия на D, на значение f(m)\nи на положение вершины x0 = -b / 2a\nОба корня больше m: D ≥ 0, x0 больше m, f(m) больше 0",
+      "data": {
+        "sectionId": "PAR"
+      }
+    },
+    {
+      "id": "ParAn",
+      "label": "Метод «параметр как переменная»:\nВыразить a через x: a = g(x)\nПостроить график g и горизонтальные прямые y = a\nЧисло пересечений = число корней",
+      "data": {
+        "sectionId": "PAR"
+      }
+    },
+    {
+      "id": "ParPlane",
+      "label": "Плоскость (x, a):\nНарисовать множество решений как область\nСечения вертикальными прямыми a = const\nУдобно для систем и неравенств с параметром",
+      "data": {
+        "sectionId": "PAR"
+      }
+    },
+    {
+      "id": "ParSym",
+      "label": "Единственное решение и симметрия:\nЕсли уравнение не меняется при замене x на -x\n(или x на c - x), решения идут парами\nЕдинственное решение - только при x = 0 (или x = c/2)\nЭто НЕОБХОДИМО - затем ДОСТАТОЧНОСТЬ: проверить найденные a",
+      "data": {
+        "sectionId": "PAR"
+      }
+    },
+    {
+      "id": "ParIneq",
+      "label": "Неравенство с параметром:\nРазбор по знаку старшего коэффициента (при его нуле отдельно:\nстрогое 0·x больше c - нет решений, нестрогое 0·x ≥ 0 - любое x),\nпо знаку дискриминанта и по порядку корней (какой левее - зависит от a)",
+      "data": {
+        "sectionId": "PAR"
+      }
+    },
+    {
+      "id": "ParAns",
+      "label": "Ответ: по каждому диапазону a отдельно\nНе потерять особые значения a\n(границы диапазонов, a = 0, D = 0)",
+      "data": {
+        "sectionId": "PAR"
+      }
+    },
+    {
+      "id": "SeqTarget",
+      "label": "Цель:\nНайти член, сумму или закономерность\nпоследовательности чисел",
+      "data": {
+        "sectionId": "SEQ"
+      }
+    },
+    {
+      "id": "SeqQ1",
+      "label": "Что задано?",
+      "data": {
+        "sectionId": "SEQ"
+      }
+    },
+    {
+      "id": "SeqAr",
+      "label": "Арифметическая прогрессия, разность d:\na_n = a_1 + (n-1)d\nS_n = (a_1 + a_n)·n / 2\nПризнак: a_(n+1) - a_n = d всегда\nСредний член: 2a_n = a_(n-1) + a_(n+1)",
+      "data": {
+        "sectionId": "SEQ"
+      }
+    },
+    {
+      "id": "SeqGeo",
+      "label": "Геометрическая прогрессия, знаменатель q ≠ 0:\nb_n = b_1·q^(n-1)\nS_n = b_1(q^n - 1) / (q - 1) при q ≠ 1, S_n = n·b_1 при q = 1\nПризнак: b_(n+1) / b_n = q\nСредний член: b_n² = b_(n-1)·b_(n+1)",
+      "data": {
+        "sectionId": "SEQ"
+      }
+    },
+    {
+      "id": "SeqInf",
+      "label": "Бесконечно убывающая геометрическая:\nУсловие: модуль q меньше 1\nS = b_1 / (1 - q)\nПериодическая дробь 0,(3) = 3/10 + 3/100 + ...\nпревращается в обыкновенную",
+      "data": {
+        "sectionId": "SEQ"
+      }
+    },
+    {
+      "id": "SeqRec",
+      "label": "Рекуррентная a_(n+1) = f(a_n):\nВыписать первые члены, увидеть закономерность\nЛинейная a_(n+1) = p·a_n + q: сдвиг b_n = a_n - c,\nc = q / (1 - p), получится геометрическая\nДоказать найденную формулу индукцией",
+      "data": {
+        "sectionId": "SEQ"
+      }
+    },
+    {
+      "id": "SeqSum",
+      "label": "Сумма по формуле общего члена:\nТелескопическая: 1 / (n(n+1)) = 1/n - 1/(n+1)\n1 + 2 + ... + n = n(n+1) / 2\n1² + 2² + ... + n² = n(n+1)(2n+1) / 6\n1³ + 2³ + ... + n³ = (n(n+1) / 2)²",
+      "data": {
+        "sectionId": "SEQ"
+      }
+    },
+    {
+      "id": "SeqBin",
+      "label": "Бином Ньютона и сочетания:\n(a + b)^n = сумма по k от 0 до n: C(n,k)·a^(n-k)·b^k\nC(n,k) = n! / (k!(n-k)!) - строка треугольника Паскаля\nНужный член искать по заданной степени\nСумма всех коэффициентов: подставить a = b = 1",
+      "data": {
+        "sectionId": "SEQ"
+      }
+    },
+    {
+      "id": "SeqInd",
+      "label": "Метод математической индукции:\n1. База: проверить n = 1\n2. Шаг: допустить, что верно при n = k\n3. Доказать при n = k + 1 через допущение\nВывод: верно для всех натуральных n",
+      "data": {
+        "sectionId": "SEQ"
+      }
+    },
+    {
+      "id": "SeqSys",
+      "label": "Условие связывает члены между собой:\nНеизвестные a_1 и d (или b_1 и q)\nСоставить систему по условиям\nТри числа в прогрессии: a-d, a, a+d\nили b/q, b, b·q",
+      "data": {
+        "sectionId": "SEQ"
+      }
+    },
+    {
+      "id": "WordTarget",
+      "label": "Цель:\nПеревести сюжет на язык уравнения\nи ответить именно на заданный вопрос",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "WordS1",
+      "label": "Шаг 1: Выбрать неизвестные\nОбозначить то, что спрашивают, или то,\nчерез что проще выразить остальное\nЗаписать единицы и ограничения: больше 0, целое",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "WordQ",
+      "label": "Шаг 2: Какой тип сюжета?",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "WordMove",
+      "label": "Движение: S = v·t\nПо течению v + u, против течения v - u\nНавстречу - скорости складываются,\nвдогонку - вычитаются\nСредняя скорость = весь путь / всё время",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "WordWork",
+      "label": "Работа: весь объём = 1\nПроизводительность p = 1 / t\nВместе: p_1 + p_2 = 1 / t\nТрубы: наполняет - плюс, опустошает - минус",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "WordMix",
+      "label": "Смеси, сплавы, проценты:\nВещество = концентрация · масса раствора\nБаланс вещества до и после смешивания\np процентов от N = N·p / 100\nИзменение на p процентов: умножить на (1 ± p/100)",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "WordNum",
+      "label": "Числа и цифры:\nДвузначное число = 10a + b, цифры от 0 до 9, a ≥ 1\nОбратный порядок цифр: 10b + a\nНатуральные и целые - ограничения на корни",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "WordFin",
+      "label": "Банк и цены:\nЦена = стоимость единицы · количество\nВклад: N·(1 + p/100)^n - сложные проценты\nРавные платежи - сумма геометрической прогрессии",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "WordS3",
+      "label": "Шаг 3: Составить уравнения по условиям\n«на ... больше» - плюс, «в ... раз» - умножение\nОдно неизвестное - одно уравнение\nДва неизвестных - система",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "WordS4",
+      "label": "Шаг 4: Решить полученное уравнение или систему",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "WordS5",
+      "label": "Шаг 5: Проверка смысла\nОтбросить корни, противоречащие условию\n(отрицательное время, дробное число людей)\nЕдиницы измерения, ответ на вопрос задачи",
+      "data": {
+        "sectionId": "WORD"
+      }
+    },
+    {
+      "id": "NumTarget",
+      "label": "Цель:\nРешения только в целых или натуральных числах\nНе искать формулу, а ОГРАНИЧИТЬ перебор:\nделимость, остатки, оценки",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "NumQ1",
+      "label": "Какой вид задачи?",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "NumDiv",
+      "label": "Делимость, НОД и НОК:\nПризнаки на 2, 3, 4, 5, 9, 11\nАлгоритм Евклида: НОД(a, b) = НОД(b, остаток a на b)\nНОД(a, b)·НОК(a, b) = a·b\nРазложение на простые множители",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "NumLin",
+      "label": "Линейное ax + by = c:\nd = НОД(a, b) не делит c - решений нет\nИначе частное решение (x0, y0) - алгоритм Евклида\nОбщее: x = x0 + (b/d)t, y = y0 - (a/d)t, t целое",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "NumFact",
+      "label": "Разложение на множители:\nПривести к виду (A)(B) = N с целыми A, B\nПеребрать пары делителей числа N\nПриём: xy + ax + by = (x + b)(y + a) - ab",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "NumQuad",
+      "label": "Квадраты и степени:\nВыделить полный квадрат, разность квадратов\n(x - a)(x + a) = N\nДискриминант должен быть полным квадратом",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "NumMod",
+      "label": "Остатки и чётность:\nКвадрат даёт остаток 0 или 1 по модулю 3 и 4,\nи остаток 0, 1, 4 по модулю 8\nКуб: 0, 1, 8 по модулю 9\nОстатки сторон не совпали - решений нет\nМалая теорема Ферма: a^p - a делится на простое p",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "NumBound",
+      "label": "Оценка и перебор:\nУпорядочить неизвестные x ≤ y ≤ z\nОценить сверху и снизу, ограничить переменную\nПеребрать конечное число случаев",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "NumRat",
+      "label": "Целые и рациональные корни многочлена:\nЦелый корень делит свободный член\nРациональный p/q: p делит свободный член,\nq делит старший коэффициент",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "NumDesc",
+      "label": "Бесконечный спуск (олимпиадный приём):\nДопустить наименьшее решение\nПостроить из него меньшее - противоречие\nТак доказывают отсутствие решений",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "NumAns",
+      "label": "Ответ: все целые решения - формулой или списком\nПроверить подстановкой\nУчесть, натуральные числа нужны или целые",
+      "data": {
+        "sectionId": "NUM"
+      }
+    },
+    {
+      "id": "OlyTarget",
+      "label": "Цель:\nДоказать неравенство, найти наибольшее\nили наименьшее значение, решить нестандартное\nуравнение оценкой или подстановкой",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlyQ1",
+      "label": "Что требуется?",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlyProve",
+      "label": "Доказать неравенство A ≥ B:\nРазность A - B превратить в сумму квадратов\nx² + y² ≥ 2xy, (x + y)² ≥ 4xy\nx² + y² + z² ≥ xy + yz + zx\nРавенство - когда все квадраты равны 0",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlyAM",
+      "label": "Неравенство Коши для неотрицательных x_i:\n(x_1 + ... + x_n) / n ≥ корень n-й степени из x_1·...·x_n\nРавенство только при x_1 = ... = x_n\na + 1/a ≥ 2 при a больше 0\nЦепочка: гармоническое ≤ геометрическое ≤\nарифметическое ≤ квадратичное",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlyCS",
+      "label": "Коши-Буняковский:\n(a_1b_1 + ... + a_nb_n)² ≤ (a_1² + ... + a_n²)(b_1² + ... + b_n²)\nРавенство при пропорциональности наборов\nНужен для оценки сумм и дробей",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlyExt",
+      "label": "Наибольшее и наименьшее значение:\nКвадратичная: вершина параболы\nОграничены: sin, cos, квадрат ≥ 0, модуль ≥ 0\nОценка Коши или через сумму квадратов\nПроизводная и экстремумы - блок Функции",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlyEst",
+      "label": "Метод оценки (мажоранты):\nЛевая часть ≥ M, правая ≤ M\nРавенство возможно только когда обе части равны M\nПолучается система из двух простых условий\nВ ответе указать, когда достигается равенство",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlySq",
+      "label": "Сумма неотрицательных равна 0:\nx² + y² = 0 даёт x = 0 и y = 0\nОдно уравнение с двумя неизвестными:\nвыделить полные квадраты по каждой переменной",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlyMono",
+      "label": "Монотонность:\nСумма возрастающих функций возрастает\nУгадать корень, доказать единственность\nВозрастающая f: f(a) = f(b) даёт a = b\nСмесь типов, например 2^x = 5 - x: одна часть возрастает, другая убывает - корень не больше одного, подобрать его\nГрафически: построить обе части, число пересечений = число корней",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlyFE",
+      "label": "Функциональное уравнение:\nПодстановки x = 0, 1, -1, y = 0, y = x, y = 1/x\nНайти f(0), f(1), чётность и нечётность\nПредположить вид f(x) = kx + b или f(x) = x²\nОБЯЗАТЕЛЬНО проверить подстановкой в исходное",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlyFl",
+      "label": "Целая и дробная часть:\nx = [x] + {x}, 0 ≤ {x} меньше 1\n[x] = n равносильно n ≤ x меньше n + 1\nОбозначить n = [x], выразить x, наложить условие дробной части",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "OlySymm",
+      "label": "Симметрия и подстановки:\nСимметричные выражения через u = x + y, v = xy\nЗамена x на a - x для симметричных условий\nОднородность: деление на степень, масштабирование",
+      "data": {
+        "sectionId": "OLY"
+      }
+    },
+    {
+      "id": "CtrlTarget",
+      "label": "Цель:\nНе потерять корни и не принять посторонние\nпри преобразованиях\nОДЗ всегда считается для ИСХОДНОГО уравнения",
+      "data": {
+        "sectionId": "CTRL"
+      }
+    },
+    {
+      "id": "CtrlQ",
+      "label": "Какое преобразование применили?",
+      "data": {
+        "sectionId": "CTRL"
+      }
+    },
+    {
+      "id": "CtrlSq",
+      "label": "Возведение в чётную степень (квадрат):\nПРИОБРЕТЕНИЕ посторонних корней\nПроверить подстановкой в исходное\nили заранее поставить условие знака (B ≥ 0)",
+      "data": {
+        "sectionId": "CTRL"
+      }
+    },
+    {
+      "id": "CtrlDiv",
+      "label": "Деление или сокращение на выражение с x:\nПОТЕРЯ корней\nОтдельно решить g(x) = 0 и проверить эти значения\nЛучше вынести за скобки, а не сокращать",
+      "data": {
+        "sectionId": "CTRL"
+      }
+    },
+    {
+      "id": "CtrlFrac",
+      "label": "Умножение на знаменатель:\nПРИОБРЕТЕНИЕ корней, обнуляющих знаменатель\nИсключить их по ОДЗ исходного уравнения",
+      "data": {
+        "sectionId": "CTRL"
+      }
+    },
+    {
+      "id": "CtrlLog",
+      "label": "Свойства логарифмов:\nlog(bc) = log b + log c и log(b/c) РАСШИРЯЮТ ОДЗ\nlog(b²) = 2·log b СУЖАЕТ: верно 2·log(модуль b)\nПример: log(x-2) + log(x+1) = 0: ОДЗ x больше 2,\nпосле склейки log((x-2)(x+1)) ОДЗ шире - корень x ≈ -1,3 посторонний",
+      "data": {
+        "sectionId": "CTRL"
+      }
+    },
+    {
+      "id": "CtrlTrig",
+      "label": "Тригонометрия:\ntg x = sin x / cos x требует cos x не равен 0\nДеление на cos x теряет корни cos x = 0\nПодстановка t = tg(x/2) теряет x = π + 2πk\nСверять ответ с ОДЗ ИСХОДНОГО",
+      "data": {
+        "sectionId": "CTRL"
+      }
+    },
+    {
+      "id": "CtrlRoot",
+      "label": "Корни и модуль:\n√(a²) = модуль a, а не a\n(√a)² = a только при a ≥ 0\n√(ab) = √a·√b только при a ≥ 0 и b ≥ 0\nНарушение условий теряет или приобретает корни",
+      "data": {
+        "sectionId": "CTRL"
+      }
+    },
+    {
+      "id": "CtrlSub",
+      "label": "Замена переменной:\nУчесть область значений t\n(t больше 0 для a^x, модуль t не больше 1 для sin и cos)\nКорень t вне области отбросить, остальные вернуть к x",
+      "data": {
+        "sectionId": "CTRL"
+      }
+    },
+    {
+      "id": "CtrlEnd",
+      "label": "Итог: каждый найденный корень\nпроверен по ОДЗ или подстановкой в ИСХОДНОЕ\nтолько после этого записывается ответ",
+      "data": {
+        "sectionId": "CTRL"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-d072754225c996b649d89a77-1",
+      "sourceId": "Root",
+      "targetId": "QC",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 0
+      }
+    },
+    {
+      "id": "e-6405e1a42d932ab215a11e0a-1",
+      "sourceId": "QC",
+      "targetId": "QF",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 1
+      }
+    },
+    {
+      "id": "e-3ac047e96d22f1975fe3b3e6-1",
+      "sourceId": "QF",
+      "targetId": "QI",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 2
+      }
+    },
+    {
+      "id": "e-1111b11d05308eaf5520109f-1",
+      "sourceId": "QI",
+      "targetId": "QP",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 3
+      }
+    },
+    {
+      "id": "e-2497a981884f39964aa04670-1",
+      "sourceId": "QP",
+      "targetId": "QS",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 4
+      }
+    },
+    {
+      "id": "e-6c09b61b3ccca1e209cfaf4b-1",
+      "sourceId": "QS",
+      "targetId": "QW",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 5
+      }
+    },
+    {
+      "id": "e-e82a50e4ea8e638cfff1b3c0-1",
+      "sourceId": "QW",
+      "targetId": "QN",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 6
+      }
+    },
+    {
+      "id": "e-721abeac13bbc07dc5100695-1",
+      "sourceId": "QN",
+      "targetId": "QO",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 7
+      }
+    },
+    {
+      "id": "e-2187f222bc98a45abdb80293-1",
+      "sourceId": "QO",
+      "targetId": "Q1",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 8
+      }
+    },
+    {
+      "id": "e-45b4dbd35f9491f9bbe692e0-1",
+      "sourceId": "Q1",
+      "targetId": "Q2",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 9
+      }
+    },
+    {
+      "id": "e-15e087248105244ffff57473-1",
+      "sourceId": "Q1",
+      "targetId": "Q3",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 10
+      }
+    },
+    {
+      "id": "e-e1c1a1cbe44cf78cc877570a-1",
+      "sourceId": "Q3",
+      "targetId": "Q4",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 11
+      }
+    },
+    {
+      "id": "e-b1fa596b3e009a729c18b850-1",
+      "sourceId": "Q2",
+      "targetId": "NotEq",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 12
+      }
+    },
+    {
+      "id": "e-9d93309c9a286eba3c6aed80-1",
+      "sourceId": "Q3",
+      "targetId": "NotEq",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 13
+      }
+    },
+    {
+      "id": "e-93dcf87bc9f16cd3a08ece21-1",
+      "sourceId": "Q4",
+      "targetId": "NotEq",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 14
+      }
+    },
+    {
+      "id": "e-fb2c1cea1db79848fcaa2128-1",
+      "sourceId": "Dispatcher",
+      "targetId": "Q_Check",
+      "label": "Обычная алгебра",
+      "data": {
+        "kind": "solid",
+        "order": 15
+      }
+    },
+    {
+      "id": "e-4f446707350c8b2443510a1a-1",
+      "sourceId": "Q_Check",
+      "targetId": "Q_Type",
+      "label": "В строке только одна переменная",
+      "data": {
+        "kind": "solid",
+        "order": 16
+      }
+    },
+    {
+      "id": "e-2b5b5a44c30ba6461a0b6dac-1",
+      "sourceId": "LinTarget",
+      "targetId": "LinQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 17
+      }
+    },
+    {
+      "id": "e-6f4906fecadf6f9ba8d0eec3-1",
+      "sourceId": "LinQ1",
+      "targetId": "LinAct1",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 18
+      }
+    },
+    {
+      "id": "e-805fc6ee314746d1a7a14a73-1",
+      "sourceId": "LinAct1",
+      "targetId": "LinQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 19
+      }
+    },
+    {
+      "id": "e-6973d2aba45a4074c3bf1b94-1",
+      "sourceId": "LinQ1",
+      "targetId": "LinQ2",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 20
+      }
+    },
+    {
+      "id": "e-8e6469dd6b7fe968b1a5b7c9-1",
+      "sourceId": "LinQ2",
+      "targetId": "LinAct2",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 21
+      }
+    },
+    {
+      "id": "e-d9b258c0fd0301c156d803e8-1",
+      "sourceId": "LinAct2",
+      "targetId": "LinQ2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 22
+      }
+    },
+    {
+      "id": "e-7e70d5bba66f0bba95fec7fb-1",
+      "sourceId": "LinQ2",
+      "targetId": "LinAct3",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 23
+      }
+    },
+    {
+      "id": "e-2a7666bfed367bc8d0229326-1",
+      "sourceId": "LinAct3",
+      "targetId": "SpecQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 24
+      }
+    },
+    {
+      "id": "e-3f96812e8b1de5e6a8b6c00b-1",
+      "sourceId": "SpecQ1",
+      "targetId": "SpecAns1",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 25
+      }
+    },
+    {
+      "id": "e-f1a9d9ec18ce834f98fcbb8f-1",
+      "sourceId": "SpecQ1",
+      "targetId": "SpecQ2",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 26
+      }
+    },
+    {
+      "id": "e-ef58cab3c8f4038ab379cbbb-1",
+      "sourceId": "SpecQ2",
+      "targetId": "SpecAns2",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 27
+      }
+    },
+    {
+      "id": "e-27490d6ea1645cf9689a2cce-1",
+      "sourceId": "SpecQ2",
+      "targetId": "SpecAns3",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 28
+      }
+    },
+    {
+      "id": "e-48fdf304e3f5c4467dda5370-1",
+      "sourceId": "QuadTarget",
+      "targetId": "QuadQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 29
+      }
+    },
+    {
+      "id": "e-0cbd0ae13d188bfbbeed58dd-1",
+      "sourceId": "QuadQ1",
+      "targetId": "QuadAct1",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 30
+      }
+    },
+    {
+      "id": "e-62f55713c53c677c080d7f36-1",
+      "sourceId": "QuadAct1",
+      "targetId": "QuadQ2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 31
+      }
+    },
+    {
+      "id": "e-1ee23649c57283890f7fe5b6-1",
+      "sourceId": "QuadQ1",
+      "targetId": "QuadQ2",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 32
+      }
+    },
+    {
+      "id": "e-bd6581b290e44c6f27036a5b-1",
+      "sourceId": "QuadQ2",
+      "targetId": "QuadQ3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 33
+      }
+    },
+    {
+      "id": "e-c4eee78119addaf0bed45b24-1",
+      "sourceId": "QuadQ3",
+      "targetId": "QuadQ4",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 34
+      }
+    },
+    {
+      "id": "e-cc59f5c2d55a5ebbc6b3f370-1",
+      "sourceId": "QuadQ4",
+      "targetId": "Неполные",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 35
+      }
+    },
+    {
+      "id": "e-26480aceb9da57f5f6d8c2e5-1",
+      "sourceId": "Неполные",
+      "targetId": "Неполные1",
+      "label": "нет c",
+      "data": {
+        "kind": "solid",
+        "order": 36
+      }
+    },
+    {
+      "id": "e-09726ef3856449193c38be76-1",
+      "sourceId": "Неполные",
+      "targetId": "Неполные2",
+      "label": "нет b",
+      "data": {
+        "kind": "solid",
+        "order": 37
+      }
+    },
+    {
+      "id": "e-c1d862e1cf0ab1a25f3dee10-1",
+      "sourceId": "QuadQ4",
+      "targetId": "Полные",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 38
+      }
+    },
+    {
+      "id": "e-ba6a15c672749ff60c46eb0e-1",
+      "sourceId": "Полные",
+      "targetId": "QuadQ5",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 39
+      }
+    },
+    {
+      "id": "e-ae2ccf07ac42ab20370c9fcf-1",
+      "sourceId": "QuadQ5",
+      "targetId": "Виет",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 40
+      }
+    },
+    {
+      "id": "e-b402d4886730835024488fcb-1",
+      "sourceId": "QuadQ5",
+      "targetId": "Дискр",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 41
+      }
+    },
+    {
+      "id": "e-c727e5594c0a3c62e14809e7-1",
+      "sourceId": "Дискр",
+      "targetId": "DQ",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 42
+      }
+    },
+    {
+      "id": "e-a4bfb7fa5ecb92dea0fc5658-1",
+      "sourceId": "DQ",
+      "targetId": "D1",
+      "label": "D меньше 0",
+      "data": {
+        "kind": "solid",
+        "order": 43
+      }
+    },
+    {
+      "id": "e-89958473a3d14c8cfbea06b7-1",
+      "sourceId": "DQ",
+      "targetId": "D2",
+      "label": "D = 0",
+      "data": {
+        "kind": "solid",
+        "order": 44
+      }
+    },
+    {
+      "id": "e-bb239271f21f252d28e38251-1",
+      "sourceId": "DQ",
+      "targetId": "D3",
+      "label": "D больше 0",
+      "data": {
+        "kind": "solid",
+        "order": 45
+      }
+    },
+    {
+      "id": "e-7a43bd486309f228a6f178b8-1",
+      "sourceId": "HighTarget",
+      "targetId": "HighQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 46
+      }
+    },
+    {
+      "id": "e-988666b8efb2d576e7d59341-1",
+      "sourceId": "HighQ1",
+      "targetId": "HighAct1",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 47
+      }
+    },
+    {
+      "id": "e-4aebc154ba9063acb78fbcac-1",
+      "sourceId": "HighQ1",
+      "targetId": "HighQ2",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 48
+      }
+    },
+    {
+      "id": "e-f7f10f17f32a3fb98aaa2c1a-1",
+      "sourceId": "HighQ2",
+      "targetId": "HighAct2",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 49
+      }
+    },
+    {
+      "id": "e-639a4e65852c8f290d41c574-1",
+      "sourceId": "HighQ2",
+      "targetId": "HighQ3",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 50
+      }
+    },
+    {
+      "id": "e-5c02fa12cf44b01d7d4fdbd7-1",
+      "sourceId": "HighQ3",
+      "targetId": "HighAct3",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 51
+      }
+    },
+    {
+      "id": "e-0c923b1ad94e9b9aade10fd0-1",
+      "sourceId": "HighQ3",
+      "targetId": "HighQ3b",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 52
+      }
+    },
+    {
+      "id": "e-9915075e0b9df44931d75e74-1",
+      "sourceId": "HighQ3b",
+      "targetId": "HighRec",
+      "label": "Возвратное",
+      "data": {
+        "kind": "solid",
+        "order": 53
+      }
+    },
+    {
+      "id": "e-b3951ce95855fbf0bf06249b-1",
+      "sourceId": "HighQ3b",
+      "targetId": "HighPair",
+      "label": "Четыре скобки",
+      "data": {
+        "kind": "solid",
+        "order": 54
+      }
+    },
+    {
+      "id": "e-ca3371e40573d4ac1784a442-1",
+      "sourceId": "HighQ3b",
+      "targetId": "HighShift",
+      "label": "Сумма двух одинаковых степеней",
+      "data": {
+        "kind": "solid",
+        "order": 55
+      }
+    },
+    {
+      "id": "e-03d9815f72fcf5d6608c0062-1",
+      "sourceId": "HighQ3b",
+      "targetId": "HighHom",
+      "label": "Однородное",
+      "data": {
+        "kind": "solid",
+        "order": 56
+      }
+    },
+    {
+      "id": "e-cf77caf41b3724aa33e5dbde-1",
+      "sourceId": "HighQ3b",
+      "targetId": "HighQ4",
+      "label": "Особого вида нет",
+      "data": {
+        "kind": "solid",
+        "order": 57
+      }
+    },
+    {
+      "id": "e-93c0e7711c6cf9bbb0c85b79-1",
+      "sourceId": "HighQ4",
+      "targetId": "Безу",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 58
+      }
+    },
+    {
+      "id": "e-a1dd435d53f87a3780722a2a-1",
+      "sourceId": "HighQ4",
+      "targetId": "ВУЗ",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 59
+      }
+    },
+    {
+      "id": "e-f5d621513905cdffe685573a-1",
+      "sourceId": "Безу",
+      "targetId": "HighUnc",
+      "label": "Корней среди p/q нет",
+      "data": {
+        "kind": "dotted",
+        "order": 60
+      }
+    },
+    {
+      "id": "e-2084031d2cfb977866c9153f-1",
+      "sourceId": "Безу",
+      "targetId": "HighVi",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 61
+      }
+    },
+    {
+      "id": "e-c45bde03ca55ef432cb20c7a-1",
+      "sourceId": "HighUnc",
+      "targetId": "HighSq",
+      "label": "Не получилось",
+      "data": {
+        "kind": "dotted",
+        "order": 62
+      }
+    },
+    {
+      "id": "e-605225d5a1ca57a316a8cbff-1",
+      "sourceId": "HighQ3b",
+      "targetId": "HighSq",
+      "label": "Степень 4, особого вида нет",
+      "data": {
+        "kind": "solid",
+        "order": 63
+      }
+    },
+    {
+      "id": "e-503804a287dfd5621f96df2c-1",
+      "sourceId": "HighSq",
+      "targetId": "ВУЗ",
+      "label": "Не получилось",
+      "data": {
+        "kind": "dotted",
+        "order": 64
+      }
+    },
+    {
+      "id": "e-b8d6b31ec251558fe630adc5-1",
+      "sourceId": "HighSq",
+      "targetId": "ExprF2A",
+      "label": "Разность квадратов",
+      "data": {
+        "kind": "dotted",
+        "order": 65
+      }
+    },
+    {
+      "id": "e-1dfc90d82f9330555b571921-1",
+      "sourceId": "ExprF4B",
+      "targetId": "HighSq",
+      "label": "Не раскладывается",
+      "data": {
+        "kind": "dotted",
+        "order": 66
+      }
+    },
+    {
+      "id": "e-fa8176850d423138d372a213-1",
+      "sourceId": "HighSq",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 67
+      }
+    },
+    {
+      "id": "e-9a586a70fead1df619d5b1c8-1",
+      "sourceId": "SysTarget",
+      "targetId": "SysQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 68
+      }
+    },
+    {
+      "id": "e-1afabd94aec54f2ba950ce51-1",
+      "sourceId": "SysQ1",
+      "targetId": "SysParam",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 69
+      }
+    },
+    {
+      "id": "e-7e5c908537cab8ce4dc4d453-1",
+      "sourceId": "SysQ1",
+      "targetId": "SysQ2",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 70
+      }
+    },
+    {
+      "id": "e-e566f53f81d80b54ce2dcec9-1",
+      "sourceId": "SysQ2",
+      "targetId": "SysQ3",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 71
+      }
+    },
+    {
+      "id": "e-9f8c32e7afa66c7d8daf0c1d-1",
+      "sourceId": "SysQ3",
+      "targetId": "Гаусс",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 72
+      }
+    },
+    {
+      "id": "e-90129b7c8fd1143ece6d993e-1",
+      "sourceId": "SysQ3",
+      "targetId": "Школа",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 73
+      }
+    },
+    {
+      "id": "e-e56f6561623b52d2207b97a8-1",
+      "sourceId": "SysQ2",
+      "targetId": "Школа",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 74
+      }
+    },
+    {
+      "id": "e-22877898e28e4a33e8043056-1",
+      "sourceId": "Школа",
+      "targetId": "Метод1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 75
+      }
+    },
+    {
+      "id": "e-3b0c373ed7dcedfc258d167b-1",
+      "sourceId": "Школа",
+      "targetId": "Метод2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 76
+      }
+    },
+    {
+      "id": "e-cecf02eff25eae8303813a0a-1",
+      "sourceId": "Школа",
+      "targetId": "SysSpec",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 77
+      }
+    },
+    {
+      "id": "e-fd924e4538e77565f612fe1d-1",
+      "sourceId": "SysSpec",
+      "targetId": "SysSym",
+      "label": "Симметричная",
+      "data": {
+        "kind": "solid",
+        "order": 78
+      }
+    },
+    {
+      "id": "e-ae6a29fc4fdb1596c729a9e9-1",
+      "sourceId": "SysSpec",
+      "targetId": "SysHom",
+      "label": "Однородное уравнение",
+      "data": {
+        "kind": "solid",
+        "order": 79
+      }
+    },
+    {
+      "id": "e-db72d63f8d170e6902ecd54c-1",
+      "sourceId": "SysSpec",
+      "targetId": "SysFact",
+      "label": "Можно разложить на множители",
+      "data": {
+        "kind": "solid",
+        "order": 80
+      }
+    },
+    {
+      "id": "e-242a9d2967618c9bac5daa47-1",
+      "sourceId": "SysSpec",
+      "targetId": "SysGraph",
+      "label": "Нужно число решений",
+      "data": {
+        "kind": "solid",
+        "order": 81
+      }
+    },
+    {
+      "id": "e-e0c5b6bc76b680af686173cc-1",
+      "sourceId": "Veq",
+      "targetId": "VeqQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 82
+      }
+    },
+    {
+      "id": "e-f7fd150c39ceeb10c2143100-1",
+      "sourceId": "VeqQ1",
+      "targetId": "VeqAct1",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 83
+      }
+    },
+    {
+      "id": "e-c9508d4e7858e58d19e3968a-1",
+      "sourceId": "VeqQ1",
+      "targetId": "VeqAct2",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 84
+      }
+    },
+    {
+      "id": "e-42ef5b1b22fb3ce94c925340-1",
+      "sourceId": "VeqAct1",
+      "targetId": "SysTarget",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 85
+      }
+    },
+    {
+      "id": "e-135026f273d88fc7f736a818-1",
+      "sourceId": "VeqAct2",
+      "targetId": "SysTarget",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 86
+      }
+    },
+    {
+      "id": "e-e8e55ee996a72e7c7e7a431e-1",
+      "sourceId": "FracTarget",
+      "targetId": "FracStep1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 87
+      }
+    },
+    {
+      "id": "e-f6fcd1d4b2852341ff4af4b0-1",
+      "sourceId": "FracStep1",
+      "targetId": "FracQ",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 88
+      }
+    },
+    {
+      "id": "e-2645a78303d498403c18e5fa-1",
+      "sourceId": "FracQ",
+      "targetId": "FracZero",
+      "label": "Дробь равна нулю",
+      "data": {
+        "kind": "solid",
+        "order": 89
+      }
+    },
+    {
+      "id": "e-2c1cc1d6af922faa1d502363-1",
+      "sourceId": "FracQ",
+      "targetId": "FracProp",
+      "label": "Пропорция",
+      "data": {
+        "kind": "solid",
+        "order": 90
+      }
+    },
+    {
+      "id": "e-f6c1e83db59a50d83f2c43c4-1",
+      "sourceId": "FracQ",
+      "targetId": "FracSub",
+      "label": "Повторяющийся блок",
+      "data": {
+        "kind": "solid",
+        "order": 91
+      }
+    },
+    {
+      "id": "e-6d3099e6208b64f52a32ff62-1",
+      "sourceId": "FracQ",
+      "targetId": "FracStep2",
+      "label": "Общий случай",
+      "data": {
+        "kind": "solid",
+        "order": 92
+      }
+    },
+    {
+      "id": "e-cf4f2c326eadc757e0f0617b-1",
+      "sourceId": "TrigTarget",
+      "targetId": "TrigODZ",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 93
+      }
+    },
+    {
+      "id": "e-53b22a503e8ea5981f578824-1",
+      "sourceId": "TrigODZ",
+      "targetId": "TrigQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 94
+      }
+    },
+    {
+      "id": "e-7979a2ea5362371ee2a05a5b-1",
+      "sourceId": "TrigQ1",
+      "targetId": "TrigBase",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 95
+      }
+    },
+    {
+      "id": "e-d0deda3ad7e11b98f892cc4e-1",
+      "sourceId": "TrigBase",
+      "targetId": "TrigErr",
+      "label": "sin или cos и модуль числа больше 1",
+      "data": {
+        "kind": "solid",
+        "order": 96
+      }
+    },
+    {
+      "id": "e-ff8af4c8571ac9777d43d706-1",
+      "sourceId": "TrigBase",
+      "targetId": "TrigAns",
+      "label": "Иначе: tg - ctg или модуль не больше 1",
+      "data": {
+        "kind": "solid",
+        "order": 97
+      }
+    },
+    {
+      "id": "e-eef1953b9cd5eed4dea16108-1",
+      "sourceId": "TrigAns",
+      "targetId": "TrigChk",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 98
+      }
+    },
+    {
+      "id": "e-4a81239e3cd668c4c4713b1e-1",
+      "sourceId": "TrigChk",
+      "targetId": "TrigSel",
+      "label": "Задан промежуток",
+      "data": {
+        "kind": "solid",
+        "order": 99
+      }
+    },
+    {
+      "id": "e-1d093ae42a75264e01903067-1",
+      "sourceId": "TrigQ1",
+      "targetId": "TrigQ2",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 100
+      }
+    },
+    {
+      "id": "e-193d8b4212a8f59894bd1ec5-1",
+      "sourceId": "TrigQ2",
+      "targetId": "TrigAct1",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 101
+      }
+    },
+    {
+      "id": "e-ef43c6413caaa402cd520505-1",
+      "sourceId": "TrigAct1",
+      "targetId": "TrigQ2",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 102
+      }
+    },
+    {
+      "id": "e-7d659d24445d9aa5ba1f999a-1",
+      "sourceId": "TrigQ2",
+      "targetId": "TrigQ3",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 103
+      }
+    },
+    {
+      "id": "e-2c7e049be672b35f31d106dc-1",
+      "sourceId": "TrigQ3",
+      "targetId": "TrigQ4",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 104
+      }
+    },
+    {
+      "id": "e-a604bd3c96fcb972c29d68d8-1",
+      "sourceId": "TrigQ4",
+      "targetId": "TrigAct2",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 105
+      }
+    },
+    {
+      "id": "e-22260bfbbb3bacafe5e8a360-1",
+      "sourceId": "TrigQ4",
+      "targetId": "TrigQ4b",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 106
+      }
+    },
+    {
+      "id": "e-7111b15b659f75cf7700d2e3-1",
+      "sourceId": "TrigQ4b",
+      "targetId": "TrigAux",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 107
+      }
+    },
+    {
+      "id": "e-a38d1929434be41e3062e35f-1",
+      "sourceId": "TrigQ4b",
+      "targetId": "TrigAct3",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 108
+      }
+    },
+    {
+      "id": "e-29ca97c7b23ca5799d8fd9f7-1",
+      "sourceId": "TrigAct2",
+      "targetId": "TrigQ3",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 109
+      }
+    },
+    {
+      "id": "e-a4ae87bd08af4294781788e7-1",
+      "sourceId": "TrigAct3",
+      "targetId": "TrigQ3",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 110
+      }
+    },
+    {
+      "id": "e-d6e2ea8ddd336240334451bd-1",
+      "sourceId": "TrigAux",
+      "targetId": "TrigQ1",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 111
+      }
+    },
+    {
+      "id": "e-34a484f3e6964165fb55a47e-1",
+      "sourceId": "TrigQ3",
+      "targetId": "TrigQ5",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 112
+      }
+    },
+    {
+      "id": "e-f45909e203ce7779ebafa31a-1",
+      "sourceId": "TrigQ5",
+      "targetId": "TrigSub",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 113
+      }
+    },
+    {
+      "id": "e-8ec937b3b88deca51ce46ce2-1",
+      "sourceId": "TrigQ5",
+      "targetId": "TrigQ6",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 114
+      }
+    },
+    {
+      "id": "e-35069d561bfbb5d19fb479e0-1",
+      "sourceId": "TrigQ6",
+      "targetId": "TrigSplit",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 115
+      }
+    },
+    {
+      "id": "e-ebb0c25187956d666c036778-1",
+      "sourceId": "TrigQ6",
+      "targetId": "TrigQ7",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 116
+      }
+    },
+    {
+      "id": "e-30d309fa8af5fa76331ba214-1",
+      "sourceId": "TrigQ7",
+      "targetId": "TrigSame",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 117
+      }
+    },
+    {
+      "id": "e-3228864e06a1f1d4c0fe3388-1",
+      "sourceId": "TrigQ7",
+      "targetId": "TrigHard",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 118
+      }
+    },
+    {
+      "id": "e-224847f9895fc6276fd3b9a5-1",
+      "sourceId": "TrigSplit",
+      "targetId": "TrigQ1",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 119
+      }
+    },
+    {
+      "id": "e-393600606213dd327428d87a-1",
+      "sourceId": "ModTarget",
+      "targetId": "ModQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 120
+      }
+    },
+    {
+      "id": "e-28c43c1a03c6f56e95f28616-1",
+      "sourceId": "ModQ1",
+      "targetId": "ModAct1",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 121
+      }
+    },
+    {
+      "id": "e-7411c7f3811a46c8fce16b58-1",
+      "sourceId": "ModAct1",
+      "targetId": "ModQ2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 122
+      }
+    },
+    {
+      "id": "e-552d7292264999eeb173227f-1",
+      "sourceId": "ModQ2",
+      "targetId": "ModQ3",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 123
+      }
+    },
+    {
+      "id": "e-cc25b943bea4f5f58b815cc5-1",
+      "sourceId": "ModQ3",
+      "targetId": "ModErr",
+      "label": "Отрицательное",
+      "data": {
+        "kind": "solid",
+        "order": 124
+      }
+    },
+    {
+      "id": "e-c8949ef8680395ead8d84128-1",
+      "sourceId": "ModQ3",
+      "targetId": "ModZero",
+      "label": "Равно нулю",
+      "data": {
+        "kind": "solid",
+        "order": 125
+      }
+    },
+    {
+      "id": "e-ca967b87abde502e11a6abeb-1",
+      "sourceId": "ModQ3",
+      "targetId": "ModSplit",
+      "label": "Положительное",
+      "data": {
+        "kind": "solid",
+        "order": 126
+      }
+    },
+    {
+      "id": "e-7fbcd9052422d420f515ded9-1",
+      "sourceId": "ModQ2",
+      "targetId": "ModX",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 127
+      }
+    },
+    {
+      "id": "e-71f73dc0fce1b2449ce88764-1",
+      "sourceId": "ModQ1",
+      "targetId": "ModQ4",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 128
+      }
+    },
+    {
+      "id": "e-c62f3d56615d82ffa1dcf04b-1",
+      "sourceId": "ModQ4",
+      "targetId": "ModTwo",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 129
+      }
+    },
+    {
+      "id": "e-6ab4ad4c3b9609566242aa47-1",
+      "sourceId": "ModQ4",
+      "targetId": "ModIntervals",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 130
+      }
+    },
+    {
+      "id": "e-046f0e3ee59c69ba6f93aaaf-1",
+      "sourceId": "IrrTarget",
+      "targetId": "IrrODZ",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 131
+      }
+    },
+    {
+      "id": "e-0581995f816c579521f9e1a2-1",
+      "sourceId": "IrrODZ",
+      "targetId": "IrrQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 132
+      }
+    },
+    {
+      "id": "e-f9e18bc5672361c4de159e32-1",
+      "sourceId": "IrrQ1",
+      "targetId": "IrrНечет",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 133
+      }
+    },
+    {
+      "id": "e-56e6e1f0102bdd457c899a1a-1",
+      "sourceId": "IrrQ1",
+      "targetId": "IrrQ0",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 134
+      }
+    },
+    {
+      "id": "e-07689458cb140f1f3787d0c2-1",
+      "sourceId": "IrrQ0",
+      "targetId": "IrrSub",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 135
+      }
+    },
+    {
+      "id": "e-1f3bf242ea4316f8f1067001-1",
+      "sourceId": "IrrQ0",
+      "targetId": "IrrAct1",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 136
+      }
+    },
+    {
+      "id": "e-d38a31dd7fcdc72f13b3e99b-1",
+      "sourceId": "IrrAct1",
+      "targetId": "IrrQ2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 137
+      }
+    },
+    {
+      "id": "e-cb03c91dec28f75e2c94acd5-1",
+      "sourceId": "IrrQ2",
+      "targetId": "IrrQ3",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 138
+      }
+    },
+    {
+      "id": "e-ddf642c0d4b0992c7bd320db-1",
+      "sourceId": "IrrQ3",
+      "targetId": "IrrErr",
+      "label": "Отрицательное",
+      "data": {
+        "kind": "solid",
+        "order": 139
+      }
+    },
+    {
+      "id": "e-ee5839e683616952867107de-1",
+      "sourceId": "IrrQ3",
+      "targetId": "IrrZero",
+      "label": "Равно нулю",
+      "data": {
+        "kind": "solid",
+        "order": 140
+      }
+    },
+    {
+      "id": "e-f7efbc0a6f5cb40018a8411b-1",
+      "sourceId": "IrrQ3",
+      "targetId": "IrrPos",
+      "label": "Положительное",
+      "data": {
+        "kind": "solid",
+        "order": 141
+      }
+    },
+    {
+      "id": "e-a907b07470a6788c05394d63-1",
+      "sourceId": "IrrQ2",
+      "targetId": "IrrQ4",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 142
+      }
+    },
+    {
+      "id": "e-8e290f40242ce3085f1ab54a-1",
+      "sourceId": "IrrQ4",
+      "targetId": "ЩитМеч",
+      "label": "Выражение с x без корней",
+      "data": {
+        "kind": "solid",
+        "order": 143
+      }
+    },
+    {
+      "id": "e-880c4b752d205de337d64607-1",
+      "sourceId": "IrrQ4",
+      "targetId": "IrrEq",
+      "label": "Один другой корень",
+      "data": {
+        "kind": "solid",
+        "order": 144
+      }
+    },
+    {
+      "id": "e-3e13a2f55f23c668a2137c99-1",
+      "sourceId": "IrrQ4",
+      "targetId": "IrrTwo",
+      "label": "Справа ещё корни",
+      "data": {
+        "kind": "solid",
+        "order": 145
+      }
+    },
+    {
+      "id": "e-baae57cdfa8ddc43da64124d-1",
+      "sourceId": "IrrQ4",
+      "targetId": "IrrCnj",
+      "label": "Сумма двух корней равна числу",
+      "data": {
+        "kind": "solid",
+        "order": 146
+      }
+    },
+    {
+      "id": "e-2bad30f7af324cf657870f64-1",
+      "sourceId": "ExpTarget",
+      "targetId": "ExpQ0",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 147
+      }
+    },
+    {
+      "id": "e-2401f827eaef9dcc142f828d-1",
+      "sourceId": "ExpQ0",
+      "targetId": "ExpPow",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 148
+      }
+    },
+    {
+      "id": "e-6b5a15552947a8e8fd588f95-1",
+      "sourceId": "ExpQ0",
+      "targetId": "ExpQ1",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 149
+      }
+    },
+    {
+      "id": "e-6d5f7cb396a81ff4dc5c9a49-1",
+      "sourceId": "ExpQ1",
+      "targetId": "ExpErr",
+      "label": "Да и B меньше или равно нулю",
+      "data": {
+        "kind": "solid",
+        "order": 150
+      }
+    },
+    {
+      "id": "e-28dd081c3b78f4d752a6a74b-1",
+      "sourceId": "ExpQ1",
+      "targetId": "ExpQ2",
+      "label": "Да и B больше нуля",
+      "data": {
+        "kind": "solid",
+        "order": 151
+      }
+    },
+    {
+      "id": "e-212bcf166f1a94ac797cae8a-1",
+      "sourceId": "ExpQ1",
+      "targetId": "ExpQ3",
+      "label": "Нет: слева сумма степеней",
+      "data": {
+        "kind": "solid",
+        "order": 152
+      }
+    },
+    {
+      "id": "e-0bbdc6cf2ad38b57f1c5b0ec-1",
+      "sourceId": "ExpQ2",
+      "targetId": "ExpAct1",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 153
+      }
+    },
+    {
+      "id": "e-db5999d71ba81ccf9145cb25-1",
+      "sourceId": "ExpQ2",
+      "targetId": "ExpQ3",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 154
+      }
+    },
+    {
+      "id": "e-d0b1d597dbdb63b27735ea9c-1",
+      "sourceId": "ExpQ3",
+      "targetId": "ExpAct2",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 155
+      }
+    },
+    {
+      "id": "e-a159c4c2b44a6617a0d53299-1",
+      "sourceId": "ExpAct2",
+      "targetId": "ExpQ2",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 156
+      }
+    },
+    {
+      "id": "e-0f911d95502ca74f13418042-1",
+      "sourceId": "ExpQ3",
+      "targetId": "ExpQ4",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 157
+      }
+    },
+    {
+      "id": "e-00afdae539a70f66c06f3cc2-1",
+      "sourceId": "ExpQ4",
+      "targetId": "ExpSub",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 158
+      }
+    },
+    {
+      "id": "e-077a58e88a777601315133bb-1",
+      "sourceId": "ExpQ4",
+      "targetId": "ExpQ5",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 159
+      }
+    },
+    {
+      "id": "e-dc7cc46d3d442a8f37c5e0e3-1",
+      "sourceId": "ExpQ5",
+      "targetId": "ExpHom",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 160
+      }
+    },
+    {
+      "id": "e-5b0cf9b597093efa3bb1a022-1",
+      "sourceId": "ExpQ5",
+      "targetId": "ExpLog",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 161
+      }
+    },
+    {
+      "id": "e-28b26d1115acef0f2dacfade-1",
+      "sourceId": "LogTarget",
+      "targetId": "LogОДЗ",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 162
+      }
+    },
+    {
+      "id": "e-776e9071efd01bdd0af05fba-1",
+      "sourceId": "LogОДЗ",
+      "targetId": "LogAct1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 163
+      }
+    },
+    {
+      "id": "e-4c08f155fab15c5d9208d793-1",
+      "sourceId": "LogAct1",
+      "targetId": "LogQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 164
+      }
+    },
+    {
+      "id": "e-05f037cc70563456af3595fe-1",
+      "sourceId": "LogAct1",
+      "targetId": "LogBase",
+      "label": "Основания разные",
+      "data": {
+        "kind": "dotted",
+        "order": 165
+      }
+    },
+    {
+      "id": "e-f497ad081e30bd4d8e428e2f-1",
+      "sourceId": "LogBase",
+      "targetId": "LogQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 166
+      }
+    },
+    {
+      "id": "e-ee11307b9fa961048dead6e2-1",
+      "sourceId": "LogQ1",
+      "targetId": "LogDef",
+      "label": "log_a f-x = B",
+      "data": {
+        "kind": "solid",
+        "order": 167
+      }
+    },
+    {
+      "id": "e-1d26bff8e9da5d0c61e87e62-1",
+      "sourceId": "LogQ1",
+      "targetId": "LogPot",
+      "label": "log_a f-x = log_a g-x",
+      "data": {
+        "kind": "solid",
+        "order": 168
+      }
+    },
+    {
+      "id": "e-609dff2f09b9f631b098fcf9-1",
+      "sourceId": "LogQ1",
+      "targetId": "LogSub",
+      "label": "Квадрат логарифма",
+      "data": {
+        "kind": "solid",
+        "order": 169
+      }
+    },
+    {
+      "id": "e-ff1a8d3b024db0f67a0d943a-1",
+      "sourceId": "LogQ1",
+      "targetId": "LogTake",
+      "label": "Переменная в основании и показателе",
+      "data": {
+        "kind": "solid",
+        "order": 170
+      }
+    },
+    {
+      "id": "e-1a221830d30dd97175907141-1",
+      "sourceId": "MatTarget",
+      "targetId": "MatStep1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 171
+      }
+    },
+    {
+      "id": "e-6698b69225f437f9b05a6926-1",
+      "sourceId": "MatStep1",
+      "targetId": "MatStep2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 172
+      }
+    },
+    {
+      "id": "e-e349ce29573712691c8f4178-1",
+      "sourceId": "MatStep2",
+      "targetId": "MatStep3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 173
+      }
+    },
+    {
+      "id": "e-e5e501203dd7239f3a6fb191-1",
+      "sourceId": "Hub",
+      "targetId": "B1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 174
+      }
+    },
+    {
+      "id": "e-98b9ffba41d66fd601dbe358-1",
+      "sourceId": "Hub",
+      "targetId": "B2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 175
+      }
+    },
+    {
+      "id": "e-684d89f442e84d5b175c97b6-1",
+      "sourceId": "Hub",
+      "targetId": "B3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 176
+      }
+    },
+    {
+      "id": "e-6367b0f27ac8fa8453b51a11-1",
+      "sourceId": "Hub",
+      "targetId": "B4",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 177
+      }
+    },
+    {
+      "id": "e-22d551e47ed1325300442a68-1",
+      "sourceId": "Hub",
+      "targetId": "B5",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 178
+      }
+    },
+    {
+      "id": "e-8446231446f600cb157b51c7-1",
+      "sourceId": "ExprTarget",
+      "targetId": "ExprQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 179
+      }
+    },
+    {
+      "id": "e-4ec390bc1d56681db9480933-1",
+      "sourceId": "ExprQ1",
+      "targetId": "ExprNum",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 180
+      }
+    },
+    {
+      "id": "e-3adee1777925c51b09e43479-1",
+      "sourceId": "ExprQ1",
+      "targetId": "ExprQ2",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 181
+      }
+    },
+    {
+      "id": "e-d1dd547643b86d1712b9c741-1",
+      "sourceId": "ExprNum",
+      "targetId": "ExprS4",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 182
+      }
+    },
+    {
+      "id": "e-59d0b63c936e5c6a497fa0ab-1",
+      "sourceId": "ExprQ2",
+      "targetId": "ExprS1",
+      "label": "Упростить или найти значение",
+      "data": {
+        "kind": "solid",
+        "order": 183
+      }
+    },
+    {
+      "id": "e-69802bdb25c6261509d71714-1",
+      "sourceId": "ExprQ2",
+      "targetId": "ExprF1",
+      "label": "Разложить на множители",
+      "data": {
+        "kind": "solid",
+        "order": 184
+      }
+    },
+    {
+      "id": "e-0dc2a024c89445ef18de17f5-1",
+      "sourceId": "ExprQ2",
+      "targetId": "ExprI1",
+      "label": "Доказать тождество",
+      "data": {
+        "kind": "solid",
+        "order": 185
+      }
+    },
+    {
+      "id": "e-dff6022e6ea73671743e1efa-1",
+      "sourceId": "ExprQ2",
+      "targetId": "ExprCmp",
+      "label": "Сравнить числа",
+      "data": {
+        "kind": "solid",
+        "order": 186
+      }
+    },
+    {
+      "id": "e-eb66ef24ecdd8e27f67f0092-1",
+      "sourceId": "ExprQ2",
+      "targetId": "OlyTarget",
+      "label": "Доказать неравенство",
+      "data": {
+        "kind": "solid",
+        "order": 187
+      }
+    },
+    {
+      "id": "e-d876c9d4f8e80ff4b6536563-1",
+      "sourceId": "ExprCmp",
+      "targetId": "ExprS6",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 188
+      }
+    },
+    {
+      "id": "e-3e8147b7355d8dbd036f1801-1",
+      "sourceId": "ExprS3",
+      "targetId": "ExprDiv",
+      "label": "Нужно выделить целую часть",
+      "data": {
+        "kind": "dotted",
+        "order": 189
+      }
+    },
+    {
+      "id": "e-8089866c8561f91cd2dc99aa-1",
+      "sourceId": "ExprDiv",
+      "targetId": "ExprS4",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 190
+      }
+    },
+    {
+      "id": "e-0b4e28378dc08d9d943b7a4c-1",
+      "sourceId": "ExprS4",
+      "targetId": "ExprRad",
+      "label": "Есть радикалы",
+      "data": {
+        "kind": "dotted",
+        "order": 191
+      }
+    },
+    {
+      "id": "e-6d0bf307fa11b54c86e203d3-1",
+      "sourceId": "ExprRad",
+      "targetId": "ExprS1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 192
+      }
+    },
+    {
+      "id": "e-bc4845622caa80cda282f8de-1",
+      "sourceId": "ExprS1",
+      "targetId": "ExprS2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 193
+      }
+    },
+    {
+      "id": "e-12bd4bb97e433f7acd6c7620-1",
+      "sourceId": "ExprS2",
+      "targetId": "ExprS3",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 194
+      }
+    },
+    {
+      "id": "e-81a99c04016456180cdb92f7-1",
+      "sourceId": "ExprS2",
+      "targetId": "ExprS4",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 195
+      }
+    },
+    {
+      "id": "e-d2ac4db9ab8f1fbf6f059642-1",
+      "sourceId": "ExprS3",
+      "targetId": "ExprS4",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 196
+      }
+    },
+    {
+      "id": "e-c8099d267621f1a42c6c2c63-1",
+      "sourceId": "ExprS3",
+      "targetId": "ExprF1",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 197
+      }
+    },
+    {
+      "id": "e-4b4a0b3f50cf72f89dd8e488-1",
+      "sourceId": "ExprS4",
+      "targetId": "ExprS5",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 198
+      }
+    },
+    {
+      "id": "e-2260bf6dfeedafc4713182d5-1",
+      "sourceId": "ExprS5",
+      "targetId": "ExprS1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 199
+      }
+    },
+    {
+      "id": "e-dbbe52d23240794655e6008a-1",
+      "sourceId": "ExprS4",
+      "targetId": "ExprS6",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 200
+      }
+    },
+    {
+      "id": "e-b4accfda17501f480a146475-1",
+      "sourceId": "ExprS6",
+      "targetId": "ExprS8",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 201
+      }
+    },
+    {
+      "id": "e-4c6883a33fefabedffc0405e-1",
+      "sourceId": "ExprF1",
+      "targetId": "ExprF1A",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 202
+      }
+    },
+    {
+      "id": "e-9826a3009bbf6eec475178eb-1",
+      "sourceId": "ExprF1A",
+      "targetId": "ExprF2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 203
+      }
+    },
+    {
+      "id": "e-83e8c518b4fea7e166fc9364-1",
+      "sourceId": "ExprF1",
+      "targetId": "ExprF2",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 204
+      }
+    },
+    {
+      "id": "e-3aa52b5ac732169b927c1523-1",
+      "sourceId": "ExprF2",
+      "targetId": "ExprF2A",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 205
+      }
+    },
+    {
+      "id": "e-c6d5e9c060cd1efdef55d0b2-1",
+      "sourceId": "ExprF2A",
+      "targetId": "ExprF5",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 206
+      }
+    },
+    {
+      "id": "e-4d6c8858050ae2e23c980e94-1",
+      "sourceId": "ExprF2",
+      "targetId": "ExprF3",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 207
+      }
+    },
+    {
+      "id": "e-e6677d37d2703fdb7014550b-1",
+      "sourceId": "ExprF3",
+      "targetId": "ExprF3A",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 208
+      }
+    },
+    {
+      "id": "e-b262d4dbd0ca559ad7160394-1",
+      "sourceId": "ExprF3A",
+      "targetId": "ExprF5",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 209
+      }
+    },
+    {
+      "id": "e-977b7fc7d4da1c58e9779ce8-1",
+      "sourceId": "ExprF3",
+      "targetId": "ExprF4",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 210
+      }
+    },
+    {
+      "id": "e-f4c5fda6002568224d0ccc01-1",
+      "sourceId": "ExprF4",
+      "targetId": "ExprF4A",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 211
+      }
+    },
+    {
+      "id": "e-80f8a1a25e31e2b98faf8318-1",
+      "sourceId": "ExprF4A",
+      "targetId": "ExprF5",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 212
+      }
+    },
+    {
+      "id": "e-51af6f55a3e1117ba7f26216-1",
+      "sourceId": "ExprF4",
+      "targetId": "ExprF4B",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 213
+      }
+    },
+    {
+      "id": "e-8841168f3e332f9659e0a0d0-1",
+      "sourceId": "ExprF4B",
+      "targetId": "ExprF5",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 214
+      }
+    },
+    {
+      "id": "e-0b17b2fb6996ad3e1d2ae754-1",
+      "sourceId": "ExprI1",
+      "targetId": "ExprI2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 215
+      }
+    },
+    {
+      "id": "e-ba966e86718fbf358f22f753-1",
+      "sourceId": "ExprI2",
+      "targetId": "ExprI3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 216
+      }
+    },
+    {
+      "id": "e-df51c264c3b7e54cd68498dc-1",
+      "sourceId": "ExprI3",
+      "targetId": "ExprI5",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 217
+      }
+    },
+    {
+      "id": "e-1869e9abdff1b7b32c39ac42-1",
+      "sourceId": "ExprI3",
+      "targetId": "ExprI4",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 218
+      }
+    },
+    {
+      "id": "e-ca554f6957e0a5ecd7d66fab-1",
+      "sourceId": "ExprI4",
+      "targetId": "ExprI5",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 219
+      }
+    },
+    {
+      "id": "e-da5bff031790e0c4bcb7fb50-1",
+      "sourceId": "FuncTarget",
+      "targetId": "FuncQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 220
+      }
+    },
+    {
+      "id": "e-d810625da6e172087c9a1801-1",
+      "sourceId": "FuncQ1",
+      "targetId": "FuncV1",
+      "label": "Значение в точке или сложная функция",
+      "data": {
+        "kind": "solid",
+        "order": 221
+      }
+    },
+    {
+      "id": "e-b31e75d24a6fe95ca47d151d-1",
+      "sourceId": "FuncQ1",
+      "targetId": "FuncD1",
+      "label": "Область определения",
+      "data": {
+        "kind": "solid",
+        "order": 222
+      }
+    },
+    {
+      "id": "e-1479fed15484694989787ace-1",
+      "sourceId": "FuncQ1",
+      "targetId": "FuncR1",
+      "label": "Область значений",
+      "data": {
+        "kind": "solid",
+        "order": 223
+      }
+    },
+    {
+      "id": "e-d1c4a967464dba2696b95220-1",
+      "sourceId": "FuncQ1",
+      "targetId": "FuncG1",
+      "label": "График",
+      "data": {
+        "kind": "solid",
+        "order": 224
+      }
+    },
+    {
+      "id": "e-f15f6fd147f765bd12495b5a-1",
+      "sourceId": "FuncQ1",
+      "targetId": "FuncP1",
+      "label": "Свойства",
+      "data": {
+        "kind": "solid",
+        "order": 225
+      }
+    },
+    {
+      "id": "e-15fb503efcadd1c2132f5c43-1",
+      "sourceId": "FuncQ1",
+      "targetId": "FuncI1",
+      "label": "Обратная функция",
+      "data": {
+        "kind": "solid",
+        "order": 226
+      }
+    },
+    {
+      "id": "e-eff1093931ff83a8785db7dd-1",
+      "sourceId": "FuncQ1",
+      "targetId": "FuncX",
+      "label": "Производная, экстремумы, касательная",
+      "data": {
+        "kind": "solid",
+        "order": 227
+      }
+    },
+    {
+      "id": "e-566acf17bad1463ff6cf3859-1",
+      "sourceId": "FuncD1",
+      "targetId": "FuncD2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 228
+      }
+    },
+    {
+      "id": "e-5e6c3010fc6750026e62d93e-1",
+      "sourceId": "FuncD2",
+      "targetId": "FuncD3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 229
+      }
+    },
+    {
+      "id": "e-271b69b0a95612935e7fc5b2-1",
+      "sourceId": "FuncR1",
+      "targetId": "FuncR2",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 230
+      }
+    },
+    {
+      "id": "e-16d6583ab02f6af0ea1fb896-1",
+      "sourceId": "FuncR1",
+      "targetId": "FuncR3",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 231
+      }
+    },
+    {
+      "id": "e-ea83ea5ea3c959b9adb62961-1",
+      "sourceId": "FuncR3",
+      "targetId": "FuncR4",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 232
+      }
+    },
+    {
+      "id": "e-9e45b63fce5c42052ff58e1c-1",
+      "sourceId": "FuncR3",
+      "targetId": "FuncR5",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 233
+      }
+    },
+    {
+      "id": "e-455154848140e436e6553d4e-1",
+      "sourceId": "FuncG1",
+      "targetId": "FuncG2",
+      "label": "Линейная",
+      "data": {
+        "kind": "solid",
+        "order": 234
+      }
+    },
+    {
+      "id": "e-acf0cbca76cd2dc3a79817c2-1",
+      "sourceId": "FuncG1",
+      "targetId": "FuncG3",
+      "label": "Квадратичная",
+      "data": {
+        "kind": "solid",
+        "order": 235
+      }
+    },
+    {
+      "id": "e-90dddf383eadb88a26d6c553-1",
+      "sourceId": "FuncG1",
+      "targetId": "FuncG4",
+      "label": "Дробно-линейная",
+      "data": {
+        "kind": "solid",
+        "order": 236
+      }
+    },
+    {
+      "id": "e-93799e33eb2846d7a91e306d-1",
+      "sourceId": "FuncG1",
+      "targetId": "FuncG5",
+      "label": "Другая",
+      "data": {
+        "kind": "solid",
+        "order": 237
+      }
+    },
+    {
+      "id": "e-92316a7235c66a5ff30e1e04-1",
+      "sourceId": "FuncG1",
+      "targetId": "FuncG7",
+      "label": "Кривая, не функция",
+      "data": {
+        "kind": "solid",
+        "order": 238
+      }
+    },
+    {
+      "id": "e-212f9ff4087f4c221e7dedf4-1",
+      "sourceId": "FuncG5",
+      "targetId": "FuncG6",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 239
+      }
+    },
+    {
+      "id": "e-721ed50ae2252dc2bd76d552-1",
+      "sourceId": "FuncP1",
+      "targetId": "FuncP2",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 240
+      }
+    },
+    {
+      "id": "e-59cbd702e96b10ac2e3cb2a9-1",
+      "sourceId": "FuncP2",
+      "targetId": "FuncP4",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 241
+      }
+    },
+    {
+      "id": "e-1679c9e8b9c5ced4745b645f-1",
+      "sourceId": "FuncP2",
+      "targetId": "FuncP3",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 242
+      }
+    },
+    {
+      "id": "e-13b068b2220c1e693e656da2-1",
+      "sourceId": "FuncP4",
+      "targetId": "FuncP5",
+      "label": "Равны",
+      "data": {
+        "kind": "solid",
+        "order": 243
+      }
+    },
+    {
+      "id": "e-459afe81f2db64c2b48d8ae4-1",
+      "sourceId": "FuncP4",
+      "targetId": "FuncP6",
+      "label": "Противоположны",
+      "data": {
+        "kind": "solid",
+        "order": 244
+      }
+    },
+    {
+      "id": "e-f0f493cc99070f53a50c65e6-1",
+      "sourceId": "FuncP4",
+      "targetId": "FuncP3",
+      "label": "Иначе",
+      "data": {
+        "kind": "solid",
+        "order": 245
+      }
+    },
+    {
+      "id": "e-362731560dd743029cf30610-1",
+      "sourceId": "FuncP3",
+      "targetId": "FuncP8",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 246
+      }
+    },
+    {
+      "id": "e-a8bfdc8d6a53be3a6d952496-1",
+      "sourceId": "FuncP5",
+      "targetId": "FuncP8",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 247
+      }
+    },
+    {
+      "id": "e-3ac86a7ca1b98fe9016f47d5-1",
+      "sourceId": "FuncP6",
+      "targetId": "FuncP8",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 248
+      }
+    },
+    {
+      "id": "e-a76ae9644fee4563ddf8bb15-1",
+      "sourceId": "FuncP8",
+      "targetId": "FuncP9",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 249
+      }
+    },
+    {
+      "id": "e-c05b446b39ed44c25c71f33c-1",
+      "sourceId": "FuncP9",
+      "targetId": "FuncP10",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 250
+      }
+    },
+    {
+      "id": "e-f557d2f10638840aac9325a9-1",
+      "sourceId": "FuncP10",
+      "targetId": "FuncP11",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 251
+      }
+    },
+    {
+      "id": "e-5896b612b418f4089f08320c-1",
+      "sourceId": "FuncP10",
+      "targetId": "FuncX",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 252
+      }
+    },
+    {
+      "id": "e-6040b97cfd064d86a0ce22dd-1",
+      "sourceId": "FuncI1",
+      "targetId": "FuncI3",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 253
+      }
+    },
+    {
+      "id": "e-7d130a6c619f9b4e655647ae-1",
+      "sourceId": "FuncI1",
+      "targetId": "FuncI2",
+      "label": "Нет",
+      "data": {
+        "kind": "solid",
+        "order": 254
+      }
+    },
+    {
+      "id": "e-c8a6caa50dac5e3b59abaf2e-1",
+      "sourceId": "FuncI2",
+      "targetId": "FuncI3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 255
+      }
+    },
+    {
+      "id": "e-431d35eb6180398a4602b5ab-1",
+      "sourceId": "FuncI3",
+      "targetId": "FuncI4",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 256
+      }
+    },
+    {
+      "id": "e-7102574c270f7a38e8d6bd54-1",
+      "sourceId": "CplxTarget",
+      "targetId": "CplxQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 257
+      }
+    },
+    {
+      "id": "e-93c10312a1bc8262ec5b50bf-1",
+      "sourceId": "CplxQ1",
+      "targetId": "CplxOpsQ",
+      "label": "Сложение, вычитание, умножение, деление",
+      "data": {
+        "kind": "solid",
+        "order": 258
+      }
+    },
+    {
+      "id": "e-678df4bc562e8ed8ce2c4d21-1",
+      "sourceId": "CplxQ1",
+      "targetId": "CplxChar",
+      "label": "Модуль, сопряженное, аргумент",
+      "data": {
+        "kind": "solid",
+        "order": 259
+      }
+    },
+    {
+      "id": "e-8b45c7e03eb1a79a9bccb1f0-1",
+      "sourceId": "CplxQ1",
+      "targetId": "CplxPQ",
+      "label": "Степень или корень",
+      "data": {
+        "kind": "solid",
+        "order": 260
+      }
+    },
+    {
+      "id": "e-e472ff3e32b23907eae268b7-1",
+      "sourceId": "CplxQ1",
+      "targetId": "CplxEq1",
+      "label": "Уравнение",
+      "data": {
+        "kind": "solid",
+        "order": 261
+      }
+    },
+    {
+      "id": "e-9eab8d8c4700d8792af8578e-1",
+      "sourceId": "CplxQ1",
+      "targetId": "CplxTrigF",
+      "label": "Тригонометрическая форма",
+      "data": {
+        "kind": "solid",
+        "order": 262
+      }
+    },
+    {
+      "id": "e-2eadf7aa65e325138117f5d6-1",
+      "sourceId": "CplxQ1",
+      "targetId": "CplxLoc",
+      "label": "Множество точек на плоскости",
+      "data": {
+        "kind": "solid",
+        "order": 263
+      }
+    },
+    {
+      "id": "e-f1bab825dd32ea2175c099ec-1",
+      "sourceId": "CplxTrigF",
+      "targetId": "CplxChar",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 264
+      }
+    },
+    {
+      "id": "e-9c7d72e4c6d78f3a4d828936-1",
+      "sourceId": "CplxOpsQ",
+      "targetId": "CplxAdd",
+      "label": "Сложение или вычитание",
+      "data": {
+        "kind": "solid",
+        "order": 265
+      }
+    },
+    {
+      "id": "e-de957e777e29ac528747d4b6-1",
+      "sourceId": "CplxOpsQ",
+      "targetId": "CplxMul",
+      "label": "Умножение",
+      "data": {
+        "kind": "solid",
+        "order": 266
+      }
+    },
+    {
+      "id": "e-bd91975c0f4d9acc36aaae76-1",
+      "sourceId": "CplxOpsQ",
+      "targetId": "CplxDiv",
+      "label": "Деление",
+      "data": {
+        "kind": "solid",
+        "order": 267
+      }
+    },
+    {
+      "id": "e-795746524c94cefa65f23deb-1",
+      "sourceId": "CplxChar",
+      "targetId": "CplxArg",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 268
+      }
+    },
+    {
+      "id": "e-6ee3f1006bec97f0413b1e41-1",
+      "sourceId": "CplxPQ",
+      "targetId": "CplxIPow",
+      "label": "Степень самого i",
+      "data": {
+        "kind": "solid",
+        "order": 269
+      }
+    },
+    {
+      "id": "e-3566bb92fa2d2ef523676e27-1",
+      "sourceId": "CplxPQ",
+      "targetId": "CplxMul",
+      "label": "Степень 2 или 3",
+      "data": {
+        "kind": "solid",
+        "order": 270
+      }
+    },
+    {
+      "id": "e-46aea49f4ad6ba0a2564122c-1",
+      "sourceId": "CplxPQ",
+      "targetId": "CplxMoivre",
+      "label": "Большая степень",
+      "data": {
+        "kind": "solid",
+        "order": 271
+      }
+    },
+    {
+      "id": "e-75196999d6fa1554bd301a68-1",
+      "sourceId": "CplxPQ",
+      "targetId": "CplxRoot",
+      "label": "Корень",
+      "data": {
+        "kind": "solid",
+        "order": 272
+      }
+    },
+    {
+      "id": "e-9606b9ec800b030a27cebec7-1",
+      "sourceId": "CplxMoivre",
+      "targetId": "CplxChar",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 273
+      }
+    },
+    {
+      "id": "e-ece7db69c95aae399aa5486e-1",
+      "sourceId": "CplxRoot",
+      "targetId": "CplxChar",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 274
+      }
+    },
+    {
+      "id": "e-8bcd754f6d5e0cfe941827fc-1",
+      "sourceId": "CplxEq1",
+      "targetId": "CplxEq2",
+      "label": "Квадратное с действительными коэффициентами",
+      "data": {
+        "kind": "solid",
+        "order": 275
+      }
+    },
+    {
+      "id": "e-68dd0045ee2e29ddca40b624-1",
+      "sourceId": "CplxEq1",
+      "targetId": "CplxEq3",
+      "label": "Есть сопряженное или модуль",
+      "data": {
+        "kind": "solid",
+        "order": 276
+      }
+    },
+    {
+      "id": "e-1bc8796cf563bedec80effd2-1",
+      "sourceId": "CplxEq1",
+      "targetId": "CplxEq4",
+      "label": "Вид z^n = w",
+      "data": {
+        "kind": "solid",
+        "order": 277
+      }
+    },
+    {
+      "id": "e-9325b98be9c67e5cbc764d55-1",
+      "sourceId": "CplxEq1",
+      "targetId": "CplxEq5",
+      "label": "Линейное",
+      "data": {
+        "kind": "solid",
+        "order": 278
+      }
+    },
+    {
+      "id": "e-e7bf916fa649dadb2a43560c-1",
+      "sourceId": "CplxEq1",
+      "targetId": "CplxEq6",
+      "label": "Квадратное с комплексными коэффициентами",
+      "data": {
+        "kind": "solid",
+        "order": 279
+      }
+    },
+    {
+      "id": "e-e4f210fc0efb59f5acf4a083-1",
+      "sourceId": "CplxEq4",
+      "targetId": "CplxRoot",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 280
+      }
+    },
+    {
+      "id": "e-0192ddcb6f57dacdd97a675f-1",
+      "sourceId": "CplxEq6",
+      "targetId": "CplxRoot",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 281
+      }
+    },
+    {
+      "id": "e-488444667c43af89f2452458-1",
+      "sourceId": "IneqTarget",
+      "targetId": "IneqS0",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 282
+      }
+    },
+    {
+      "id": "e-b321113ca3288c665423157c-1",
+      "sourceId": "IneqS0",
+      "targetId": "IneqS1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 283
+      }
+    },
+    {
+      "id": "e-32885eecfd75d6477a7b0bad-1",
+      "sourceId": "IneqS1",
+      "targetId": "IneqQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 284
+      }
+    },
+    {
+      "id": "e-181d7883c06ca85598f355fb-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqLin",
+      "label": "Линейное",
+      "data": {
+        "kind": "solid",
+        "order": 285
+      }
+    },
+    {
+      "id": "e-4ab4cfb74d6965f5ec325a76-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqQuad",
+      "label": "Квадратное",
+      "data": {
+        "kind": "solid",
+        "order": 286
+      }
+    },
+    {
+      "id": "e-88038f9528f28ea7b98d856e-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqInt",
+      "label": "Многочлен степени 3 и выше",
+      "data": {
+        "kind": "solid",
+        "order": 287
+      }
+    },
+    {
+      "id": "e-f96fdcf0713ab07999c63437-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqFrac",
+      "label": "x в знаменателе",
+      "data": {
+        "kind": "solid",
+        "order": 288
+      }
+    },
+    {
+      "id": "e-7f6ceb7e9c1296a04177a098-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqMod",
+      "label": "Модуль",
+      "data": {
+        "kind": "solid",
+        "order": 289
+      }
+    },
+    {
+      "id": "e-6e5bb878a633d30dabc3cfa1-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqRad1",
+      "label": "Корень, знак меньше",
+      "data": {
+        "kind": "solid",
+        "order": 290
+      }
+    },
+    {
+      "id": "e-160f9b142cdfba72f4c4a86a-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqRad2",
+      "label": "Корень, знак больше",
+      "data": {
+        "kind": "solid",
+        "order": 291
+      }
+    },
+    {
+      "id": "e-995abab4c30f9302ee17ea09-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqExp",
+      "label": "Показательное",
+      "data": {
+        "kind": "solid",
+        "order": 292
+      }
+    },
+    {
+      "id": "e-7236fb7ed99c6308fc7cef52-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqLog",
+      "label": "Логарифм",
+      "data": {
+        "kind": "solid",
+        "order": 293
+      }
+    },
+    {
+      "id": "e-9080a2f41bd1883251d37d4d-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqTrig",
+      "label": "Тригонометрия",
+      "data": {
+        "kind": "solid",
+        "order": 294
+      }
+    },
+    {
+      "id": "e-8f7851e1fb91bc1246416ce6-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqRat",
+      "label": "Переменное основание или сложный знак",
+      "data": {
+        "kind": "solid",
+        "order": 295
+      }
+    },
+    {
+      "id": "e-803fd7513125db6dc5cbc6e5-1",
+      "sourceId": "IneqQ1",
+      "targetId": "IneqSys",
+      "label": "Несколько неравенств",
+      "data": {
+        "kind": "solid",
+        "order": 296
+      }
+    },
+    {
+      "id": "e-20323a507095f268cf22200e-1",
+      "sourceId": "IneqFrac",
+      "targetId": "IneqInt",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 297
+      }
+    },
+    {
+      "id": "e-67fc17bdd494c8943e3ec909-1",
+      "sourceId": "IneqMod",
+      "targetId": "IneqSys",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 298
+      }
+    },
+    {
+      "id": "e-9e916302e1822351a7d654c1-1",
+      "sourceId": "IneqRad1",
+      "targetId": "IneqSys",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 299
+      }
+    },
+    {
+      "id": "e-de29f2e0d6cce1b9759820f6-1",
+      "sourceId": "IneqRad2",
+      "targetId": "IneqSys",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 300
+      }
+    },
+    {
+      "id": "e-a81897ad898eea8ff4d32d48-1",
+      "sourceId": "IneqExp",
+      "targetId": "IneqQ1",
+      "label": "После сведения",
+      "data": {
+        "kind": "dotted",
+        "order": 301
+      }
+    },
+    {
+      "id": "e-98ac1a46c7c6efdce0754dbd-1",
+      "sourceId": "IneqLog",
+      "targetId": "IneqQ1",
+      "label": "После сведения",
+      "data": {
+        "kind": "dotted",
+        "order": 302
+      }
+    },
+    {
+      "id": "e-75123710bca1d87dbd2f3780-1",
+      "sourceId": "IneqTrig",
+      "targetId": "IneqQ1",
+      "label": "После сведения",
+      "data": {
+        "kind": "dotted",
+        "order": 303
+      }
+    },
+    {
+      "id": "e-074b44e22611b0d6e4333ef3-1",
+      "sourceId": "IneqRat",
+      "targetId": "IneqInt",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 304
+      }
+    },
+    {
+      "id": "e-96cb7dbed9613eb54b92fb3e-1",
+      "sourceId": "IneqLin",
+      "targetId": "IneqChk",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 305
+      }
+    },
+    {
+      "id": "e-59b1b8c614684d4a3d41516f-1",
+      "sourceId": "IneqQuad",
+      "targetId": "IneqChk",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 306
+      }
+    },
+    {
+      "id": "e-2b1ec00161e2c4bbae849153-1",
+      "sourceId": "IneqInt",
+      "targetId": "IneqChk",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 307
+      }
+    },
+    {
+      "id": "e-b184c44d8c900888d83981f8-1",
+      "sourceId": "IneqSys",
+      "targetId": "IneqChk",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 308
+      }
+    },
+    {
+      "id": "e-32e01a8328f3d183577a65ea-1",
+      "sourceId": "ParTarget",
+      "targetId": "ParQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 309
+      }
+    },
+    {
+      "id": "e-e0cd586533f6fa34c93f252b-1",
+      "sourceId": "ParQ1",
+      "targetId": "ParLin",
+      "label": "Линейное по x",
+      "data": {
+        "kind": "solid",
+        "order": 310
+      }
+    },
+    {
+      "id": "e-959477dbc07da4292434dfb6-1",
+      "sourceId": "ParQ1",
+      "targetId": "ParQuad",
+      "label": "Квадратное по x",
+      "data": {
+        "kind": "solid",
+        "order": 311
+      }
+    },
+    {
+      "id": "e-61e18473686b55f344fcd81a-1",
+      "sourceId": "ParQ1",
+      "targetId": "ParPos",
+      "label": "Расположение корней",
+      "data": {
+        "kind": "solid",
+        "order": 312
+      }
+    },
+    {
+      "id": "e-4468e775d6aa2a2dbafa69dc-1",
+      "sourceId": "ParQ1",
+      "targetId": "ParAn",
+      "label": "Число решений",
+      "data": {
+        "kind": "solid",
+        "order": 313
+      }
+    },
+    {
+      "id": "e-d63874969eadfa36a1b8e439-1",
+      "sourceId": "ParQ1",
+      "targetId": "ParPlane",
+      "label": "Система",
+      "data": {
+        "kind": "solid",
+        "order": 314
+      }
+    },
+    {
+      "id": "e-a691398ececfb9db95f4989d-1",
+      "sourceId": "ParQ1",
+      "targetId": "ParSym",
+      "label": "Единственное решение",
+      "data": {
+        "kind": "solid",
+        "order": 315
+      }
+    },
+    {
+      "id": "e-20b619387d78e1464e7f5235-1",
+      "sourceId": "ParQ1",
+      "targetId": "ParIneq",
+      "label": "Неравенство",
+      "data": {
+        "kind": "solid",
+        "order": 316
+      }
+    },
+    {
+      "id": "e-34497146ef6f27df1012c444-1",
+      "sourceId": "ParQuad",
+      "targetId": "ParPos",
+      "label": "Корни относительно числа",
+      "data": {
+        "kind": "solid",
+        "order": 317
+      }
+    },
+    {
+      "id": "e-36e6dfb9a73c53235b990682-1",
+      "sourceId": "ParLin",
+      "targetId": "ParAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 318
+      }
+    },
+    {
+      "id": "e-13b0ec6e96db4f48b51bf26b-1",
+      "sourceId": "ParQuad",
+      "targetId": "ParAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 319
+      }
+    },
+    {
+      "id": "e-a61ecff6167f6e22d1f2d9b9-1",
+      "sourceId": "ParPos",
+      "targetId": "ParAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 320
+      }
+    },
+    {
+      "id": "e-a01b5e9d5ab3ee61d1c830b7-1",
+      "sourceId": "ParAn",
+      "targetId": "ParAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 321
+      }
+    },
+    {
+      "id": "e-6627354e74ecb64da078aa22-1",
+      "sourceId": "ParPlane",
+      "targetId": "ParAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 322
+      }
+    },
+    {
+      "id": "e-45692355d66602a07c1c8698-1",
+      "sourceId": "ParSym",
+      "targetId": "ParAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 323
+      }
+    },
+    {
+      "id": "e-2c192703ae089018d4cd5d53-1",
+      "sourceId": "ParIneq",
+      "targetId": "ParAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 324
+      }
+    },
+    {
+      "id": "e-5678dbbc6f7e861bca1f9689-1",
+      "sourceId": "SeqTarget",
+      "targetId": "SeqQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 325
+      }
+    },
+    {
+      "id": "e-4c3328cac2064a3289a0e8d3-1",
+      "sourceId": "SeqQ1",
+      "targetId": "SeqAr",
+      "label": "Арифметическая",
+      "data": {
+        "kind": "solid",
+        "order": 326
+      }
+    },
+    {
+      "id": "e-55fad50a16dc5199f9ef4dd0-1",
+      "sourceId": "SeqQ1",
+      "targetId": "SeqGeo",
+      "label": "Геометрическая",
+      "data": {
+        "kind": "solid",
+        "order": 327
+      }
+    },
+    {
+      "id": "e-47415532b47b4e3afc2ca534-1",
+      "sourceId": "SeqQ1",
+      "targetId": "SeqInf",
+      "label": "Бесконечная сумма",
+      "data": {
+        "kind": "solid",
+        "order": 328
+      }
+    },
+    {
+      "id": "e-816bacff637f00959cb1ea96-1",
+      "sourceId": "SeqQ1",
+      "targetId": "SeqRec",
+      "label": "Рекуррентная формула",
+      "data": {
+        "kind": "solid",
+        "order": 329
+      }
+    },
+    {
+      "id": "e-8cab4f46ff7d3afadd7cabd8-1",
+      "sourceId": "SeqQ1",
+      "targetId": "SeqSum",
+      "label": "Сумма по общему члену",
+      "data": {
+        "kind": "solid",
+        "order": 330
+      }
+    },
+    {
+      "id": "e-befcfbba4864d926e7e26859-1",
+      "sourceId": "SeqQ1",
+      "targetId": "SeqBin",
+      "label": "Степень суммы, коэффициенты",
+      "data": {
+        "kind": "solid",
+        "order": 331
+      }
+    },
+    {
+      "id": "e-aa8e8d947fe675b964c73e03-1",
+      "sourceId": "SeqQ1",
+      "targetId": "SeqInd",
+      "label": "Доказать для всех n",
+      "data": {
+        "kind": "solid",
+        "order": 332
+      }
+    },
+    {
+      "id": "e-586a20aa6fca79475375d690-1",
+      "sourceId": "SeqGeo",
+      "targetId": "SeqInf",
+      "label": "Модуль q меньше 1",
+      "data": {
+        "kind": "dotted",
+        "order": 333
+      }
+    },
+    {
+      "id": "e-e8560befc909523c4c2b25bc-1",
+      "sourceId": "SeqAr",
+      "targetId": "SeqSys",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 334
+      }
+    },
+    {
+      "id": "e-9ebb519ab1dfca2548038897-1",
+      "sourceId": "SeqGeo",
+      "targetId": "SeqSys",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 335
+      }
+    },
+    {
+      "id": "e-36bd30bbc07122404c71e4b3-1",
+      "sourceId": "SeqRec",
+      "targetId": "SeqInd",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 336
+      }
+    },
+    {
+      "id": "e-8af5739ecb2e895fb51f6cd3-1",
+      "sourceId": "SeqSum",
+      "targetId": "SeqInd",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 337
+      }
+    },
+    {
+      "id": "e-b217fbcc6f1aaa1f0117d635-1",
+      "sourceId": "WordTarget",
+      "targetId": "WordS1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 338
+      }
+    },
+    {
+      "id": "e-757ad5ee9de7563ab416fa03-1",
+      "sourceId": "WordS1",
+      "targetId": "WordQ",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 339
+      }
+    },
+    {
+      "id": "e-4df080bcb3ea3a2bb65dc306-1",
+      "sourceId": "WordQ",
+      "targetId": "WordMove",
+      "label": "Движение",
+      "data": {
+        "kind": "solid",
+        "order": 340
+      }
+    },
+    {
+      "id": "e-8a797885e617d0bb83decaab-1",
+      "sourceId": "WordQ",
+      "targetId": "WordWork",
+      "label": "Работа",
+      "data": {
+        "kind": "solid",
+        "order": 341
+      }
+    },
+    {
+      "id": "e-272640b27cb8e88f85b45933-1",
+      "sourceId": "WordQ",
+      "targetId": "WordMix",
+      "label": "Смеси и проценты",
+      "data": {
+        "kind": "solid",
+        "order": 342
+      }
+    },
+    {
+      "id": "e-0bbc04701edf734c2606a1c2-1",
+      "sourceId": "WordQ",
+      "targetId": "WordNum",
+      "label": "Числа и цифры",
+      "data": {
+        "kind": "solid",
+        "order": 343
+      }
+    },
+    {
+      "id": "e-90f917cfe2174417db931c72-1",
+      "sourceId": "WordQ",
+      "targetId": "WordFin",
+      "label": "Банк и цены",
+      "data": {
+        "kind": "solid",
+        "order": 344
+      }
+    },
+    {
+      "id": "e-093baab020335ce5decc3162-1",
+      "sourceId": "WordMove",
+      "targetId": "WordS3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 345
+      }
+    },
+    {
+      "id": "e-9a6a23ad629de8d637daee85-1",
+      "sourceId": "WordWork",
+      "targetId": "WordS3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 346
+      }
+    },
+    {
+      "id": "e-769dd3226863b2d112e4bf93-1",
+      "sourceId": "WordMix",
+      "targetId": "WordS3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 347
+      }
+    },
+    {
+      "id": "e-816bc5da55c2da88967cf398-1",
+      "sourceId": "WordNum",
+      "targetId": "WordS3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 348
+      }
+    },
+    {
+      "id": "e-db5589e06a0435294ca10520-1",
+      "sourceId": "WordFin",
+      "targetId": "WordS3",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 349
+      }
+    },
+    {
+      "id": "e-9a26c81bb7de583ebadc4026-1",
+      "sourceId": "WordS3",
+      "targetId": "WordS4",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 350
+      }
+    },
+    {
+      "id": "e-a73af88b54a298c8880bb703-1",
+      "sourceId": "WordS4",
+      "targetId": "WordS5",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 351
+      }
+    },
+    {
+      "id": "e-e75ced602b31ef206bdbf0f5-1",
+      "sourceId": "NumTarget",
+      "targetId": "NumQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 352
+      }
+    },
+    {
+      "id": "e-96ba84403140560c273fc35e-1",
+      "sourceId": "NumQ1",
+      "targetId": "NumDiv",
+      "label": "Делимость, НОД, НОК",
+      "data": {
+        "kind": "solid",
+        "order": 353
+      }
+    },
+    {
+      "id": "e-62c7857493862391a42b2bcb-1",
+      "sourceId": "NumQ1",
+      "targetId": "NumLin",
+      "label": "Линейное ax + by = c",
+      "data": {
+        "kind": "solid",
+        "order": 354
+      }
+    },
+    {
+      "id": "e-c3b4b76bdbbfc5cb7a57c5ac-1",
+      "sourceId": "NumQ1",
+      "targetId": "NumFact",
+      "label": "Произведение равно числу",
+      "data": {
+        "kind": "solid",
+        "order": 355
+      }
+    },
+    {
+      "id": "e-d38deca501b660f499bc41d7-1",
+      "sourceId": "NumQ1",
+      "targetId": "NumQuad",
+      "label": "Квадраты и степени",
+      "data": {
+        "kind": "solid",
+        "order": 356
+      }
+    },
+    {
+      "id": "e-576190bba20ac6e2b396017e-1",
+      "sourceId": "NumQ1",
+      "targetId": "NumMod",
+      "label": "Доказать, что решений нет",
+      "data": {
+        "kind": "solid",
+        "order": 357
+      }
+    },
+    {
+      "id": "e-a06768e41fc8e0fee598a19b-1",
+      "sourceId": "NumQ1",
+      "targetId": "NumBound",
+      "label": "Конечный перебор",
+      "data": {
+        "kind": "solid",
+        "order": 358
+      }
+    },
+    {
+      "id": "e-1851aed9427402b394b10b63-1",
+      "sourceId": "NumQ1",
+      "targetId": "NumRat",
+      "label": "Корни многочлена",
+      "data": {
+        "kind": "solid",
+        "order": 359
+      }
+    },
+    {
+      "id": "e-e7b859ec374163a827f8e17a-1",
+      "sourceId": "NumQ1",
+      "targetId": "NumDesc",
+      "label": "Нужен олимпиадный приём",
+      "data": {
+        "kind": "solid",
+        "order": 360
+      }
+    },
+    {
+      "id": "e-4379e2140167d75984f1129f-1",
+      "sourceId": "NumDiv",
+      "targetId": "NumLin",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 361
+      }
+    },
+    {
+      "id": "e-1048774eb30ab3987990e6dd-1",
+      "sourceId": "NumLin",
+      "targetId": "NumAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 362
+      }
+    },
+    {
+      "id": "e-39131891e35c4833bea1e882-1",
+      "sourceId": "NumFact",
+      "targetId": "NumAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 363
+      }
+    },
+    {
+      "id": "e-63f44c0537c1633566bc34a3-1",
+      "sourceId": "NumQuad",
+      "targetId": "NumAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 364
+      }
+    },
+    {
+      "id": "e-d59fad2232bdf81b2cdc0e36-1",
+      "sourceId": "NumMod",
+      "targetId": "NumAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 365
+      }
+    },
+    {
+      "id": "e-82b4bd0c74e0fd129110c4ec-1",
+      "sourceId": "NumBound",
+      "targetId": "NumAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 366
+      }
+    },
+    {
+      "id": "e-80c59195a60de0ed02ac60dc-1",
+      "sourceId": "NumRat",
+      "targetId": "NumAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 367
+      }
+    },
+    {
+      "id": "e-5c81e84e6ea6acc9777fabfa-1",
+      "sourceId": "NumDesc",
+      "targetId": "NumAns",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 368
+      }
+    },
+    {
+      "id": "e-15ee75fcec85798957cc2f8b-1",
+      "sourceId": "OlyTarget",
+      "targetId": "OlyQ1",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 369
+      }
+    },
+    {
+      "id": "e-004bf0e740ce82bbb9e61d32-1",
+      "sourceId": "OlyQ1",
+      "targetId": "OlyProve",
+      "label": "Доказать неравенство",
+      "data": {
+        "kind": "solid",
+        "order": 370
+      }
+    },
+    {
+      "id": "e-172c7bcd874a518501dc7fe9-1",
+      "sourceId": "OlyQ1",
+      "targetId": "OlyAM",
+      "label": "Среднее арифметическое и геометрическое",
+      "data": {
+        "kind": "solid",
+        "order": 371
+      }
+    },
+    {
+      "id": "e-737b7c572d1965e50f96b84a-1",
+      "sourceId": "OlyQ1",
+      "targetId": "OlyCS",
+      "label": "Сумма произведений",
+      "data": {
+        "kind": "solid",
+        "order": 372
+      }
+    },
+    {
+      "id": "e-83e2e42c262ab5665cb6d154-1",
+      "sourceId": "OlyQ1",
+      "targetId": "OlyExt",
+      "label": "Наибольшее или наименьшее значение",
+      "data": {
+        "kind": "solid",
+        "order": 373
+      }
+    },
+    {
+      "id": "e-7cd577a6123a6e86b9e6e77d-1",
+      "sourceId": "OlyQ1",
+      "targetId": "OlyEst",
+      "label": "Обе части ограничены",
+      "data": {
+        "kind": "solid",
+        "order": 374
+      }
+    },
+    {
+      "id": "e-decb6d2d0d8eeb26b4554f83-1",
+      "sourceId": "OlyQ1",
+      "targetId": "OlySq",
+      "label": "Сумма квадратов",
+      "data": {
+        "kind": "solid",
+        "order": 375
+      }
+    },
+    {
+      "id": "e-5dd364b3469357f1cdced5e5-1",
+      "sourceId": "OlyQ1",
+      "targetId": "OlyMono",
+      "label": "Угадать корень",
+      "data": {
+        "kind": "solid",
+        "order": 376
+      }
+    },
+    {
+      "id": "e-beb5410f8be9955af3dec890-1",
+      "sourceId": "OlyQ1",
+      "targetId": "OlyFE",
+      "label": "Функциональное уравнение",
+      "data": {
+        "kind": "solid",
+        "order": 377
+      }
+    },
+    {
+      "id": "e-5c762cf3f394adba7f10e545-1",
+      "sourceId": "OlyQ1",
+      "targetId": "OlyFl",
+      "label": "Целая или дробная часть",
+      "data": {
+        "kind": "solid",
+        "order": 378
+      }
+    },
+    {
+      "id": "e-abfcb5d5bbf110f342289d2e-1",
+      "sourceId": "OlyQ1",
+      "targetId": "OlySymm",
+      "label": "Симметрия",
+      "data": {
+        "kind": "solid",
+        "order": 379
+      }
+    },
+    {
+      "id": "e-8cd30a14517c5e09dd7e0877-1",
+      "sourceId": "OlyProve",
+      "targetId": "OlyAM",
+      "label": "Квадратов недостаточно",
+      "data": {
+        "kind": "dotted",
+        "order": 380
+      }
+    },
+    {
+      "id": "e-7ad4dc0e0fc21e8541ef9316-1",
+      "sourceId": "OlyProve",
+      "targetId": "OlyCS",
+      "label": "Квадратов недостаточно",
+      "data": {
+        "kind": "dotted",
+        "order": 381
+      }
+    },
+    {
+      "id": "e-9a68f534c80c432184dcec63-1",
+      "sourceId": "OlyExt",
+      "targetId": "OlyAM",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 382
+      }
+    },
+    {
+      "id": "e-8473f2bc06fa1a135716017c-1",
+      "sourceId": "OlyEst",
+      "targetId": "OlySq",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 383
+      }
+    },
+    {
+      "id": "e-903f50e15f99fd7db67e4e94-1",
+      "sourceId": "CtrlTarget",
+      "targetId": "CtrlQ",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 384
+      }
+    },
+    {
+      "id": "e-020a8831b42bb3429e4a03d3-1",
+      "sourceId": "CtrlQ",
+      "targetId": "CtrlSq",
+      "label": "Возвели в квадрат",
+      "data": {
+        "kind": "solid",
+        "order": 385
+      }
+    },
+    {
+      "id": "e-da1ceaa525276be6bc26d5ac-1",
+      "sourceId": "CtrlQ",
+      "targetId": "CtrlDiv",
+      "label": "Сократили или разделили",
+      "data": {
+        "kind": "solid",
+        "order": 386
+      }
+    },
+    {
+      "id": "e-00b438a7359a4d5b750d2856-1",
+      "sourceId": "CtrlQ",
+      "targetId": "CtrlFrac",
+      "label": "Домножили на знаменатель",
+      "data": {
+        "kind": "solid",
+        "order": 387
+      }
+    },
+    {
+      "id": "e-820405591efc9b4c77209bd3-1",
+      "sourceId": "CtrlQ",
+      "targetId": "CtrlLog",
+      "label": "Применили свойства логарифмов",
+      "data": {
+        "kind": "solid",
+        "order": 388
+      }
+    },
+    {
+      "id": "e-747f0c1cb46245905ea81704-1",
+      "sourceId": "CtrlQ",
+      "targetId": "CtrlTrig",
+      "label": "Заменили функции или разделили на cos",
+      "data": {
+        "kind": "solid",
+        "order": 389
+      }
+    },
+    {
+      "id": "e-192cd4ca6cf7a84cd2ead25a-1",
+      "sourceId": "CtrlQ",
+      "targetId": "CtrlRoot",
+      "label": "Вынесли из-под корня или модуля",
+      "data": {
+        "kind": "solid",
+        "order": 390
+      }
+    },
+    {
+      "id": "e-45ea34ac0ec9b980ff5804c1-1",
+      "sourceId": "CtrlQ",
+      "targetId": "CtrlSub",
+      "label": "Сделали замену",
+      "data": {
+        "kind": "solid",
+        "order": 391
+      }
+    },
+    {
+      "id": "e-f5c87c0b2a8e54b27d438322-1",
+      "sourceId": "CtrlSq",
+      "targetId": "CtrlEnd",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 392
+      }
+    },
+    {
+      "id": "e-e0871a234e22c50e8c842dd8-1",
+      "sourceId": "CtrlDiv",
+      "targetId": "CtrlEnd",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 393
+      }
+    },
+    {
+      "id": "e-c6a8208c5244f918c73972f5-1",
+      "sourceId": "CtrlFrac",
+      "targetId": "CtrlEnd",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 394
+      }
+    },
+    {
+      "id": "e-b1432aea37a921581017510f-1",
+      "sourceId": "CtrlLog",
+      "targetId": "CtrlEnd",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 395
+      }
+    },
+    {
+      "id": "e-806ec8af4b9180c9f8fef0dd-1",
+      "sourceId": "CtrlTrig",
+      "targetId": "CtrlEnd",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 396
+      }
+    },
+    {
+      "id": "e-0a7fd9e689ec03d59a7b3bb3-1",
+      "sourceId": "CtrlRoot",
+      "targetId": "CtrlEnd",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 397
+      }
+    },
+    {
+      "id": "e-1c07b933d4409a7b30279269-1",
+      "sourceId": "CtrlSub",
+      "targetId": "CtrlEnd",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 398
+      }
+    },
+    {
+      "id": "e-e15163c93bd7199f48022853-1",
+      "sourceId": "Q2",
+      "targetId": "Dispatcher",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 399
+      }
+    },
+    {
+      "id": "e-5d1c2675b51755139d09deb6-1",
+      "sourceId": "Q4",
+      "targetId": "Dispatcher",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 400
+      }
+    },
+    {
+      "id": "e-488d30fafe1cfe7770a5f16c-1",
+      "sourceId": "Q_Check",
+      "targetId": "SysTarget",
+      "label": "Две и больше переменных x - y - z",
+      "data": {
+        "kind": "solid",
+        "order": 401
+      }
+    },
+    {
+      "id": "e-47ddf0989e2db027a8b26395-1",
+      "sourceId": "Q_Type",
+      "targetId": "LinTarget",
+      "label": "Степени нет",
+      "data": {
+        "kind": "solid",
+        "order": 402
+      }
+    },
+    {
+      "id": "e-17d8df4e971091179b39f748-1",
+      "sourceId": "Q_Type",
+      "targetId": "QuadTarget",
+      "label": "x во 2-й степени",
+      "data": {
+        "kind": "solid",
+        "order": 403
+      }
+    },
+    {
+      "id": "e-9615a12893275a124ccf6593-1",
+      "sourceId": "Q_Type",
+      "targetId": "HighTarget",
+      "label": "x в 3-й степени и выше",
+      "data": {
+        "kind": "solid",
+        "order": 404
+      }
+    },
+    {
+      "id": "e-65374d05c682359463b5f939-1",
+      "sourceId": "Q_Type",
+      "targetId": "Veq",
+      "label": "Векторы",
+      "data": {
+        "kind": "solid",
+        "order": 405
+      }
+    },
+    {
+      "id": "e-02118fa60e2f38a38c1d5eab-1",
+      "sourceId": "Q_Type",
+      "targetId": "FracTarget",
+      "label": "x в знаменателе",
+      "data": {
+        "kind": "solid",
+        "order": 406
+      }
+    },
+    {
+      "id": "e-3b24e5500b1e2a5d3758ca55-1",
+      "sourceId": "Dispatcher",
+      "targetId": "TrigTarget",
+      "label": "Тригонометрия",
+      "data": {
+        "kind": "solid",
+        "order": 407
+      }
+    },
+    {
+      "id": "e-91d9910e23d17bc956c64afd-1",
+      "sourceId": "Dispatcher",
+      "targetId": "ModTarget",
+      "label": "Модуль",
+      "data": {
+        "kind": "solid",
+        "order": 408
+      }
+    },
+    {
+      "id": "e-cf5189269ec27841fc470e5d-1",
+      "sourceId": "Dispatcher",
+      "targetId": "IrrTarget",
+      "label": "Корень",
+      "data": {
+        "kind": "solid",
+        "order": 409
+      }
+    },
+    {
+      "id": "e-efca8ada0c5a04442324b75a-1",
+      "sourceId": "Dispatcher",
+      "targetId": "ExpTarget",
+      "label": "Показательное",
+      "data": {
+        "kind": "solid",
+        "order": 410
+      }
+    },
+    {
+      "id": "e-62546507896ee7fc535d3da1-1",
+      "sourceId": "Dispatcher",
+      "targetId": "LogTarget",
+      "label": "Логарифм",
+      "data": {
+        "kind": "solid",
+        "order": 411
+      }
+    },
+    {
+      "id": "e-ee7ee65cfaffa1f374b8cca7-1",
+      "sourceId": "Dispatcher",
+      "targetId": "MatTarget",
+      "label": "Матрешка",
+      "data": {
+        "kind": "solid",
+        "order": 412
+      }
+    },
+    {
+      "id": "e-b625834358f34338f4eaab5a-1",
+      "sourceId": "QuadQ3",
+      "targetId": "Dispatcher",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 413
+      }
+    },
+    {
+      "id": "e-c72bf2af3c053a394ef4498a-1",
+      "sourceId": "Неполные1",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 414
+      }
+    },
+    {
+      "id": "e-520caa57a070cd5761e648dc-1",
+      "sourceId": "HighAct1",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 415
+      }
+    },
+    {
+      "id": "e-f18d4f0794c3d4822e2cd651-1",
+      "sourceId": "HighAct2",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 416
+      }
+    },
+    {
+      "id": "e-0072efd6f19e5424c90662ee-1",
+      "sourceId": "HighAct3",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 417
+      }
+    },
+    {
+      "id": "e-2e3f052a32cb949f2992cefb-1",
+      "sourceId": "Безу",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 418
+      }
+    },
+    {
+      "id": "e-75e9ffd5a1aea7ff95675e0d-1",
+      "sourceId": "Метод1",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 419
+      }
+    },
+    {
+      "id": "e-c2cb13bb8dabfffba093ded6-1",
+      "sourceId": "Метод2",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 420
+      }
+    },
+    {
+      "id": "e-b1bac40e6dae2995bb54799d-1",
+      "sourceId": "FracStep2",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 421
+      }
+    },
+    {
+      "id": "e-38784cb2f5b547782585f8c2-1",
+      "sourceId": "TrigSub",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 422
+      }
+    },
+    {
+      "id": "e-2f03cf3eada5558432661f82-1",
+      "sourceId": "TrigHard",
+      "targetId": "TrigQ1",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 423
+      }
+    },
+    {
+      "id": "e-be7b5a7b3a22e0aa17a7666a-1",
+      "sourceId": "ModZero",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 424
+      }
+    },
+    {
+      "id": "e-c849cb859a24d263e3ab812f-1",
+      "sourceId": "ModSplit",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 425
+      }
+    },
+    {
+      "id": "e-ccf2992b4c0c835ab740252e-1",
+      "sourceId": "ModX",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 426
+      }
+    },
+    {
+      "id": "e-7472f0be057494536ad5d158-1",
+      "sourceId": "ModTwo",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 427
+      }
+    },
+    {
+      "id": "e-e850486216b32d331641520c-1",
+      "sourceId": "ModIntervals",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 428
+      }
+    },
+    {
+      "id": "e-6d3646b87c251d80a7d019a4-1",
+      "sourceId": "IrrНечет",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 429
+      }
+    },
+    {
+      "id": "e-13f397a94c720adfbbbacb31-1",
+      "sourceId": "IrrZero",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 430
+      }
+    },
+    {
+      "id": "e-bc0ca7ee621cca01e44e7315-1",
+      "sourceId": "IrrPos",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 431
+      }
+    },
+    {
+      "id": "e-0d14c0192e6c16cfdfc5a51b-1",
+      "sourceId": "ЩитМеч",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 432
+      }
+    },
+    {
+      "id": "e-4cb69d755551455c6e5c7bdf-1",
+      "sourceId": "ExpAct1",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 433
+      }
+    },
+    {
+      "id": "e-f9e771d20c025ddf6ecbc441-1",
+      "sourceId": "ExpSub",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 434
+      }
+    },
+    {
+      "id": "e-eec8166b63db8d3c1e6c3c7d-1",
+      "sourceId": "ExpLog",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 435
+      }
+    },
+    {
+      "id": "e-ec47f567001af033ee672711-1",
+      "sourceId": "LogDef",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 436
+      }
+    },
+    {
+      "id": "e-72670b44f322e67e265e049b-1",
+      "sourceId": "LogPot",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 437
+      }
+    },
+    {
+      "id": "e-ea20dd680b1b44256c251966-1",
+      "sourceId": "LogSub",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 438
+      }
+    },
+    {
+      "id": "e-51db342ae6671dd466d91d32-1",
+      "sourceId": "MatStep3",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 439
+      }
+    },
+    {
+      "id": "e-4bce42e8db7422975ef1df73-1",
+      "sourceId": "TrigAct1",
+      "targetId": "Hub",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 440
+      }
+    },
+    {
+      "id": "e-80b937906a6759ae1e67f3c6-1",
+      "sourceId": "TrigAct3",
+      "targetId": "Hub",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 441
+      }
+    },
+    {
+      "id": "e-f7ba6f2fa490709a4d1980ce-1",
+      "sourceId": "TrigHard",
+      "targetId": "Hub",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 442
+      }
+    },
+    {
+      "id": "e-261da7a0de0e6e24f0181bd0-1",
+      "sourceId": "LogAct1",
+      "targetId": "Hub",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 443
+      }
+    },
+    {
+      "id": "e-79487b5ffd7e7be2ea11455c-1",
+      "sourceId": "LinAct1",
+      "targetId": "Hub",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 444
+      }
+    },
+    {
+      "id": "e-d23ee2962c14354929e8e3a2-1",
+      "sourceId": "QC",
+      "targetId": "CplxTarget",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 445
+      }
+    },
+    {
+      "id": "e-4afc65ce36769d9b8bd32208-1",
+      "sourceId": "QF",
+      "targetId": "FuncTarget",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 446
+      }
+    },
+    {
+      "id": "e-c367b96cc0aa5de18707102f-1",
+      "sourceId": "NotEq",
+      "targetId": "ExprTarget",
+      "label": "",
+      "data": {
+        "kind": "solid",
+        "order": 447
+      }
+    },
+    {
+      "id": "e-7da834c2ed19011e04a50d2e-1",
+      "sourceId": "ExprS5",
+      "targetId": "Hub",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 448
+      }
+    },
+    {
+      "id": "e-6ba6cb75abad7abdf1cb267a-1",
+      "sourceId": "ExprF2A",
+      "targetId": "B3",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 449
+      }
+    },
+    {
+      "id": "e-cf0bbdb6427c9f694061ca73-1",
+      "sourceId": "ExprF4A",
+      "targetId": "Дискр",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 450
+      }
+    },
+    {
+      "id": "e-2e7576f69b3f9d263f6d001d-1",
+      "sourceId": "ExprF4B",
+      "targetId": "Безу",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 451
+      }
+    },
+    {
+      "id": "e-b3542cfcbc4674a035045d5d-1",
+      "sourceId": "ExprI2",
+      "targetId": "Hub",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 452
+      }
+    },
+    {
+      "id": "e-f6dbaf71eb2a5087c82c8e45-1",
+      "sourceId": "FuncV1",
+      "targetId": "ExprTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 453
+      }
+    },
+    {
+      "id": "e-a048e77bd47b500951ba9328-1",
+      "sourceId": "FuncD3",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 454
+      }
+    },
+    {
+      "id": "e-1c3d19a2bed99ddd59a3d47f-1",
+      "sourceId": "FuncR5",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 455
+      }
+    },
+    {
+      "id": "e-d33380c7a9baacc6d62ef5d2-1",
+      "sourceId": "FuncG3",
+      "targetId": "QuadTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 456
+      }
+    },
+    {
+      "id": "e-9c16c735cb6848afbaee80ca-1",
+      "sourceId": "FuncP8",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 457
+      }
+    },
+    {
+      "id": "e-5416d99a54ba828892383da8-1",
+      "sourceId": "FuncI3",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 458
+      }
+    },
+    {
+      "id": "e-98e60361dbdc296a0a255ba8-1",
+      "sourceId": "D1",
+      "targetId": "CplxEq2",
+      "label": "Если нужны комплексные корни",
+      "data": {
+        "kind": "dotted",
+        "order": 459
+      }
+    },
+    {
+      "id": "e-5b797a83ec409fab09fd9ac2-1",
+      "sourceId": "CplxEq3",
+      "targetId": "SysTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 460
+      }
+    },
+    {
+      "id": "e-57227a0fd1666d2815c34880-1",
+      "sourceId": "CplxEq5",
+      "targetId": "LinTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 461
+      }
+    },
+    {
+      "id": "e-e69a3b67fbb8d284e91938e6-1",
+      "sourceId": "QI",
+      "targetId": "IneqTarget",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 462
+      }
+    },
+    {
+      "id": "e-1ddf147a37a3c8b81553d09b-1",
+      "sourceId": "QP",
+      "targetId": "ParTarget",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 463
+      }
+    },
+    {
+      "id": "e-07d0f9589f39895511f96c18-1",
+      "sourceId": "QS",
+      "targetId": "SeqTarget",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 464
+      }
+    },
+    {
+      "id": "e-88cf7989f59130e59917b79b-1",
+      "sourceId": "QW",
+      "targetId": "WordTarget",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 465
+      }
+    },
+    {
+      "id": "e-26b3c1d7c812841a7d573b0f-1",
+      "sourceId": "QN",
+      "targetId": "NumTarget",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 466
+      }
+    },
+    {
+      "id": "e-25e3c7c4088eaa8541acf382-1",
+      "sourceId": "QO",
+      "targetId": "OlyTarget",
+      "label": "Да",
+      "data": {
+        "kind": "solid",
+        "order": 467
+      }
+    },
+    {
+      "id": "e-56545eb052d13ecc8dcef763-1",
+      "sourceId": "Dispatcher",
+      "targetId": "IneqTarget",
+      "label": "Знак неравенства",
+      "data": {
+        "kind": "solid",
+        "order": 468
+      }
+    },
+    {
+      "id": "e-3f16570363381eee4c3e2d0a-1",
+      "sourceId": "Dispatcher",
+      "targetId": "ParTarget",
+      "label": "Есть параметр",
+      "data": {
+        "kind": "solid",
+        "order": 469
+      }
+    },
+    {
+      "id": "e-95c89ac827f8415d91730bcd-1",
+      "sourceId": "Dispatcher",
+      "targetId": "NumTarget",
+      "label": "Только целые решения",
+      "data": {
+        "kind": "solid",
+        "order": 470
+      }
+    },
+    {
+      "id": "e-9856e081fb9d7b3d38492c6f-1",
+      "sourceId": "Dispatcher",
+      "targetId": "OlyTarget",
+      "label": "Функциональное уравнение или оценка",
+      "data": {
+        "kind": "solid",
+        "order": 471
+      }
+    },
+    {
+      "id": "e-7794bd115450b05238c8e758-1",
+      "sourceId": "Dispatcher",
+      "targetId": "OlyMono",
+      "label": "Смесь разных типов функций",
+      "data": {
+        "kind": "solid",
+        "order": 472
+      }
+    },
+    {
+      "id": "e-63d9c62d9742abaa57ae47da-1",
+      "sourceId": "ExpLog",
+      "targetId": "OlyMono",
+      "label": "Выражение с x справа",
+      "data": {
+        "kind": "dotted",
+        "order": 473
+      }
+    },
+    {
+      "id": "e-e3d07c7044b8400601826448-1",
+      "sourceId": "FracZero",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 474
+      }
+    },
+    {
+      "id": "e-a2840520f12029daac396e08-1",
+      "sourceId": "FracProp",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 475
+      }
+    },
+    {
+      "id": "e-e58aebda1798d0667dd68f40-1",
+      "sourceId": "FracSub",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 476
+      }
+    },
+    {
+      "id": "e-90878b0810e53aa5866a70a3-1",
+      "sourceId": "TrigSame",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 477
+      }
+    },
+    {
+      "id": "e-da939fa34ec61cb0a44ae458-1",
+      "sourceId": "HighRec",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 478
+      }
+    },
+    {
+      "id": "e-f8e1235ed5eff6e08eeec4d0-1",
+      "sourceId": "HighPair",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 479
+      }
+    },
+    {
+      "id": "e-40725fa266ff57019f98e84f-1",
+      "sourceId": "HighShift",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 480
+      }
+    },
+    {
+      "id": "e-40862b1fcff9e368648eb45e-1",
+      "sourceId": "HighHom",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 481
+      }
+    },
+    {
+      "id": "e-1d1a4c93053fa2499d937db9-1",
+      "sourceId": "HighUnc",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 482
+      }
+    },
+    {
+      "id": "e-689c8609229ccbf298e23c6a-1",
+      "sourceId": "IrrSub",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 483
+      }
+    },
+    {
+      "id": "e-4e696eed48128a9f1896d0cc-1",
+      "sourceId": "IrrEq",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 484
+      }
+    },
+    {
+      "id": "e-e4b5a768fd0c9faa4425fca7-1",
+      "sourceId": "IrrTwo",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 485
+      }
+    },
+    {
+      "id": "e-6744b6fbbdddbc3817de33b2-1",
+      "sourceId": "IrrCnj",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 486
+      }
+    },
+    {
+      "id": "e-afd8d0d174e278ce1039f697-1",
+      "sourceId": "ExpPow",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 487
+      }
+    },
+    {
+      "id": "e-13f2b606ee53a38597dc8153-1",
+      "sourceId": "ExpHom",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 488
+      }
+    },
+    {
+      "id": "e-3d08b35224a19521ed562eb8-1",
+      "sourceId": "LogTake",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 489
+      }
+    },
+    {
+      "id": "e-adefee0d1b60fd9fa2be6695-1",
+      "sourceId": "SysHom",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 490
+      }
+    },
+    {
+      "id": "e-9709f8de335346cd6509bf1f-1",
+      "sourceId": "SysFact",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 491
+      }
+    },
+    {
+      "id": "e-6e6e817eb55cd9b7fa614d57-1",
+      "sourceId": "SysSym",
+      "targetId": "QuadTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 492
+      }
+    },
+    {
+      "id": "e-246d348c65130b30dcb9d8f7-1",
+      "sourceId": "WordS4",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 493
+      }
+    },
+    {
+      "id": "e-d38380d3209ce7f266e7e9bd-1",
+      "sourceId": "WordS4",
+      "targetId": "SysTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 494
+      }
+    },
+    {
+      "id": "e-d1e694a9af8fcce11adca33e-1",
+      "sourceId": "OlySq",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 495
+      }
+    },
+    {
+      "id": "e-338fba582d9540fe253229bd-1",
+      "sourceId": "OlyEst",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 496
+      }
+    },
+    {
+      "id": "e-5b957c833d00623af22450d0-1",
+      "sourceId": "OlyFl",
+      "targetId": "Dispatcher",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 497
+      }
+    },
+    {
+      "id": "e-f6c9e27280efdc6dd7b96a35-1",
+      "sourceId": "OlyFE",
+      "targetId": "FuncP4",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 498
+      }
+    },
+    {
+      "id": "e-dac9e6f622433e51be30d1ca-1",
+      "sourceId": "OlyMono",
+      "targetId": "FuncP10",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 499
+      }
+    },
+    {
+      "id": "e-4aba72052118d164dacf3a25-1",
+      "sourceId": "OlyExt",
+      "targetId": "FuncX",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 500
+      }
+    },
+    {
+      "id": "e-834ec3f6e43a95c2a4aca810-1",
+      "sourceId": "OlySymm",
+      "targetId": "SysSym",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 501
+      }
+    },
+    {
+      "id": "e-81e8bafbcbc18e8c1a1422bb-1",
+      "sourceId": "SysParam",
+      "targetId": "NumTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 502
+      }
+    },
+    {
+      "id": "e-cc45ea2b9acd63d950668ef8-1",
+      "sourceId": "SysGraph",
+      "targetId": "FuncG1",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 503
+      }
+    },
+    {
+      "id": "e-dfdbd1fee312ab908c16d696-1",
+      "sourceId": "TrigSel",
+      "targetId": "IneqTrig",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 504
+      }
+    },
+    {
+      "id": "e-8f107e124472726319054c7e-1",
+      "sourceId": "IneqTrig",
+      "targetId": "TrigTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 505
+      }
+    },
+    {
+      "id": "e-b5093cc075c5b5d33d76f4db-1",
+      "sourceId": "IneqQuad",
+      "targetId": "QuadTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 506
+      }
+    },
+    {
+      "id": "e-22090b80084df5fc5ed5ef96-1",
+      "sourceId": "IneqInt",
+      "targetId": "HighTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 507
+      }
+    },
+    {
+      "id": "e-5d6948219a4d50ebfef132ad-1",
+      "sourceId": "IneqLog",
+      "targetId": "LogTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 508
+      }
+    },
+    {
+      "id": "e-6e58e91e695777e3d67ff490-1",
+      "sourceId": "IneqExp",
+      "targetId": "ExpTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 509
+      }
+    },
+    {
+      "id": "e-99f575eeea906924d1e23b40-1",
+      "sourceId": "FuncD3",
+      "targetId": "IneqTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 510
+      }
+    },
+    {
+      "id": "e-252d2033c2c64f1f3c5c457b-1",
+      "sourceId": "FuncP9",
+      "targetId": "IneqTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 511
+      }
+    },
+    {
+      "id": "e-39e97c3ad57c816194f6cd65-1",
+      "sourceId": "ParLin",
+      "targetId": "LinTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 512
+      }
+    },
+    {
+      "id": "e-5ce717c7ba47b7f5b958df6a-1",
+      "sourceId": "ParQuad",
+      "targetId": "QuadTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 513
+      }
+    },
+    {
+      "id": "e-7b9a731750afa676c0bbfe30-1",
+      "sourceId": "ParIneq",
+      "targetId": "IneqTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 514
+      }
+    },
+    {
+      "id": "e-b027635c5ecc3557e734b819-1",
+      "sourceId": "ParAn",
+      "targetId": "FuncG1",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 515
+      }
+    },
+    {
+      "id": "e-951ea391052a89e856470585-1",
+      "sourceId": "ParPlane",
+      "targetId": "SysTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 516
+      }
+    },
+    {
+      "id": "e-490f8ecfeb20b441c8efeb87-1",
+      "sourceId": "SeqSys",
+      "targetId": "SysTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 517
+      }
+    },
+    {
+      "id": "e-1fa84ee0bdc7bb6cce6ad89e-1",
+      "sourceId": "WordNum",
+      "targetId": "NumTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 518
+      }
+    },
+    {
+      "id": "e-c09f04206320d99821abcd57-1",
+      "sourceId": "WordFin",
+      "targetId": "SeqGeo",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 519
+      }
+    },
+    {
+      "id": "e-32b00d9ed035880e4951359e-1",
+      "sourceId": "NumQuad",
+      "targetId": "QuadTarget",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 520
+      }
+    },
+    {
+      "id": "e-195568255dbea6584ccf35e5-1",
+      "sourceId": "NumRat",
+      "targetId": "Безу",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 521
+      }
+    },
+    {
+      "id": "e-2582366561e68b07a03bccc7-1",
+      "sourceId": "SysParam",
+      "targetId": "OlySq",
+      "label": "Сумма квадратов равна 0",
+      "data": {
+        "kind": "dotted",
+        "order": 522
+      }
+    },
+    {
+      "id": "e-bfa2a74b76658353ee20572c-1",
+      "sourceId": "LogAct1",
+      "targetId": "CtrlLog",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 523
+      }
+    },
+    {
+      "id": "e-08b5b14d95d17b620e06918b-1",
+      "sourceId": "TrigODZ",
+      "targetId": "CtrlTrig",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 524
+      }
+    },
+    {
+      "id": "e-3ec9b5341a6d13cf453c168c-1",
+      "sourceId": "IrrODZ",
+      "targetId": "CtrlSq",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 525
+      }
+    },
+    {
+      "id": "e-f87864e60ce0c012985bb8c7-1",
+      "sourceId": "FracStep1",
+      "targetId": "CtrlFrac",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 526
+      }
+    },
+    {
+      "id": "e-d278d79f6e19f078aef14409-1",
+      "sourceId": "TrigSub",
+      "targetId": "CtrlSub",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 527
+      }
+    },
+    {
+      "id": "e-e36040f7b8b876dd383a07c0-1",
+      "sourceId": "ExpSub",
+      "targetId": "CtrlSub",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 528
+      }
+    },
+    {
+      "id": "e-b964a8870ddbba4dbf74a486-1",
+      "sourceId": "LogSub",
+      "targetId": "CtrlSub",
+      "label": "",
+      "data": {
+        "kind": "dotted",
+        "order": 529
+      }
+    },
+    {
+      "id": "e-6e9a0f7aa76360aa5d17d649-1",
+      "sourceId": "Dispatcher",
+      "targetId": "CtrlTarget",
+      "label": "Контроль корней в конце",
+      "data": {
+        "kind": "dotted",
+        "order": 530
+      }
+    }
+  ]
+}

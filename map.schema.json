@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "./map.schema.json"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "mode": {
+      "type": "string",
+      "const": "directed"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "author": {
+              "type": "string"
+            },
+            "license": {
+              "type": "string",
+              "const": "CC-BY-NC-SA-4.0"
+            }
+          },
+          "required": [
+            "url",
+            "sha256",
+            "author",
+            "license"
+          ],
+          "additionalProperties": false
+        },
+        "sections": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "number": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "entryNodeId": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "number",
+              "label",
+              "entryNodeId"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "source",
+        "sections"
+      ],
+      "additionalProperties": false
+    },
+    "nodes": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "sectionId": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "sectionId"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "data"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "targetId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "solid",
+                  "dotted"
+                ]
+              },
+              "order": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "kind",
+              "order"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "sourceId",
+          "targetId",
+          "label",
+          "data"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "mode",
+    "data",
+    "nodes",
+    "edges"
+  ],
+  "additionalProperties": false
+}
